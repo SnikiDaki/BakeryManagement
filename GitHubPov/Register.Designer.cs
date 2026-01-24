@@ -37,6 +37,7 @@
             label4 = new Label();
             textBox3 = new TextBox();
             textBox4 = new TextBox();
+            label5 = new Label();
             SuspendLayout();
             // 
             // button1
@@ -112,11 +113,22 @@
             textBox4.Size = new Size(100, 23);
             textBox4.TabIndex = 8;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(340, 9);
+            label5.Name = "label5";
+            label5.Size = new Size(181, 45);
+            label5.TabIndex = 9;
+            label5.Text = "Registracija";
+            // 
             // Register
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label5);
             Controls.Add(textBox4);
             Controls.Add(textBox3);
             Controls.Add(label4);
@@ -143,5 +155,6 @@
         private Label label4;
         private TextBox textBox3;
         private TextBox textBox4;
+        private Label label5;
     }
 }
