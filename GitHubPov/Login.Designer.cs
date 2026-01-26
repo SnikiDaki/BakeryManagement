@@ -34,12 +34,14 @@
             label2 = new Label();
             textBox2 = new TextBox();
             label5 = new Label();
+            linkLabel1 = new LinkLabel();
+            label3 = new Label();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(162, 86);
+            label1.Location = new Point(171, 148);
             label1.Name = "label1";
             label1.Size = new Size(60, 15);
             label1.TabIndex = 0;
@@ -47,16 +49,17 @@
             // 
             // button1
             // 
-            button1.Location = new Point(237, 168);
+            button1.Location = new Point(246, 227);
             button1.Name = "button1";
             button1.Size = new Size(100, 23);
             button1.TabIndex = 1;
             button1.Text = "Login";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(237, 83);
+            textBox1.Location = new Point(245, 140);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(100, 23);
             textBox1.TabIndex = 2;
@@ -64,7 +67,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(162, 124);
+            label2.Location = new Point(171, 189);
             label2.Name = "label2";
             label2.Size = new Size(57, 15);
             label2.TabIndex = 3;
@@ -72,7 +75,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(237, 124);
+            textBox2.Location = new Point(246, 181);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(100, 23);
             textBox2.TabIndex = 4;
@@ -81,24 +84,46 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(237, 9);
+            label5.Location = new Point(246, 66);
             label5.Name = "label5";
             label5.Size = new Size(99, 45);
             label5.TabIndex = 10;
             label5.Text = "Login";
             // 
-            // Form1
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.Location = new Point(257, 294);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(77, 15);
+            linkLabel1.TabIndex = 11;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Register Now";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(286, 265);
+            label3.Name = "label3";
+            label3.Size = new Size(20, 15);
+            label3.TabIndex = 12;
+            label3.Text = "Or";
+            // 
+            // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(578, 383);
+            Controls.Add(label3);
+            Controls.Add(linkLabel1);
             Controls.Add(label5);
             Controls.Add(textBox2);
             Controls.Add(label2);
             Controls.Add(textBox1);
             Controls.Add(button1);
             Controls.Add(label1);
-            Name = "Form1";
+            Name = "Login";
             Text = "Form1";
             ResumeLayout(false);
             PerformLayout();
@@ -112,5 +137,7 @@
         private Label label2;
         private TextBox textBox2;
         private Label label5;
+        private LinkLabel linkLabel1;
+        private Label label3;
     }
 }
