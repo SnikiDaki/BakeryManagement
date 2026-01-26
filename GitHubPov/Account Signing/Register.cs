@@ -26,12 +26,12 @@ namespace GitHubPov
             string email = textBox4.Text;
             string password = textBox5.Text;  
 
-            string konekcija = "Server=db.hwxqtaqoebbpmtnrormo.supabase.co;Username=postgres;Password=SDBmenigment958;Database=postgres;";
+            string konekcija = "Host=db.hwxqtaqoebbpmtnrormo.supabase.co;Port=5432;Database=postgres;Username=postgres;Password=SDBmenigment958;SSL Mode=Require;Trust Server Certificate=true";
             NpgsqlConnection conn = new NpgsqlConnection(konekcija);
-            conn.Open();
 
             try
             {
+            conn.Open();
                 string insert = "INSERT INTO users (firstname, lastname, username, email, password, role) VALUES (@firstname, @lastname, @username, @email, @password, 'customer')";
                 NpgsqlCommand cmd = new NpgsqlCommand(insert, conn);
                 cmd.Parameters.AddWithValue("@firstname", firstname);
