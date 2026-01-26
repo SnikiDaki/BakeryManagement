@@ -16,5 +16,10 @@ namespace GitHubPov.Account_Type_s
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
