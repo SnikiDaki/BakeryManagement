@@ -24,7 +24,7 @@ namespace GitHubPov
             string lastname = textBox2.Text;
             string username = textBox3.Text;
             string email = textBox4.Text;
-            string password = textBox5.Text;
+            string password = textBox5.Text;  
 
             string konekcija = "Server=db.hwxqtaqoebbpmtnrormo.supabase.co;Username=postgres;Password=SDBmenigment958;Database=postgres;";
             NpgsqlConnection conn = new NpgsqlConnection(konekcija);
