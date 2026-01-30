@@ -1,15 +1,6 @@
-﻿using Npgsql;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MongoDB;
-
+﻿using MySql.Data;
+using MySql.Data.MySqlClient;
+using Mysqlx.Crud;
 namespace GitHubPov
 {
     public partial class Register : Form
@@ -25,16 +16,16 @@ namespace GitHubPov
             string lastname = textBox2.Text;
             string username = textBox3.Text;
             string email = textBox4.Text;
-            string password = textBox5.Text;  
+            string password = textBox5.Text;
 
-            string konekcija = "Host=db.hwxqtaqoebbpmtnrormo.supabase.co;Port=5432;Database=postgres;Username=postgres;Password=SDBmenigment958;SSL Mode=Require;Trust Server Certificate=true";
-            NpgsqlConnection conn = new NpgsqlConnection(konekcija);
+            string konekcija = "Host=bakerymanagement-bakerymanagement.g.aivencloud.com;Port=11884;Database=defaultdb;Username=avnadmin;Password=AVNS_6o1GMUTkYmgXdBdxJYy;SSL Mode=Require;Trust Server Certificate=true";
+            MySqlConnection conn = new MySqlConnection(konekcija);
 
             try
             {
-            conn.Open();
+                conn.Open();
                 string insert = "INSERT INTO users (firstname, lastname, username, email, password, role) VALUES (@firstname, @lastname, @username, @email, @password, 'customer')";
-                NpgsqlCommand cmd = new NpgsqlCommand(insert, conn);
+                MySqlCommand cmd = new MySqlCommand(insert, conn);
                 cmd.Parameters.AddWithValue("@firstname", firstname);
                 cmd.Parameters.AddWithValue("@firstname", lastname);
                 cmd.Parameters.AddWithValue("@username", username);
@@ -44,5 +35,7 @@ namespace GitHubPov
             }
             catch (Exception ex) { MessageBox.Show($"Doslo je do greske: {ex} "); }
         }
+
+        
     }
 }
