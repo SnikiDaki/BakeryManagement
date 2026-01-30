@@ -122,11 +122,11 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(171, 9);
+            label5.Location = new Point(136, 9);
             label5.Name = "label5";
-            label5.Size = new Size(181, 45);
+            label5.Size = new Size(318, 45);
             label5.TabIndex = 9;
-            label5.Text = "Registracija";
+            label5.Text = "Registracija Korisnika";
             // 
             // label6
             // 
