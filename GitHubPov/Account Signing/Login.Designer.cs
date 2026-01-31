@@ -79,6 +79,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(100, 23);
             textBox2.TabIndex = 4;
+            textBox2.UseSystemPasswordChar = true;
             // 
             // label5
             // 
@@ -125,6 +126,7 @@
             Controls.Add(label1);
             Name = "Login";
             Text = "Form1";
+            Load += Login_Load;
             ResumeLayout(false);
             PerformLayout();
         }
