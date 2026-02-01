@@ -31,13 +31,25 @@ namespace GitHubPov.Account_Types
 
         }
 
-        
+
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             CustomerDataOrder cdr = new CustomerDataOrder(User1);
             this.Hide();
             cdr.Show();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Cart cart = new Cart(User1);
+            this.Hide();
+            cart.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+           
         }
     }
 }
