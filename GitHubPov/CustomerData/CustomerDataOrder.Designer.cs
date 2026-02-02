@@ -70,7 +70,7 @@
             // 
             label3.Location = new Point(92, 80);
             label3.Name = "label3";
-            label3.Size = new Size(141, 29);
+            label3.Size = new Size(161, 29);
             label3.TabIndex = 9;
             label3.Text = "Saved Delivery Information";
             // 

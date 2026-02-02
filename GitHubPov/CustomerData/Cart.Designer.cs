@@ -28,41 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
             label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
+            listView1 = new ListView();
+            PN = new ColumnHeader();
+            P = new ColumnHeader();
+            Q = new ColumnHeader();
+            button1 = new Button();
+            label1 = new Label();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(24, 78);
-            label1.Name = "label1";
-            label1.Size = new Size(84, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Product Name";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(223, 78);
-            label2.Name = "label2";
-            label2.Size = new Size(33, 15);
-            label2.TabIndex = 1;
-            label2.Text = "Price";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(354, 78);
-            label3.Name = "label3";
-            label3.Size = new Size(53, 15);
-            label3.TabIndex = 2;
-            label3.Text = "Quantity";
             // 
             // label4
             // 
@@ -74,48 +47,60 @@
             label4.TabIndex = 3;
             label4.Text = "Your Cart";
             // 
-            // label5
+            // listView1
             // 
-            label5.AutoSize = true;
-            label5.ForeColor = SystemColors.Control;
-            label5.Location = new Point(24, 139);
-            label5.Name = "label5";
-            label5.Size = new Size(55, 15);
-            label5.TabIndex = 4;
-            label5.Text = "Product1";
+            listView1.Columns.AddRange(new ColumnHeader[] { PN, P, Q });
+            listView1.Location = new Point(12, 70);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(528, 223);
+            listView1.TabIndex = 5;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
             // 
-            // label6
+            // PN
             // 
-            label6.AutoSize = true;
-            label6.ForeColor = SystemColors.Control;
-            label6.Location = new Point(212, 139);
-            label6.Name = "label6";
-            label6.Size = new Size(55, 15);
-            label6.TabIndex = 5;
-            label6.Text = "Product1";
+            PN.Text = "Product Name";
+            PN.Width = 150;
             // 
-            // label7
+            // P
             // 
-            label7.AutoSize = true;
-            label7.ForeColor = SystemColors.Control;
-            label7.Location = new Point(354, 139);
-            label7.Name = "label7";
-            label7.Size = new Size(55, 15);
-            label7.TabIndex = 6;
-            label7.Text = "Product1";
+            P.Text = "Price $";
+            P.Width = 150;
+            // 
+            // Q
+            // 
+            Q.Text = "Quantity";
+            Q.Width = 150;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(343, 307);
+            button1.Name = "button1";
+            button1.Size = new Size(197, 34);
+            button1.TabIndex = 6;
+            button1.Text = "Continue To Payment";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(12, 305);
+            label1.Name = "label1";
+            label1.Size = new Size(68, 30);
+            label1.TabIndex = 7;
+            label1.Text = "Total :";
             // 
             // Cart
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(552, 510);
-            Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
             Controls.Add(label1);
+            Controls.Add(button1);
+            Controls.Add(listView1);
+            Controls.Add(label4);
             Name = "Cart";
             Text = "Cart";
             Load += Cart_Load;
@@ -124,13 +109,12 @@
         }
 
         #endregion
-
-        private Label label1;
-        private Label label2;
-        private Label label3;
         private Label label4;
-        private Label label5;
-        private Label label6;
-        private Label label7;
+        private ListView listView1;
+        private Button button1;
+        private ColumnHeader PN;
+        private ColumnHeader P;
+        private ColumnHeader Q;
+        private Label label1;
     }
 }

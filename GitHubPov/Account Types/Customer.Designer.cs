@@ -86,8 +86,9 @@
             // 
             // linkLabel1
             // 
+            linkLabel1.ActiveLinkColor = SystemColors.ControlText;
             linkLabel1.LinkBehavior = LinkBehavior.HoverUnderline;
-            linkLabel1.LinkColor = Color.Black;
+            linkLabel1.LinkColor = SystemColors.ControlText;
             linkLabel1.Location = new Point(751, 9);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(73, 31);
@@ -95,6 +96,7 @@
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Username";
             linkLabel1.TextAlign = ContentAlignment.MiddleCenter;
+            linkLabel1.VisitedLinkColor = SystemColors.ControlText;
             linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // label1
@@ -152,6 +154,7 @@
             button2.TabIndex = 37;
             button2.Text = "Add to Cart";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // label4
             // 
@@ -179,6 +182,7 @@
             button3.TabIndex = 40;
             button3.Text = "Add to Cart";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // label5
             // 
@@ -206,6 +210,7 @@
             button4.TabIndex = 43;
             button4.Text = "Add to Cart";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // label6
             // 
@@ -233,6 +238,7 @@
             button5.TabIndex = 46;
             button5.Text = "Add to Cart";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // label7
             // 
@@ -260,6 +266,7 @@
             button6.TabIndex = 49;
             button6.Text = "Add to Cart";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // label8
             // 
@@ -375,6 +382,7 @@
             Controls.Add(pictureBox1);
             Name = "Customer";
             Text = "Customer";
+            Load += Customer_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();

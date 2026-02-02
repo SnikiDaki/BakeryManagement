@@ -20,6 +20,7 @@ namespace GitHubPov.CustomerData
             InitializeComponent();
             user2 = username;
             labeluser.Text = user2;
+            
         }
 
         public static class Db
@@ -89,7 +90,7 @@ namespace GitHubPov.CustomerData
 
         private void labeluser_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

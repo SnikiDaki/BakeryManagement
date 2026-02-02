@@ -44,8 +44,6 @@
             textBox2 = new TextBox();
             label4 = new Label();
             label3 = new Label();
-            radioButton5 = new RadioButton();
-            radioButton4 = new RadioButton();
             label2 = new Label();
             radioButton3 = new RadioButton();
             radioButton2 = new RadioButton();
@@ -54,6 +52,12 @@
             textBox1 = new TextBox();
             Username = new Label();
             button1 = new Button();
+            groupBox1 = new GroupBox();
+            groupBox2 = new GroupBox();
+            radioButton6 = new RadioButton();
+            radioButton7 = new RadioButton();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // label11
@@ -66,7 +70,7 @@
             // 
             // richTextBox1
             // 
-            richTextBox1.Location = new Point(176, 513);
+            richTextBox1.Location = new Point(170, 513);
             richTextBox1.Name = "richTextBox1";
             richTextBox1.Size = new Size(415, 124);
             richTextBox1.TabIndex = 49;
@@ -185,28 +189,6 @@
             label3.Text = "Delivery Information";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // radioButton5
-            // 
-            radioButton5.AutoSize = true;
-            radioButton5.Location = new Point(315, 143);
-            radioButton5.Name = "radioButton5";
-            radioButton5.Size = new Size(92, 19);
-            radioButton5.TabIndex = 34;
-            radioButton5.TabStop = true;
-            radioButton5.Text = "Local Pickup";
-            radioButton5.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            radioButton4.AutoSize = true;
-            radioButton4.Location = new Point(176, 143);
-            radioButton4.Name = "radioButton4";
-            radioButton4.Size = new Size(111, 19);
-            radioButton4.TabIndex = 33;
-            radioButton4.TabStop = true;
-            radioButton4.Text = "Address delivery";
-            radioButton4.UseVisualStyleBackColor = true;
-            // 
             // label2
             // 
             label2.Location = new Point(167, 101);
@@ -219,7 +201,7 @@
             // radioButton3
             // 
             radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(400, 60);
+            radioButton3.Location = new Point(230, 22);
             radioButton3.Name = "radioButton3";
             radioButton3.Size = new Size(86, 19);
             radioButton3.TabIndex = 31;
@@ -230,7 +212,7 @@
             // radioButton2
             // 
             radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(263, 60);
+            radioButton2.Location = new Point(91, 22);
             radioButton2.Name = "radioButton2";
             radioButton2.Size = new Size(93, 19);
             radioButton2.TabIndex = 30;
@@ -240,7 +222,7 @@
             // 
             // label1
             // 
-            label1.Location = new Point(167, 18);
+            label1.Location = new Point(170, 14);
             label1.Name = "label1";
             label1.Size = new Size(103, 29);
             label1.TabIndex = 29;
@@ -250,13 +232,14 @@
             // radioButton1
             // 
             radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(176, 60);
+            radioButton1.Location = new Point(16, 22);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new Size(50, 19);
             radioButton1.TabIndex = 28;
             radioButton1.TabStop = true;
             radioButton1.Text = "Card";
             radioButton1.UseVisualStyleBackColor = true;
+            radioButton1.CheckedChanged += radioButton1_CheckedChanged;
             // 
             // textBox1
             // 
@@ -283,12 +266,61 @@
             button1.TabIndex = 51;
             button1.Text = "Complete Purchase";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(radioButton1);
+            groupBox1.Controls.Add(radioButton2);
+            groupBox1.Controls.Add(radioButton3);
+            groupBox1.Location = new Point(170, 46);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(330, 52);
+            groupBox1.TabIndex = 52;
+            groupBox1.TabStop = false;
+            groupBox1.Enter += groupBox1_Enter;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(radioButton6);
+            groupBox2.Controls.Add(radioButton7);
+            groupBox2.Location = new Point(170, 138);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(330, 52);
+            groupBox2.TabIndex = 53;
+            groupBox2.TabStop = false;
+            // 
+            // radioButton6
+            // 
+            radioButton6.AutoSize = true;
+            radioButton6.Location = new Point(16, 22);
+            radioButton6.Name = "radioButton6";
+            radioButton6.Size = new Size(112, 19);
+            radioButton6.TabIndex = 28;
+            radioButton6.TabStop = true;
+            radioButton6.Text = "Address Delivery";
+            radioButton6.UseVisualStyleBackColor = true;
+            radioButton6.CheckedChanged += radioButton6_CheckedChanged;
+            // 
+            // radioButton7
+            // 
+            radioButton7.AutoSize = true;
+            radioButton7.Location = new Point(172, 22);
+            radioButton7.Name = "radioButton7";
+            radioButton7.Size = new Size(92, 19);
+            radioButton7.TabIndex = 30;
+            radioButton7.TabStop = true;
+            radioButton7.Text = "Local pickup";
+            radioButton7.UseVisualStyleBackColor = true;
+            radioButton7.CheckedChanged += radioButton7_CheckedChanged;
             // 
             // OrderInformation
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(852, 763);
+            Controls.Add(groupBox2);
+            Controls.Add(groupBox1);
             Controls.Add(button1);
             Controls.Add(label11);
             Controls.Add(richTextBox1);
@@ -306,17 +338,17 @@
             Controls.Add(textBox2);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(radioButton5);
-            Controls.Add(radioButton4);
             Controls.Add(label2);
-            Controls.Add(radioButton3);
-            Controls.Add(radioButton2);
             Controls.Add(label1);
-            Controls.Add(radioButton1);
             Controls.Add(textBox1);
             Controls.Add(Username);
             Name = "OrderInformation";
             Text = "OrderInformation";
+            Load += OrderInformation_Load;
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -339,8 +371,6 @@
         private TextBox textBox2;
         private Label label4;
         private Label label3;
-        private RadioButton radioButton5;
-        private RadioButton radioButton4;
         private Label label2;
         private RadioButton radioButton3;
         private RadioButton radioButton2;
@@ -349,5 +379,9 @@
         private TextBox textBox1;
         private Label Username;
         private Button button1;
+        private GroupBox groupBox1;
+        private GroupBox groupBox2;
+        private RadioButton radioButton6;
+        private RadioButton radioButton7;
     }
 }
