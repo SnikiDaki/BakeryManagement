@@ -86,17 +86,11 @@ namespace GitHubPov.CustomerData
 
         private void radioButton7_CheckedChanged(object sender, EventArgs e)
         {
-            
+            delivery = radioButton7.Text;
         }
         public void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioButton1.Checked)
-            {
-                payment = radioButton1.Text;
-
-            }
-            else if (radioButton2.Checked) { payment = radioButton2.Text; }
-            else { payment = radioButton3.Text; }
+            payment = radioButton1.Text;
 
         }
         public void button1_Click(object sender, EventArgs e)
@@ -136,5 +130,41 @@ namespace GitHubPov.CustomerData
             catch (Exception ex) { MessageBox.Show($"Erorr: {ex} "); }
         }
 
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            payment = radioButton2.Text;
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            payment = radioButton3.Text;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MySqlConnection conn = new MySqlConnection(Db.konekcija);
+            conn.Open();
+
+            try
+            {
+                string update = "UPDATE users SET firstname=@firstname, lastname=@lastname, email=@email, telefon=@telefon, adresa=@adresa, hnum=@hnum, city=@city WHERE username=@username";
+                MySqlCommand cmd = new MySqlCommand(update, conn);
+                cmd.Parameters.AddWithValue("username", user);
+                cmd.Parameters.AddWithValue("@firstname", textBox1.Text);
+                cmd.Parameters.AddWithValue("@lastname", textBox2.Text);
+                cmd.Parameters.AddWithValue("@email", textBox3.Text);
+                cmd.Parameters.AddWithValue("@telefon", Convert.ToString(maskedTextBox1.Text));
+                cmd.Parameters.AddWithValue("@adresa", textBox4.Text);
+                cmd.Parameters.AddWithValue("@hnum", textBox5.Text);
+                cmd.Parameters.AddWithValue("@city", textBox6.Text);
+                int updejt = Convert.ToInt32(cmd.ExecuteNonQuery());
+
+                if (updejt > 0)
+                {
+                    MessageBox.Show($"Your information has been successfully updated!");
+                }
+            }
+            catch (Exception ex) { MessageBox.Show($"Error: {ex} "); }
+        }
     }
 }

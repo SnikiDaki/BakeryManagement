@@ -15,12 +15,13 @@ namespace GitHubPov.Account_Types
     public partial class Customer : Form
     {
         public string User1;
+        
         public Customer(string username)
         {
             InitializeComponent();
             User1 = username;
             linkLabel1.Text = User1;
-
+            
 
         }
         List<Product> products = new List<Product>();
@@ -52,7 +53,7 @@ namespace GitHubPov.Account_Types
 
         public void button1_Click_1(object sender, EventArgs e)
         {
-            products.Add(new Product { ProductName = "Torta 1", Price = 25, Quantity = 1 });
+            products.Add(new Product { ProductName = "Torta 1", Price = 25, Quantity = "1;" });
         }
 
         private void Customer_Load(object sender, EventArgs e)
@@ -63,34 +64,34 @@ namespace GitHubPov.Account_Types
         public class Product
         {
             public string? ProductName { get; set; }
-            public float Price { get; set; }
-            public int? Quantity { get; set; }
+            public double Price { get; set; }
+            public string? Quantity { get; set; }
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            products.Add(new Product { ProductName = "Torta 2", Price = 25, Quantity = 1 });
+            products.Add(new Product { ProductName = "Torta 2;", Price = 25, Quantity = "1;" });
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            products.Add(new Product { ProductName = "Torta 3", Price = 25, Quantity = 1 });
+            products.Add(new Product { ProductName = "Torta 3;", Price = 25, Quantity = "1;" });
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            products.Add(new Product { ProductName = "Torta 4", Price = 25, Quantity = 1 });
+            products.Add(new Product { ProductName = "Torta 4;", Price = 25, Quantity = "1;" });
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            products.Add(new Product { ProductName = "Torta 5", Price = 25, Quantity = 1 });
+            products.Add(new Product { ProductName = "Torta 5;", Price = 25, Quantity = "1;" });
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            products.Add(new Product { ProductName = "Torta 6", Price = 25, Quantity = 1 });
+            products.Add(new Product { ProductName = "Torta 6;", Price = 25, Quantity = "1;" });
         }
     }
 }

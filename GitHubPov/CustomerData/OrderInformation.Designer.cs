@@ -56,6 +56,7 @@
             groupBox2 = new GroupBox();
             radioButton6 = new RadioButton();
             radioButton7 = new RadioButton();
+            button2 = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -135,7 +136,7 @@
             // maskedTextBox1
             // 
             maskedTextBox1.Location = new Point(345, 338);
-            maskedTextBox1.Mask = "(+381) 641234567";
+            maskedTextBox1.Mask = "(+999) 00-0000000";
             maskedTextBox1.Name = "maskedTextBox1";
             maskedTextBox1.Size = new Size(100, 23);
             maskedTextBox1.TabIndex = 41;
@@ -208,6 +209,7 @@
             radioButton3.TabStop = true;
             radioButton3.Text = "QR Scanner";
             radioButton3.UseVisualStyleBackColor = true;
+            radioButton3.CheckedChanged += radioButton3_CheckedChanged;
             // 
             // radioButton2
             // 
@@ -219,6 +221,7 @@
             radioButton2.TabStop = true;
             radioButton2.Text = "Upon pickup";
             radioButton2.UseVisualStyleBackColor = true;
+            radioButton2.CheckedChanged += radioButton2_CheckedChanged;
             // 
             // label1
             // 
@@ -314,11 +317,22 @@
             radioButton7.UseVisualStyleBackColor = true;
             radioButton7.CheckedChanged += radioButton7_CheckedChanged;
             // 
+            // button2
+            // 
+            button2.Location = new Point(635, 428);
+            button2.Name = "button2";
+            button2.Size = new Size(125, 23);
+            button2.TabIndex = 54;
+            button2.Text = "Update Information";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // OrderInformation
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(852, 763);
+            Controls.Add(button2);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(button1);
@@ -383,5 +397,6 @@
         private GroupBox groupBox2;
         private RadioButton radioButton6;
         private RadioButton radioButton7;
+        private Button button2;
     }
 }

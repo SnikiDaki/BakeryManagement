@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GitHubPov.CustomerData;
-
+using GitHubPov.Account_Types;
 
 
 namespace GitHubPov.CustomerData
@@ -24,10 +24,9 @@ namespace GitHubPov.CustomerData
             user = username;
             produkti = products;
 
-
         }
 
-            double total = 0;
+        double total = 0;
         private void Cart_Load(object sender, EventArgs e)
         {
             foreach (GitHubPov.Account_Types.Customer.Product product in produkti)
@@ -48,6 +47,13 @@ namespace GitHubPov.CustomerData
             OrderInformation oi = new OrderInformation(user, total, produkti);
             this.Hide();
             oi.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+             Customer customer = new Customer(user);
+            this.Hide();
+            customer.Show();
         }
     }
 }
