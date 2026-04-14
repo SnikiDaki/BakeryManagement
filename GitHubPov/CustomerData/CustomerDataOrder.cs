@@ -15,17 +15,19 @@ namespace GitHubPov.CustomerData
     public partial class CustomerDataOrder : Form
     {
         public string user2;
-        public CustomerDataOrder(string username)
+        public int Uid;
+        public CustomerDataOrder(string username, int uid)
         {
             InitializeComponent();
             user2 = username;
             labeluser.Text = user2;
-            
+            Uid = uid;
         }
 
         public static class Db
         {
-            public static string konekcija = "Server=metro.proxy.rlwy.net;Port=20149;Database=railway;Uid=root;Pwd=mvxRtenxTQfNKFjrBnYNlhViwjyupHiS;SSLMode=Required;Connection Timeout=30;";
+            public static string konekcija = "server=localhost;user=root;password=;database=bakery";
+            //public static string konekcija = "Server=metro.proxy.rlwy.net;Port=20149;Database=railway;Uid=root;Pwd=mvxRtenxTQfNKFjrBnYNlhViwjyupHiS;SSLMode=Required;Connection Timeout=30;";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -84,7 +86,7 @@ namespace GitHubPov.CustomerData
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Customer customer = new Customer(user2);
+            Customer customer = new Customer(user2,Uid);
             customer.Show();
         }
 

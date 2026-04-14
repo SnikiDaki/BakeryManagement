@@ -12,7 +12,8 @@ namespace GitHubPov
         }
         public static class Db
         {
-            public static string konekcija = "Server=metro.proxy.rlwy.net;Port=20149;Database=railway;Uid=root;Pwd=mvxRtenxTQfNKFjrBnYNlhViwjyupHiS;SSLMode=Required;Connection Timeout=30;";
+            public static string konekcija = "server=localhost;user=root;password=;database=bakery";
+            //public static string konekcija = "Server=metro.proxy.rlwy.net;Port=20149;Database=railway;Uid=root;Pwd=mvxRtenxTQfNKFjrBnYNlhViwjyupHiS;SSLMode=Required;Connection Timeout=30;";
         }
         private void button1_Click(object sender, EventArgs e)
         {

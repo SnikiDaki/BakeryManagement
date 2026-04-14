@@ -57,6 +57,7 @@
             radioButton6 = new RadioButton();
             radioButton7 = new RadioButton();
             button2 = new Button();
+            button3 = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -263,9 +264,9 @@
             // 
             // button1
             // 
-            button1.Location = new Point(176, 679);
+            button1.Location = new Point(400, 679);
             button1.Name = "button1";
-            button1.Size = new Size(415, 62);
+            button1.Size = new Size(191, 62);
             button1.TabIndex = 51;
             button1.Text = "Complete Purchase";
             button1.UseVisualStyleBackColor = true;
@@ -327,11 +328,22 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // button3
+            // 
+            button3.Location = new Point(170, 679);
+            button3.Name = "button3";
+            button3.Size = new Size(191, 62);
+            button3.TabIndex = 55;
+            button3.Text = "Back to Shop";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // OrderInformation
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(852, 763);
+            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
@@ -398,5 +410,6 @@
         private RadioButton radioButton6;
         private RadioButton radioButton7;
         private Button button2;
+        private Button button3;
     }
 }

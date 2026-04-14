@@ -29,31 +29,26 @@ namespace GitHubPov.CustomerData
         double total = 0;
         private void Cart_Load(object sender, EventArgs e)
         {
-            foreach (GitHubPov.Account_Types.Customer.Product product in produkti)
-            {
-                ListViewItem item = new ListViewItem(product.ProductName);
-                item.SubItems.Add(product.Price.ToString());
-                item.SubItems.Add(product.Quantity.ToString());
 
-                total += product.Price;
-
-                listView1.Items.Add(item);
-                label1.Text = $"Total : {total}$";
-            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            OrderInformation oi = new OrderInformation(user, total, produkti);
-            this.Hide();
-            oi.Show();
+            //OrderInformation oi = new OrderInformation(user, total, produkti);
+            //this.Hide();
+            //oi.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-             Customer customer = new Customer(user);
-            this.Hide();
-            customer.Show();
+        //    Customer customer = new Customer(user);
+        //    this.Hide();
+        //    customer.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -2,10 +2,13 @@
 using MySql.Data.MySqlClient;
 using System.Security.Cryptography.X509Certificates;
 using GitHubPov.Account_Types;
+using GitHubPov.Account_Type_s;
 namespace GitHubPov
 {
     public partial class Login : Form
     {
+        public string role;
+        public int userid;
         public Login()
         {
             InitializeComponent();
@@ -21,7 +24,8 @@ namespace GitHubPov
 
         public static class Db
         {
-            public static string konekcija = "Server=metro.proxy.rlwy.net;Port=20149;Database=railway;Uid=root;Pwd=mvxRtenxTQfNKFjrBnYNlhViwjyupHiS;SSLMode=Required;Connection Timeout=30;";
+            public static string konekcija = "server=localhost;user=root;password=;database=bakery";
+            //public static string konekcija = "Server=metro.proxy.rlwy.net;Port=20149;Database=railway;Uid=root;Pwd=mvxRtenxTQfNKFjrBnYNlhViwjyupHiS;SSLMode=Required;Connection Timeout=30;";
         }
 
 
@@ -36,7 +40,7 @@ namespace GitHubPov
         {
             string username = textBox1.Text;
             string password = textBox2.Text;
-
+            
              
         MySqlConnection conn = new MySqlConnection(Db.konekcija);
             conn.Open();
@@ -47,9 +51,35 @@ namespace GitHubPov
                 cmd.Parameters.AddWithValue("username", username);
                 cmd.Parameters.AddWithValue("password", password);
                 MySqlDataReader dr = cmd.ExecuteReader();
-                if (dr.HasRows) {
+                while (dr.Read())
+                {
+                    userid = Convert.ToInt32(dr[0]);
+                    role = Convert.ToString(dr[6]);
+
+
+
+                }
+                    if (dr.HasRows && role=="customer")
+                    {
+                        MessageBox.Show($"Login Successful!\nWelcome, {username}!", "Login");
+                        Customer customer = new Customer(username, userid);
+                        customer.FormClosed += (s, args) => this.Close();
+                        this.Hide();
+                        customer.Show();
+                    }
+                 else if (dr.HasRows && role == "cook")
+                {
                     MessageBox.Show($"Login Successful!\nWelcome, {username}!", "Login");
-                    Customer customer = new Customer(username);
+                    Cook customer = new Cook(username, userid);
+                    customer.FormClosed += (s, args) => this.Close();
+                    this.Hide();
+                    customer.Show();
+                }
+                else if (dr.HasRows && role == "manager")
+                {
+                    MessageBox.Show($"Login Successful!\nWelcome, {username}!", "Login");
+                    Manager customer = new Manager(username, userid);
+                    customer.FormClosed += (s, args) => this.Close();
                     this.Hide();
                     customer.Show();
                 }

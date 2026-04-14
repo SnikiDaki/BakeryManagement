@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using GitHubPov.Account_Types;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,18 +20,24 @@ namespace GitHubPov.CustomerData
         public string user;
         public List<GitHubPov.Account_Types.Customer.Product> produkti2;
         public double total2;
-        public OrderInformation(string username, double total, List<GitHubPov.Account_Types.Customer.Product> produkti)
+        public int uid;
+        public int potvrda;
+        public double cena;
+        public OrderInformation(string username, double total, List<GitHubPov.Account_Types.Customer.Product> products, int userid, double price)
         {
             InitializeComponent();
             user = username;
-            produkti2 = produkti;
+            produkti2 = products;
             total2 = total;
             Username.Text = user;
+            uid = userid;
+            cena = price;
         }
 
         public static class Db
         {
-            public static string konekcija = "Server=metro.proxy.rlwy.net;Port=20149;Database=railway;Uid=root;Pwd=mvxRtenxTQfNKFjrBnYNlhViwjyupHiS;SSLMode=Required;Connection Timeout=30;";
+            public static string konekcija = "server=localhost;user=root;password=;database=bakery";
+            // public static string konekcija = "Server=metro.proxy.rlwy.net;Port=20149;Database=railway;Uid=root;Pwd=mvxRtenxTQfNKFjrBnYNlhViwjyupHiS;SSLMode=Required;Connection Timeout=30;";
         }
         private void OrderInformation_Load(object sender, EventArgs e)
         {
@@ -95,12 +102,6 @@ namespace GitHubPov.CustomerData
         }
         public void button1_Click(object sender, EventArgs e)
         {
-            foreach (GitHubPov.Account_Types.Customer.Product product in produkti2)
-            {
-                produkat += product.ProductName.ToString();
-                quantity += product.Quantity.ToString();
-
-            }
 
 
 
@@ -110,19 +111,33 @@ namespace GitHubPov.CustomerData
             conn.Open();
             try
             {
-                string select = "INSERT INTO orders(userid, product, price, quantity, pickup, payment, info) VALUES (@userid, @product, @price, @quantity, @pickup, @payment, @info)";
+            foreach (GitHubPov.Account_Types.Customer.Product product in produkti2)
+            {
+                produkat = product.ProductName.ToString();
+                quantity = product.Quantity.ToString();
+
+                string select = "INSERT INTO orders(userid, product, price, quantity, pickup, payment, status, chefstatus, info) VALUES (@userid, @product, @price, @quantity, @pickup, @payment, 'Pending', 'Not Completed', @info)";
                 MySqlCommand cmd = new MySqlCommand(select, conn);
-                cmd.Parameters.AddWithValue("@userid", user);
+                cmd.Parameters.AddWithValue("@userid", uid);
                 cmd.Parameters.AddWithValue("@product", produkat);
-                cmd.Parameters.AddWithValue("@price", total2);
+                cmd.Parameters.AddWithValue("@price", cena);
                 cmd.Parameters.AddWithValue("@quantity", quantity);
                 cmd.Parameters.AddWithValue("@pickup", delivery);
                 cmd.Parameters.AddWithValue("@payment", payment);
                 cmd.Parameters.AddWithValue("@info", richTextBox1.Text);
-                int potvrda = cmd.ExecuteNonQuery();
+                potvrda = cmd.ExecuteNonQuery();
+                    string insert = "insert into tasks(cakename,statustask) values(@cakename, 'Not Completed')";
+                    MySqlCommand cmd2 = new MySqlCommand(insert, conn);
+                    cmd2.Parameters.AddWithValue("@cakename", produkat);
+                    cmd2.ExecuteNonQuery();
+            }
                 if (potvrda > 0)
                 {
-                    MessageBox.Show("Order Inserted!");
+                    MessageBox.Show("Order Completed!");
+                    Customer customer = new Customer(user,uid);
+                    customer.FormClosed += (s, args) => this.Close();
+                    this.Hide();
+                    customer.Show();
                 }
 
 
@@ -165,6 +180,14 @@ namespace GitHubPov.CustomerData
                 }
             }
             catch (Exception ex) { MessageBox.Show($"Error: {ex} "); }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Customer customer = new Customer(user,uid);
+            customer.FormClosed += (s, args) => this.Close();
+            this.Hide();
+            customer.Show();
         }
     }
 }
