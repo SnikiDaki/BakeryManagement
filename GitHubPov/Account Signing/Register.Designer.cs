@@ -42,6 +42,7 @@
             textBox5 = new TextBox();
             label7 = new Label();
             textBox6 = new TextBox();
+            button2 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -122,11 +123,11 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(136, 9);
+            label5.Location = new Point(208, 9);
             label5.Name = "label5";
-            label5.Size = new Size(318, 45);
+            label5.Size = new Size(190, 45);
             label5.TabIndex = 9;
-            label5.Text = "Registracija Korisnika";
+            label5.Text = "Registration";
             // 
             // label6
             // 
@@ -143,6 +144,7 @@
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(100, 23);
             textBox5.TabIndex = 11;
+            textBox5.UseSystemPasswordChar = true;
             // 
             // label7
             // 
@@ -159,12 +161,25 @@
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(100, 23);
             textBox6.TabIndex = 13;
+            textBox6.UseSystemPasswordChar = true;
+            // 
+            // button2
+            // 
+            button2.BackgroundImage = Properties.Resources.hidden_12197891;
+            button2.BackgroundImageLayout = ImageLayout.Zoom;
+            button2.Location = new Point(375, 239);
+            button2.Name = "button2";
+            button2.Size = new Size(23, 23);
+            button2.TabIndex = 14;
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Register
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(578, 383);
+            Controls.Add(button2);
             Controls.Add(textBox6);
             Controls.Add(label7);
             Controls.Add(textBox5);
@@ -201,5 +216,6 @@
         private TextBox textBox5;
         private Label label7;
         private TextBox textBox6;
+        private Button button2;
     }
 }

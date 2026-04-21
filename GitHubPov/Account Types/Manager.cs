@@ -26,13 +26,29 @@ namespace GitHubPov.Account_Type_s
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-               
-                EmployeeOverview eo = new EmployeeOverview();
-                eo.FormClosed += (s, args) => this.Close();
-                this.Hide();
-                eo.Show();
-            
+
+
+            EmployeeOverview eo = new EmployeeOverview(userime, Userid);
+            eo.FormClosed += (s, args) => this.Close();
+            this.Hide();
+            eo.Show();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            EmpReg eo = new EmpReg(userime, Userid);
+            eo.FormClosed += (s, args) => this.Close();
+            this.Hide();
+            eo.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+           Tasks eo = new Tasks(userime, Userid);
+            eo.FormClosed += (s, args) => this.Close();
+            this.Hide();
+            eo.Show();
         }
     }
 }

@@ -52,6 +52,7 @@
             button2.TabIndex = 1;
             button2.Text = "Task Overview\r\n";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -61,6 +62,7 @@
             button3.TabIndex = 2;
             button3.Text = "Register A New Employee";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
@@ -68,7 +70,7 @@
             button4.Name = "button4";
             button4.Size = new Size(458, 72);
             button4.TabIndex = 3;
-            button4.Text = "Register A New Employee";
+            button4.Text = "Income Check";
             button4.UseVisualStyleBackColor = true;
             // 
             // Manager

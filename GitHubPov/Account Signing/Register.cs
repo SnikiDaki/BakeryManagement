@@ -6,6 +6,7 @@ namespace GitHubPov
 {
     public partial class Register : Form
     {
+        public int x = 0;
         public Register()
         {
             InitializeComponent();
@@ -23,9 +24,16 @@ namespace GitHubPov
             string email = textBox4.Text;
             string password = textBox5.Text;
             string passcheck = textBox6.Text;
-            MySqlConnection conn = new MySqlConnection(Db.konekcija);
 
-                conn.Open();
+            if(firstname == "" || lastname =="" || username == "" || email == "" || password == "" || passcheck == "")
+            {
+                MessageBox.Show($"Please fill out the required fields!", "Register");
+            }
+            else
+            {
+                MySqlConnection conn = new MySqlConnection(Db.konekcija);
+
+            conn.Open();
             try
             {
                 string insert = "INSERT INTO users (firstname, lastname, username, email, password, role) VALUES (@firstname, @lastname, @username, @email, @password, 'customer')";
@@ -37,7 +45,7 @@ namespace GitHubPov
                 cmd.Parameters.AddWithValue("@password", password);
                 if (password == passcheck)
                 {
-                int b = Convert.ToInt32(cmd.ExecuteNonQuery());
+                    int b = Convert.ToInt32(cmd.ExecuteNonQuery());
                     if (b == 1)
                     {
                         MessageBox.Show($"Registration successful!", "Register");
@@ -49,8 +57,31 @@ namespace GitHubPov
                 else { MessageBox.Show($"Passwords do not match"); }
             }
             catch (Exception ex) { MessageBox.Show($"There has been an error: {ex} "); }
+
+            }
+
+
         }
 
-        
+        private void button2_Click(object sender, EventArgs e)
+        {
+            x++;
+
+            if (x % 2 == 0)
+            {
+
+                button2.BackgroundImage = Properties.Resources.hidden_12197891;
+                textBox5.UseSystemPasswordChar = true;
+                textBox6.UseSystemPasswordChar = true;
+
+            }
+            else
+            {
+                button2.BackgroundImage = Properties.Resources.sifravidi;
+                textBox5.UseSystemPasswordChar = false;
+                textBox6.UseSystemPasswordChar = false;
+
+            }
+        }
     }
 }

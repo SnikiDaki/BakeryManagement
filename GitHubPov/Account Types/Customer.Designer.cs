@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customer));
             pictureBox1 = new PictureBox();
             label3 = new Label();
             linkLabel1 = new LinkLabel();
@@ -72,10 +71,6 @@
             numericUpDown5 = new NumericUpDown();
             numericUpDown6 = new NumericUpDown();
             button8 = new Button();
-            dataGridView1 = new DataGridView();
-            ProductName = new DataGridViewTextBoxColumn();
-            Price = new DataGridViewTextBoxColumn();
-            Quantity = new DataGridViewTextBoxColumn();
             linkLabel2 = new LinkLabel();
             linkLabel3 = new LinkLabel();
             linkLabel4 = new LinkLabel();
@@ -96,12 +91,11 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDown4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Image = Properties.Resources.recipe_chocolate_raspberry_cake;
             pictureBox1.Location = new Point(18, 111);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(228, 154);
@@ -124,7 +118,7 @@
             linkLabel1.ActiveLinkColor = SystemColors.ControlText;
             linkLabel1.LinkBehavior = LinkBehavior.HoverUnderline;
             linkLabel1.LinkColor = SystemColors.ControlText;
-            linkLabel1.Location = new Point(95, 24);
+            linkLabel1.Location = new Point(91, 24);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(73, 31);
             linkLabel1.TabIndex = 28;
@@ -195,7 +189,7 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Image = Properties.Resources._9k;
             pictureBox3.Location = new Point(307, 111);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(228, 154);
@@ -225,7 +219,7 @@
             // 
             // pictureBox4
             // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Image = Properties.Resources.Sacher_Torte_6;
             pictureBox4.Location = new Point(581, 111);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(228, 154);
@@ -255,7 +249,7 @@
             // 
             // pictureBox5
             // 
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Image = Properties.Resources.Honey_Cake_take_3_5;
             pictureBox5.Location = new Point(18, 406);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(228, 154);
@@ -285,7 +279,7 @@
             // 
             // pictureBox6
             // 
-            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
+            pictureBox6.Image = Properties.Resources.Black_Forest_Cake_new_7;
             pictureBox6.Location = new Point(307, 406);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(228, 154);
@@ -315,7 +309,7 @@
             // 
             // pictureBox7
             // 
-            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
+            pictureBox7.Image = Properties.Resources.Red_Velvet_Layer_Cake_4;
             pictureBox7.Location = new Point(581, 406);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(228, 154);
@@ -387,7 +381,7 @@
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label16.Location = new Point(897, 346);
+            label16.Location = new Point(895, 404);
             label16.Name = "label16";
             label16.Size = new Size(68, 30);
             label16.TabIndex = 59;
@@ -395,7 +389,7 @@
             // 
             // button7
             // 
-            button7.Location = new Point(1228, 348);
+            button7.Location = new Point(1226, 406);
             button7.Name = "button7";
             button7.Size = new Size(197, 34);
             button7.TabIndex = 58;
@@ -411,7 +405,7 @@
             listView1.Location = new Point(897, 111);
             listView1.MultiSelect = false;
             listView1.Name = "listView1";
-            listView1.Size = new Size(528, 223);
+            listView1.Size = new Size(528, 289);
             listView1.TabIndex = 57;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -496,45 +490,13 @@
             // 
             // button8
             // 
-            button8.Location = new Point(1025, 348);
+            button8.Location = new Point(1023, 406);
             button8.Name = "button8";
             button8.Size = new Size(197, 34);
             button8.TabIndex = 67;
             button8.Text = "Clear Cart";
             button8.UseVisualStyleBackColor = true;
             button8.Click += button8_Click;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ProductName, Price, Quantity });
-            dataGridView1.Location = new Point(897, 406);
-            dataGridView1.MultiSelect = false;
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.CellSelect;
-            dataGridView1.Size = new Size(528, 243);
-            dataGridView1.TabIndex = 68;
-            dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
-            // 
-            // ProductName
-            // 
-            ProductName.HeaderText = "Product Name";
-            ProductName.Name = "ProductName";
-            ProductName.ReadOnly = true;
-            // 
-            // Price
-            // 
-            Price.HeaderText = "Price";
-            Price.Name = "Price";
-            Price.ReadOnly = true;
-            // 
-            // Quantity
-            // 
-            Quantity.HeaderText = "Quantity";
-            Quantity.Name = "Quantity";
-            Quantity.ReadOnly = true;
             // 
             // linkLabel2
             // 
@@ -613,7 +575,6 @@
             Controls.Add(linkLabel4);
             Controls.Add(linkLabel3);
             Controls.Add(linkLabel2);
-            Controls.Add(dataGridView1);
             Controls.Add(button8);
             Controls.Add(numericUpDown6);
             Controls.Add(numericUpDown5);
@@ -671,7 +632,6 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDown4).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown5).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -720,10 +680,6 @@
         private NumericUpDown numericUpDown5;
         private NumericUpDown numericUpDown6;
         private Button button8;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn ProductName;
-        private DataGridViewTextBoxColumn Price;
-        private DataGridViewTextBoxColumn Quantity;
         private LinkLabel linkLabel2;
         private LinkLabel linkLabel3;
         private LinkLabel linkLabel4;

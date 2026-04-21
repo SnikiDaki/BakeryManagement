@@ -31,8 +31,8 @@
             label1 = new Label();
             dataGridView1 = new DataGridView();
             order = new DataGridViewTextBoxColumn();
+            Zadatak2ID = new DataGridViewTextBoxColumn();
             imetorte = new DataGridViewTextBoxColumn();
-            kvantitet = new DataGridViewTextBoxColumn();
             Statustorte = new DataGridViewTextBoxColumn();
             label2 = new Label();
             panel1 = new Panel();
@@ -69,7 +69,7 @@
             // 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { order, imetorte, kvantitet, Statustorte });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { order, Zadatak2ID, imetorte, Statustorte });
             dataGridView1.Location = new Point(12, 120);
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
@@ -85,18 +85,20 @@
             order.HeaderText = "OrderID";
             order.Name = "order";
             order.ReadOnly = true;
+            order.Visible = false;
+            // 
+            // Zadatak2ID
+            // 
+            Zadatak2ID.HeaderText = "Zadatak2ID";
+            Zadatak2ID.Name = "Zadatak2ID";
+            Zadatak2ID.ReadOnly = true;
+            Zadatak2ID.Visible = false;
             // 
             // imetorte
             // 
             imetorte.HeaderText = "Cake Name";
             imetorte.Name = "imetorte";
             imetorte.ReadOnly = true;
-            // 
-            // kvantitet
-            // 
-            kvantitet.HeaderText = "Quantity";
-            kvantitet.Name = "kvantitet";
-            kvantitet.ReadOnly = true;
             // 
             // Statustorte
             // 
@@ -217,8 +219,9 @@
             // 
             // comboBox1
             // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "All", "Completed", "Not Completed" });
+            comboBox1.Items.AddRange(new object[] { "All", "Completed", "Not Completed", "Awaiting For Approval" });
             comboBox1.Location = new Point(798, 91);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
@@ -237,6 +240,7 @@
             // 
             // comboBox2
             // 
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox2.FormattingEnabled = true;
             comboBox2.Items.AddRange(new object[] { "All" });
             comboBox2.Location = new Point(1021, 91);
@@ -305,10 +309,10 @@
         private ComboBox comboBox1;
         private Label label7;
         private ComboBox comboBox2;
-        private DataGridViewTextBoxColumn order;
-        private DataGridViewTextBoxColumn imetorte;
-        private DataGridViewTextBoxColumn kvantitet;
-        private DataGridViewTextBoxColumn Statustorte;
         private Label label8;
+        private DataGridViewTextBoxColumn order;
+        private DataGridViewTextBoxColumn Zadatak2ID;
+        private DataGridViewTextBoxColumn imetorte;
+        private DataGridViewTextBoxColumn Statustorte;
     }
 }

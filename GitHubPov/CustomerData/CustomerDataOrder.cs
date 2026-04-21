@@ -37,9 +37,10 @@ namespace GitHubPov.CustomerData
 
             try
             {
-                string update = "UPDATE users SET firstname=@firstname, lastname=@lastname, email=@email, telefon=@telefon, adresa=@adresa, hnum=@hnum, city=@city WHERE username=@username";
+                string update = "UPDATE users SET firstname=@firstname, lastname=@lastname, email=@email, telefon=@telefon, adresa=@adresa, hnum=@hnum, city=@city WHERE username=@username and id=@id";
                 MySqlCommand cmd = new MySqlCommand(update, conn);
                 cmd.Parameters.AddWithValue("username", user2);
+                cmd.Parameters.AddWithValue("id", Uid);
                 cmd.Parameters.AddWithValue("@firstname", textBox1.Text);
                 cmd.Parameters.AddWithValue("@lastname", textBox2.Text);
                 cmd.Parameters.AddWithValue("@email", textBox3.Text);
@@ -59,15 +60,18 @@ namespace GitHubPov.CustomerData
 
         private void CustomerDataOrder_Load(object sender, EventArgs e)
         {
+            dataGridView1.Rows.Clear();
+
             MySqlConnection conn = new MySqlConnection(Db.konekcija);
             conn.Open();
             try
             {
-                string select = "SELECT * FROM users WHERE username=@username";
+                string select = "SELECT * FROM users WHERE username=@username and id=@id";
                 MySqlCommand cmd = new MySqlCommand(select, conn);
                 cmd.Parameters.AddWithValue("@username", user2);
+                cmd.Parameters.AddWithValue("@id", Uid);
                 MySqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
+                if (dr.Read())
                 {
                     textBox1.Text = Convert.ToString(dr["firstname"]);
                     textBox2.Text = Convert.ToString(dr["lastname"]);
@@ -76,9 +80,21 @@ namespace GitHubPov.CustomerData
                     textBox4.Text = Convert.ToString(dr["adresa"]);
                     textBox5.Text = Convert.ToString(dr["hnum"]);
                     textBox6.Text = Convert.ToString(dr["city"]);
-
-
                 }
+                dr.Close();
+
+                string orderselekt = "SELECT * FROM orders WHERE userid=@id";
+                MySqlCommand cmd2 = new MySqlCommand(orderselekt, conn);
+
+                cmd2.Parameters.AddWithValue("@id", Uid);
+                MySqlDataReader dr2 = cmd2.ExecuteReader();
+                while (dr2.Read())
+                {
+                    dataGridView1.Rows.Add(dr2["product"].ToString(), dr2["price"].ToString(), dr2["quantity"].ToString(), dr2["pickup"].ToString(), dr2["payment"].ToString(), dr2["status"].ToString(), dr2["date"].ToString());
+                }
+                dr2.Close();
+
+
             }
             catch (Exception ex) { MessageBox.Show($"Erorr: {ex} "); }
         }
@@ -86,13 +102,46 @@ namespace GitHubPov.CustomerData
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Customer customer = new Customer(user2,Uid);
+            Customer customer = new Customer(user2, Uid);
             customer.Show();
         }
 
         private void labeluser_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            DateTime dt = dateTimePicker1.Value;
+            MySqlConnection conn = new MySqlConnection(Db.konekcija);
+            conn.Open();
+            try
+            {
+
+                string orderselekt = "SELECT * FROM orders WHERE userid=@id and date=@date";
+                MySqlCommand cmd2 = new MySqlCommand(orderselekt, conn);
+
+                cmd2.Parameters.AddWithValue("@id", Uid);
+                cmd2.Parameters.AddWithValue("@date", dt.ToString("yyyy-MM-dd"));
+
+                MySqlDataReader dr2 = cmd2.ExecuteReader();
+                while (dr2.Read())
+                {
+                    dataGridView1.Rows.Add(dr2["product"].ToString(), dr2["price"].ToString(), dr2["quantity"].ToString(), dr2["pickup"].ToString(), dr2["payment"].ToString(), dr2["status"].ToString(), dr2["date"].ToString());
+                }
+
+
+
+            }
+            catch (Exception ex) { MessageBox.Show($"Erorr: {ex} "); }
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            CustomerDataOrder_Load(sender, e);
         }
     }
 }

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -23,6 +24,13 @@ namespace GitHubPov.Account_Type_s
         public int orderid2;
         public string status;
         public string produkt;
+        public string meno;
+        public string firstmeno;
+        public string lastmeno;
+        public int taskid;
+        public int taskid2;
+
+
 
         public Cook(string username, int userid)
         {
@@ -32,10 +40,30 @@ namespace GitHubPov.Account_Type_s
             button3.Enabled = false;
             comboBox1.SelectedIndex = 0;
             comboBox2.SelectedIndex = 0;
+           
 
-            // comboBox1.Items.Clear();
-            
-            
+            MySqlConnection conn = new MySqlConnection(Db.konekcija);
+            conn.Open();
+            try
+            {
+                string select = "Select firstname, lastname from users where username=@username and role = 'cook';";
+                MySqlCommand cmd = new MySqlCommand(select, conn);
+                cmd.Parameters.AddWithValue("@username", user);
+                MySqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                   meno = dr[0].ToString() + " " + dr[1].ToString();
+                    firstmeno = dr[0].ToString();
+                    lastmeno = dr[1].ToString();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Eror:" + ex);
+            }
+
+
 
         }
         public static class Db
@@ -46,24 +74,29 @@ namespace GitHubPov.Account_Type_s
         private void Cook_Load(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
+            comboBox2.Items.Clear();
+            comboBox2.Items.Add("All");
+            comboBox2.SelectedIndex = 0;
+
 
             MySqlConnection conn = new MySqlConnection(Db.konekcija);
             conn.Open();
             try
             {
-                string select = "Select * from orders;";
+                string select = "Select * from tasks;";
                 MySqlCommand cmd = new MySqlCommand(select, conn);
 
                 MySqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    produkt = dr["product"].ToString();
-                    int quantity = Convert.ToInt32(dr["quantity"]);
+                    produkt = dr["cakename"].ToString();
+                   // int quantity = Convert.ToInt32(dr["quantity"]);
                     orderid = Convert.ToInt32(dr["orderid"]);
-                    status = dr["chefstatus"].ToString();
+                    status = dr["statustask"].ToString();
+                    taskid = Convert.ToInt32(dr["taskid"]);
                     comboBox2.Items.Add(produkt);
 
-                    dataGridView1.Rows.Add(orderid, produkt, quantity, status);
+                    dataGridView1.Rows.Add(orderid,taskid, produkt, status);
                 }
 
             }
@@ -94,7 +127,7 @@ namespace GitHubPov.Account_Type_s
                 MessageBox.Show("Task Started, Good Luck!", "Task");
                 dataGridView1.Enabled = false;
                 button1.Enabled = false;
-                label8.Text = $"Started Task ID: {orderid}";
+                label8.Text = $"Started Task ID: {taskid2}";
             }
             else { MessageBox.Show("Task Not Selected!", "Task"); }
         }
@@ -108,6 +141,7 @@ namespace GitHubPov.Account_Type_s
             cakename = row.Cells["imetorte"].Value.ToString();
             if (cakename == null) return;
             orderid2 = Convert.ToInt32(row.Cells["order"].Value);
+            taskid2= Convert.ToInt32(row.Cells["Zadatak2ID"].Value);
 
             MySqlConnection conn = new MySqlConnection(Db.konekcija);
             conn.Open();
@@ -136,28 +170,31 @@ namespace GitHubPov.Account_Type_s
         {
             if (putanja != "")
             {
-                MessageBox.Show("Task Completed!", "Task");
+                MessageBox.Show("Task Completed! Awaiting for Approval!", "Task");
                 label8.Text = $"Started Task ID: None";
+                pictureBox1.Image = null;
                 MySqlConnection conn = new MySqlConnection(Db.konekcija);
                 conn.Open();
                 try
                 {
-                    string insert = "INSERT INTO tasks(cakename,cookname,picture, statustask) VALUES(@cakename,@cookname,@picture, 'Completed');";
+                    string insert = "update tasks set cookname=@cookname,picture=@picture,statustask='Awaiting For Approval' where taskid=@taskid ;";
                     MySqlCommand cmd = new MySqlCommand(insert, conn);
-                    cmd.Parameters.AddWithValue("@cakename", cakename);
-                    cmd.Parameters.AddWithValue("@cookname", user);
+                    cmd.Parameters.AddWithValue("@cookname", meno);
                     cmd.Parameters.AddWithValue("@picture", putanja);
+                    cmd.Parameters.AddWithValue("@taskid", taskid2);
+
                     int p = cmd.ExecuteNonQuery();
                     if (p > 0)
                     {
-                        string update = "update orders set status='Waiting For Courier', chefstatus='Completed' where orderid=@orderid";
-                        MySqlCommand cmd2 = new MySqlCommand(update, conn);
-                        cmd2.Parameters.AddWithValue("@orderid", orderid2);
-                        cmd2.ExecuteNonQuery();
+                        //string update = "update orders set status='Pending', chefstatus='Awaiting For Approval' where orderid=@orderid";
+                        //MySqlCommand cmd2 = new MySqlCommand(update, conn);
+                        //cmd2.Parameters.AddWithValue("@orderid", orderid2);
+                        //cmd2.ExecuteNonQuery();
 
                         button1.Enabled = true;
                         button3.Enabled = false;
                         dataGridView1.Enabled = true;
+                        Cook_Load(sender, e);
                     }
 
 
@@ -210,7 +247,7 @@ namespace GitHubPov.Account_Type_s
             conn.Open();
             try
             {
-                string select = "Select * from orders where (@status= 'All' or chefstatus=@status) and (@cakename= 'All' or product=@cakename);";
+                string select = "Select * from tasks where (@status= 'All' or statustask=@status) and (@cakename= 'All' or cakename=@cakename);";
                 MySqlCommand cmd = new MySqlCommand(select, conn);
                 cmd.Parameters.AddWithValue("@status", comboBox1.SelectedItem);
                 cmd.Parameters.AddWithValue("@cakename", comboBox2.SelectedItem);
@@ -218,13 +255,14 @@ namespace GitHubPov.Account_Type_s
                 MySqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    produkt = dr["product"].ToString();
-                    int quantity = Convert.ToInt32(dr["quantity"]);
+                    produkt = dr["cakename"].ToString();
+                  //  int quantity = Convert.ToInt32(dr["quantity"]);
                     orderid = Convert.ToInt32(dr["orderid"]);
-                    status = dr["chefstatus"].ToString();
+                    status = dr["statustask"].ToString();
+                    taskid = Convert.ToInt32(dr["taskid"]);
                     
 
-                    dataGridView1.Rows.Add(orderid, produkt, quantity, status);
+                    dataGridView1.Rows.Add(orderid, taskid,produkt, status);
                 }
 
             }

@@ -47,11 +47,24 @@
             button1 = new Button();
             label1 = new Label();
             button2 = new Button();
+            dataGridView1 = new DataGridView();
+            ProductIme = new DataGridViewTextBoxColumn();
+            ProductCena = new DataGridViewTextBoxColumn();
+            ProductQuantity = new DataGridViewTextBoxColumn();
+            OrderPickup = new DataGridViewTextBoxColumn();
+            OrderPayment = new DataGridViewTextBoxColumn();
+            OrderStatus = new DataGridViewTextBoxColumn();
+            OrderDatum = new DataGridViewTextBoxColumn();
+            label2 = new Label();
+            dateTimePicker1 = new DateTimePicker();
+            label11 = new Label();
+            button3 = new Button();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // labeluser
             // 
-            labeluser.Location = new Point(500, 19);
+            labeluser.Location = new Point(1321, 23);
             labeluser.Name = "labeluser";
             labeluser.Size = new Size(68, 18);
             labeluser.TabIndex = 0;
@@ -190,7 +203,7 @@
             // 
             // label1
             // 
-            label1.Location = new Point(416, 19);
+            label1.Location = new Point(1246, 23);
             label1.Name = "label1";
             label1.Size = new Size(78, 18);
             label1.TabIndex = 25;
@@ -206,11 +219,106 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ProductIme, ProductCena, ProductQuantity, OrderPickup, OrderPayment, OrderStatus, OrderDatum });
+            dataGridView1.Location = new Point(605, 109);
+            dataGridView1.MultiSelect = false;
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.Size = new Size(784, 296);
+            dataGridView1.TabIndex = 27;
+            // 
+            // ProductIme
+            // 
+            ProductIme.HeaderText = "ProductName";
+            ProductIme.Name = "ProductIme";
+            ProductIme.ReadOnly = true;
+            // 
+            // ProductCena
+            // 
+            ProductCena.HeaderText = "Price";
+            ProductCena.Name = "ProductCena";
+            ProductCena.ReadOnly = true;
+            // 
+            // ProductQuantity
+            // 
+            ProductQuantity.HeaderText = "Quantity";
+            ProductQuantity.Name = "ProductQuantity";
+            ProductQuantity.ReadOnly = true;
+            // 
+            // OrderPickup
+            // 
+            OrderPickup.HeaderText = "Pickup";
+            OrderPickup.Name = "OrderPickup";
+            OrderPickup.ReadOnly = true;
+            // 
+            // OrderPayment
+            // 
+            OrderPayment.HeaderText = "Payment";
+            OrderPayment.Name = "OrderPayment";
+            OrderPayment.ReadOnly = true;
+            // 
+            // OrderStatus
+            // 
+            OrderStatus.HeaderText = "Status";
+            OrderStatus.Name = "OrderStatus";
+            OrderStatus.ReadOnly = true;
+            // 
+            // OrderDatum
+            // 
+            OrderDatum.HeaderText = "Date";
+            OrderDatum.Name = "OrderDatum";
+            OrderDatum.ReadOnly = true;
+            // 
+            // label2
+            // 
+            label2.Location = new Point(605, 80);
+            label2.Name = "label2";
+            label2.Size = new Size(161, 29);
+            label2.TabIndex = 9;
+            label2.Text = "Your Orders:";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            dateTimePicker1.Location = new Point(1246, 72);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(84, 23);
+            dateTimePicker1.TabIndex = 28;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(1197, 78);
+            label11.Name = "label11";
+            label11.Size = new Size(34, 15);
+            label11.TabIndex = 29;
+            label11.Text = "Date:";
+            // 
+            // button3
+            // 
+            button3.BackgroundImage = Properties.Resources.refreshicon;
+            button3.BackgroundImageLayout = ImageLayout.Zoom;
+            button3.Location = new Point(1350, 72);
+            button3.Name = "button3";
+            button3.Size = new Size(30, 23);
+            button3.TabIndex = 30;
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // CustomerDataOrder
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(611, 436);
+            ClientSize = new Size(1401, 436);
+            Controls.Add(button3);
+            Controls.Add(label11);
+            Controls.Add(dateTimePicker1);
+            Controls.Add(dataGridView1);
             Controls.Add(button2);
             Controls.Add(label1);
             Controls.Add(button1);
@@ -227,12 +335,14 @@
             Controls.Add(label5);
             Controls.Add(textBox2);
             Controls.Add(label4);
+            Controls.Add(label2);
             Controls.Add(label3);
             Controls.Add(textBox1);
             Controls.Add(labeluser);
             Name = "CustomerDataOrder";
-            Text = "CustomerDataOrder";
+            Text = "Profile";
             Load += CustomerDataOrder_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -258,5 +368,17 @@
         private Button button1;
         private Label label1;
         private Button button2;
+        private DataGridView dataGridView1;
+        private Label label2;
+        private DataGridViewTextBoxColumn ProductIme;
+        private DataGridViewTextBoxColumn ProductCena;
+        private DataGridViewTextBoxColumn ProductQuantity;
+        private DataGridViewTextBoxColumn OrderPickup;
+        private DataGridViewTextBoxColumn OrderPayment;
+        private DataGridViewTextBoxColumn OrderStatus;
+        private DataGridViewTextBoxColumn OrderDatum;
+        private DateTimePicker dateTimePicker1;
+        private Label label11;
+        private Button button3;
     }
 }

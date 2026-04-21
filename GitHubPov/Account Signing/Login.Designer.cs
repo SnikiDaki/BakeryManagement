@@ -36,6 +36,7 @@
             label5 = new Label();
             linkLabel1 = new LinkLabel();
             label3 = new Label();
+            button2 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -111,11 +112,23 @@
             label3.TabIndex = 12;
             label3.Text = "Or";
             // 
+            // button2
+            // 
+            button2.BackgroundImage = Properties.Resources.hidden_12197891;
+            button2.BackgroundImageLayout = ImageLayout.Zoom;
+            button2.Location = new Point(357, 182);
+            button2.Name = "button2";
+            button2.Size = new Size(23, 23);
+            button2.TabIndex = 13;
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(578, 383);
+            Controls.Add(button2);
             Controls.Add(label3);
             Controls.Add(linkLabel1);
             Controls.Add(label5);
@@ -141,5 +154,6 @@
         private Label label5;
         private LinkLabel linkLabel1;
         private Label label3;
+        private Button button2;
     }
 }

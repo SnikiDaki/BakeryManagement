@@ -23,6 +23,7 @@ namespace GitHubPov.CustomerData
         public int uid;
         public int potvrda;
         public double cena;
+        public string proveratext;
         public OrderInformation(string username, double total, List<GitHubPov.Account_Types.Customer.Product> products, int userid, double price)
         {
             InitializeComponent();
@@ -32,6 +33,9 @@ namespace GitHubPov.CustomerData
             Username.Text = user;
             uid = userid;
             cena = price;
+            radioButton1.Checked = true;
+            radioButton6.Checked = true;
+
         }
 
         public static class Db
@@ -98,15 +102,55 @@ namespace GitHubPov.CustomerData
         public void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             payment = radioButton1.Text;
+            pictureBox1.Visible = false;
+
+
+            //if (radioButton1.Checked == false)
+            //{
+            //    label12.Visible = false;
+            //    label13.Visible = false;
+            //    label14.Visible = false;
+            //    maskedTextBox2.Visible = false;
+            //    maskedTextBox3.Visible = false;
+            //    maskedTextBox4.Visible = false;
+            //}
+            //else
+            //{
+                label12.Visible = true;
+                label13.Visible = true;
+                label14.Visible = true;
+                maskedTextBox2.Visible = true;
+                maskedTextBox3.Visible = true;
+                maskedTextBox4.Visible = true;
+
+            //}
 
         }
         public void button1_Click(object sender, EventArgs e)
         {
+            proveratext = "";
 
+            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "" || maskedTextBox1.Text =="") {
 
+                proveratext = "prazno";
+                
+            }
 
+                if (radioButton1.Checked) {
 
+                    if (maskedTextBox2.Text == "" || maskedTextBox3.Text == "" || maskedTextBox4.Text == "")
+                    {
+                    proveratext = "prazno";
+                        
+                    }
+                
+                }
 
+            
+            
+            
+            if(proveratext != "prazno")
+            {
             MySqlConnection conn = new MySqlConnection(Db.konekcija);
             conn.Open();
             try
@@ -116,7 +160,7 @@ namespace GitHubPov.CustomerData
                 produkat = product.ProductName.ToString();
                 quantity = product.Quantity.ToString();
 
-                string select = "INSERT INTO orders(userid, product, price, quantity, pickup, payment, status, chefstatus, info) VALUES (@userid, @product, @price, @quantity, @pickup, @payment, 'Pending', 'Not Completed', @info)";
+                string select = "INSERT INTO orders(userid, product, price, quantity, pickup, payment, status, chefstatus, info, date) VALUES (@userid, @product, @price, @quantity, @pickup, @payment, 'Pending', 'Not Completed', @info, @date)";
                 MySqlCommand cmd = new MySqlCommand(select, conn);
                 cmd.Parameters.AddWithValue("@userid", uid);
                 cmd.Parameters.AddWithValue("@product", produkat);
@@ -125,11 +169,23 @@ namespace GitHubPov.CustomerData
                 cmd.Parameters.AddWithValue("@pickup", delivery);
                 cmd.Parameters.AddWithValue("@payment", payment);
                 cmd.Parameters.AddWithValue("@info", richTextBox1.Text);
-                potvrda = cmd.ExecuteNonQuery();
-                    string insert = "insert into tasks(cakename,statustask) values(@cakename, 'Not Completed')";
+                cmd.Parameters.AddWithValue("@date", DateTime.Today);
+
+
+                    potvrda = cmd.ExecuteNonQuery();
+                    long orderid = cmd.LastInsertedId;
+
+                    for (int i = 0; i < Convert.ToInt32(quantity); i++) { 
+                    
+                    string insert = "insert into tasks(cakename,orderid, statustask) values(@cakename, @orderid ,'Not Completed')";
                     MySqlCommand cmd2 = new MySqlCommand(insert, conn);
                     cmd2.Parameters.AddWithValue("@cakename", produkat);
+                    cmd2.Parameters.AddWithValue("@orderid", orderid);
+
                     cmd2.ExecuteNonQuery();
+                    
+                    }
+
             }
                 if (potvrda > 0)
                 {
@@ -143,16 +199,43 @@ namespace GitHubPov.CustomerData
 
             }
             catch (Exception ex) { MessageBox.Show($"Erorr: {ex} "); }
+
+
+            }
+            else
+            {
+                MessageBox.Show("Please fill out required fields!", "Order");
+            }
+            
+            
+           
+
+
+
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             payment = radioButton2.Text;
+            pictureBox1.Visible = false;
+            label12.Visible = false;
+            label13.Visible = false;
+            label14.Visible = false;
+            maskedTextBox2.Visible = false;
+            maskedTextBox3.Visible = false;
+            maskedTextBox4.Visible = false;
+
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
             payment = radioButton3.Text;
+            pictureBox1.Visible = true;
+            label13.Visible = false;
+            label14.Visible = false;
+            maskedTextBox2.Visible = false;
+            maskedTextBox3.Visible = false;
+            maskedTextBox4.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)

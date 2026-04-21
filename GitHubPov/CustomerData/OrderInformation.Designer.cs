@@ -58,8 +58,16 @@
             radioButton7 = new RadioButton();
             button2 = new Button();
             button3 = new Button();
+            maskedTextBox2 = new MaskedTextBox();
+            maskedTextBox3 = new MaskedTextBox();
+            maskedTextBox4 = new MaskedTextBox();
+            label12 = new Label();
+            label13 = new Label();
+            label14 = new Label();
+            pictureBox1 = new PictureBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label11
@@ -255,7 +263,7 @@
             // 
             // Username
             // 
-            Username.Location = new Point(694, 31);
+            Username.Location = new Point(774, 9);
             Username.Name = "Username";
             Username.Size = new Size(103, 29);
             Username.TabIndex = 26;
@@ -338,11 +346,86 @@
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
+            // maskedTextBox2
+            // 
+            maskedTextBox2.Location = new Point(569, 67);
+            maskedTextBox2.Mask = "9999 9999 9999 9999";
+            maskedTextBox2.Name = "maskedTextBox2";
+            maskedTextBox2.Size = new Size(191, 23);
+            maskedTextBox2.TabIndex = 56;
+            maskedTextBox2.Visible = false;
+            // 
+            // maskedTextBox3
+            // 
+            maskedTextBox3.Location = new Point(569, 127);
+            maskedTextBox3.Mask = "99 / 99";
+            maskedTextBox3.Name = "maskedTextBox3";
+            maskedTextBox3.Size = new Size(71, 23);
+            maskedTextBox3.TabIndex = 56;
+            maskedTextBox3.Visible = false;
+            // 
+            // maskedTextBox4
+            // 
+            maskedTextBox4.Location = new Point(689, 127);
+            maskedTextBox4.Mask = "999";
+            maskedTextBox4.Name = "maskedTextBox4";
+            maskedTextBox4.Size = new Size(71, 23);
+            maskedTextBox4.TabIndex = 56;
+            maskedTextBox4.Visible = false;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(569, 46);
+            label12.Name = "label12";
+            label12.Size = new Size(82, 15);
+            label12.TabIndex = 57;
+            label12.Text = "Card Number:";
+            label12.Visible = false;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(569, 108);
+            label13.Name = "label13";
+            label13.Size = new Size(34, 15);
+            label13.TabIndex = 57;
+            label13.Text = "Date:";
+            label13.Visible = false;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(689, 108);
+            label14.Name = "label14";
+            label14.Size = new Size(33, 15);
+            label14.TabIndex = 57;
+            label14.Text = "CVC:";
+            label14.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.paypal;
+            pictureBox1.Location = new Point(569, 170);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(292, 235);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 58;
+            pictureBox1.TabStop = false;
+            pictureBox1.Visible = false;
+            // 
             // OrderInformation
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(852, 763);
+            ClientSize = new Size(889, 763);
+            Controls.Add(pictureBox1);
+            Controls.Add(label14);
+            Controls.Add(label13);
+            Controls.Add(label12);
+            Controls.Add(maskedTextBox4);
+            Controls.Add(maskedTextBox3);
+            Controls.Add(maskedTextBox2);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(groupBox2);
@@ -375,6 +458,7 @@
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -411,5 +495,12 @@
         private RadioButton radioButton7;
         private Button button2;
         private Button button3;
+        private MaskedTextBox maskedTextBox2;
+        private MaskedTextBox maskedTextBox3;
+        private MaskedTextBox maskedTextBox4;
+        private Label label12;
+        private Label label13;
+        private Label label14;
+        private PictureBox pictureBox1;
     }
 }

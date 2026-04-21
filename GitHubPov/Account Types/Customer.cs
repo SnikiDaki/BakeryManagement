@@ -127,7 +127,7 @@ namespace GitHubPov.Account_Types
 
         public void korpa()
         {
-            dataGridView1.Rows.Clear();
+            
             listView1.Items.Clear();
             total = 0;
 
@@ -141,16 +141,26 @@ namespace GitHubPov.Account_Types
 
                 listView1.Items.Add(item);
 
-                dataGridView1.Rows.Add(product.ProductName, product.Price.ToString(), product.Quantity.ToString());
+               
             }
             label16.Text = $"Total : {total}$";
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
+            if (price == 0) {
+            
+                MessageBox.Show("Cannot make an order when cart is empty!", "Order");
+            
+            }
+            else
+            {
             OrderInformation oi = new OrderInformation(User1, total, products,Userid, price);
             this.Hide();
             oi.Show();
+            }
+
+
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -158,7 +168,7 @@ namespace GitHubPov.Account_Types
             total = 0;
             listView1.Items.Clear();
             products.Clear();
-            dataGridView1.Rows.Clear();
+           
             label16.Text = $"Total : {total}$";
         }
 
