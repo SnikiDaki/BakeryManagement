@@ -72,7 +72,10 @@
             // 
             // label11
             // 
-            label11.Location = new Point(176, 490);
+            label11.BackColor = Color.FromArgb(138, 90, 60);
+            label11.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
+            label11.ForeColor = Color.FromArgb(249, 190, 189);
+            label11.Location = new Point(127, 490);
             label11.Name = "label11";
             label11.Size = new Size(141, 20);
             label11.TabIndex = 50;
@@ -80,7 +83,8 @@
             // 
             // richTextBox1
             // 
-            richTextBox1.Location = new Point(170, 513);
+            richTextBox1.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
+            richTextBox1.Location = new Point(121, 513);
             richTextBox1.Name = "richTextBox1";
             richTextBox1.Size = new Size(415, 124);
             richTextBox1.TabIndex = 49;
@@ -88,15 +92,19 @@
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(491, 428);
+            textBox6.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
+            textBox6.Location = new Point(442, 428);
             textBox6.Name = "textBox6";
             textBox6.PlaceholderText = "City *";
-            textBox6.Size = new Size(100, 23);
+            textBox6.Size = new Size(100, 30);
             textBox6.TabIndex = 48;
             // 
             // label10
             // 
-            label10.Location = new Point(491, 396);
+            label10.BackColor = Color.FromArgb(138, 90, 60);
+            label10.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
+            label10.ForeColor = Color.FromArgb(249, 190, 189);
+            label10.Location = new Point(442, 396);
             label10.Name = "label10";
             label10.Size = new Size(100, 20);
             label10.TabIndex = 47;
@@ -104,15 +112,19 @@
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(342, 428);
+            textBox5.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
+            textBox5.Location = new Point(293, 428);
             textBox5.Name = "textBox5";
             textBox5.PlaceholderText = "House Number *";
-            textBox5.Size = new Size(100, 23);
+            textBox5.Size = new Size(100, 30);
             textBox5.TabIndex = 46;
             // 
             // label9
             // 
-            label9.Location = new Point(342, 396);
+            label9.BackColor = Color.FromArgb(138, 90, 60);
+            label9.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
+            label9.ForeColor = Color.FromArgb(249, 190, 189);
+            label9.Location = new Point(293, 396);
             label9.Name = "label9";
             label9.Size = new Size(100, 20);
             label9.TabIndex = 45;
@@ -120,15 +132,19 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(176, 428);
+            textBox4.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
+            textBox4.Location = new Point(127, 428);
             textBox4.Name = "textBox4";
             textBox4.PlaceholderText = "Address *";
-            textBox4.Size = new Size(100, 23);
+            textBox4.Size = new Size(100, 30);
             textBox4.TabIndex = 44;
             // 
             // label8
             // 
-            label8.Location = new Point(176, 396);
+            label8.BackColor = Color.FromArgb(138, 90, 60);
+            label8.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
+            label8.ForeColor = Color.FromArgb(249, 190, 189);
+            label8.Location = new Point(127, 396);
             label8.Name = "label8";
             label8.Size = new Size(141, 20);
             label8.TabIndex = 43;
@@ -136,7 +152,10 @@
             // 
             // label7
             // 
-            label7.Location = new Point(345, 315);
+            label7.BackColor = Color.FromArgb(138, 90, 60);
+            label7.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
+            label7.ForeColor = Color.FromArgb(249, 190, 189);
+            label7.Location = new Point(296, 315);
             label7.Name = "label7";
             label7.Size = new Size(141, 20);
             label7.TabIndex = 42;
@@ -144,15 +163,19 @@
             // 
             // maskedTextBox1
             // 
-            maskedTextBox1.Location = new Point(345, 338);
+            maskedTextBox1.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
+            maskedTextBox1.Location = new Point(296, 338);
             maskedTextBox1.Mask = "(+999) 00-0000000";
             maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(100, 23);
+            maskedTextBox1.Size = new Size(100, 30);
             maskedTextBox1.TabIndex = 41;
             // 
             // label6
             // 
-            label6.Location = new Point(176, 315);
+            label6.BackColor = Color.FromArgb(138, 90, 60);
+            label6.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
+            label6.ForeColor = Color.FromArgb(249, 190, 189);
+            label6.Location = new Point(127, 315);
             label6.Name = "label6";
             label6.Size = new Size(141, 20);
             label6.TabIndex = 40;
@@ -160,15 +183,19 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(176, 338);
+            textBox3.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
+            textBox3.Location = new Point(127, 338);
             textBox3.Name = "textBox3";
             textBox3.PlaceholderText = "Email *";
-            textBox3.Size = new Size(100, 23);
+            textBox3.Size = new Size(100, 30);
             textBox3.TabIndex = 39;
             // 
             // label5
             // 
-            label5.Location = new Point(345, 243);
+            label5.BackColor = Color.FromArgb(138, 90, 60);
+            label5.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
+            label5.ForeColor = Color.FromArgb(249, 190, 189);
+            label5.Location = new Point(296, 243);
             label5.Name = "label5";
             label5.Size = new Size(141, 20);
             label5.TabIndex = 38;
@@ -176,15 +203,19 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(348, 266);
+            textBox2.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
+            textBox2.Location = new Point(299, 266);
             textBox2.Name = "textBox2";
             textBox2.PlaceholderText = "Last Name *";
-            textBox2.Size = new Size(100, 23);
+            textBox2.Size = new Size(100, 30);
             textBox2.TabIndex = 37;
             // 
             // label4
             // 
-            label4.Location = new Point(176, 243);
+            label4.BackColor = Color.FromArgb(138, 90, 60);
+            label4.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
+            label4.ForeColor = Color.FromArgb(249, 190, 189);
+            label4.Location = new Point(127, 243);
             label4.Name = "label4";
             label4.Size = new Size(141, 20);
             label4.TabIndex = 36;
@@ -192,7 +223,10 @@
             // 
             // label3
             // 
-            label3.Location = new Point(170, 193);
+            label3.BackColor = Color.FromArgb(138, 90, 60);
+            label3.Font = new Font("Segoe Script", 12F, FontStyle.Bold);
+            label3.ForeColor = Color.FromArgb(249, 190, 189);
+            label3.Location = new Point(121, 205);
             label3.Name = "label3";
             label3.Size = new Size(141, 29);
             label3.TabIndex = 35;
@@ -201,7 +235,10 @@
             // 
             // label2
             // 
-            label2.Location = new Point(167, 101);
+            label2.BackColor = Color.FromArgb(138, 90, 60);
+            label2.Font = new Font("Segoe Script", 12F, FontStyle.Bold);
+            label2.ForeColor = Color.FromArgb(249, 190, 189);
+            label2.Location = new Point(121, 108);
             label2.Name = "label2";
             label2.Size = new Size(103, 29);
             label2.TabIndex = 32;
@@ -211,30 +248,39 @@
             // radioButton3
             // 
             radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(230, 22);
+            radioButton3.BackColor = Color.FromArgb(138, 90, 60);
+            radioButton3.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
+            radioButton3.ForeColor = Color.FromArgb(249, 190, 189);
+            radioButton3.Location = new Point(209, 18);
             radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(86, 19);
+            radioButton3.Size = new Size(111, 24);
             radioButton3.TabIndex = 31;
             radioButton3.TabStop = true;
             radioButton3.Text = "QR Scanner";
-            radioButton3.UseVisualStyleBackColor = true;
+            radioButton3.UseVisualStyleBackColor = false;
             radioButton3.CheckedChanged += radioButton3_CheckedChanged;
             // 
             // radioButton2
             // 
             radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(91, 22);
+            radioButton2.BackColor = Color.FromArgb(138, 90, 60);
+            radioButton2.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
+            radioButton2.ForeColor = Color.FromArgb(249, 190, 189);
+            radioButton2.Location = new Point(87, 18);
             radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(93, 19);
+            radioButton2.Size = new Size(116, 24);
             radioButton2.TabIndex = 30;
             radioButton2.TabStop = true;
             radioButton2.Text = "Upon pickup";
-            radioButton2.UseVisualStyleBackColor = true;
+            radioButton2.UseVisualStyleBackColor = false;
             radioButton2.CheckedChanged += radioButton2_CheckedChanged;
             // 
             // label1
             // 
-            label1.Location = new Point(170, 14);
+            label1.BackColor = Color.FromArgb(138, 90, 60);
+            label1.Font = new Font("Segoe Script", 12F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(249, 190, 189);
+            label1.Location = new Point(121, 14);
             label1.Name = "label1";
             label1.Size = new Size(103, 29);
             label1.TabIndex = 29;
@@ -244,25 +290,32 @@
             // radioButton1
             // 
             radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(16, 22);
+            radioButton1.BackColor = Color.FromArgb(138, 90, 60);
+            radioButton1.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
+            radioButton1.ForeColor = Color.FromArgb(249, 190, 189);
+            radioButton1.Location = new Point(15, 18);
             radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(50, 19);
+            radioButton1.Size = new Size(61, 24);
             radioButton1.TabIndex = 28;
             radioButton1.TabStop = true;
             radioButton1.Text = "Card";
-            radioButton1.UseVisualStyleBackColor = true;
+            radioButton1.UseVisualStyleBackColor = false;
             radioButton1.CheckedChanged += radioButton1_CheckedChanged;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(176, 266);
+            textBox1.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
+            textBox1.Location = new Point(127, 266);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "First Name *";
-            textBox1.Size = new Size(100, 23);
+            textBox1.Size = new Size(100, 30);
             textBox1.TabIndex = 27;
             // 
             // Username
             // 
+            Username.BackColor = Color.FromArgb(138, 90, 60);
+            Username.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
+            Username.ForeColor = Color.FromArgb(249, 190, 189);
             Username.Location = new Point(774, 9);
             Username.Name = "Username";
             Username.Size = new Size(103, 29);
@@ -272,12 +325,15 @@
             // 
             // button1
             // 
-            button1.Location = new Point(400, 679);
+            button1.BackColor = Color.FromArgb(138, 90, 60);
+            button1.Font = new Font("Segoe Script", 12F, FontStyle.Bold);
+            button1.ForeColor = Color.FromArgb(249, 190, 189);
+            button1.Location = new Point(351, 679);
             button1.Name = "button1";
             button1.Size = new Size(191, 62);
             button1.TabIndex = 51;
             button1.Text = "Complete Purchase";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // groupBox1
@@ -285,7 +341,7 @@
             groupBox1.Controls.Add(radioButton1);
             groupBox1.Controls.Add(radioButton2);
             groupBox1.Controls.Add(radioButton3);
-            groupBox1.Location = new Point(170, 46);
+            groupBox1.Location = new Point(121, 46);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(330, 52);
             groupBox1.TabIndex = 52;
@@ -296,7 +352,7 @@
             // 
             groupBox2.Controls.Add(radioButton6);
             groupBox2.Controls.Add(radioButton7);
-            groupBox2.Location = new Point(170, 138);
+            groupBox2.Location = new Point(121, 138);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(330, 52);
             groupBox2.TabIndex = 53;
@@ -305,80 +361,98 @@
             // radioButton6
             // 
             radioButton6.AutoSize = true;
-            radioButton6.Location = new Point(16, 22);
+            radioButton6.BackColor = Color.FromArgb(138, 90, 60);
+            radioButton6.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
+            radioButton6.ForeColor = Color.FromArgb(249, 190, 189);
+            radioButton6.Location = new Point(23, 18);
             radioButton6.Name = "radioButton6";
-            radioButton6.Size = new Size(112, 19);
+            radioButton6.Size = new Size(144, 24);
             radioButton6.TabIndex = 28;
             radioButton6.TabStop = true;
             radioButton6.Text = "Address Delivery";
-            radioButton6.UseVisualStyleBackColor = true;
+            radioButton6.UseVisualStyleBackColor = false;
             radioButton6.CheckedChanged += radioButton6_CheckedChanged;
             // 
             // radioButton7
             // 
             radioButton7.AutoSize = true;
-            radioButton7.Location = new Point(172, 22);
+            radioButton7.BackColor = Color.FromArgb(138, 90, 60);
+            radioButton7.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
+            radioButton7.ForeColor = Color.FromArgb(249, 190, 189);
+            radioButton7.Location = new Point(179, 18);
             radioButton7.Name = "radioButton7";
-            radioButton7.Size = new Size(92, 19);
+            radioButton7.Size = new Size(117, 24);
             radioButton7.TabIndex = 30;
             radioButton7.TabStop = true;
             radioButton7.Text = "Local pickup";
-            radioButton7.UseVisualStyleBackColor = true;
+            radioButton7.UseVisualStyleBackColor = false;
             radioButton7.CheckedChanged += radioButton7_CheckedChanged;
             // 
             // button2
             // 
-            button2.Location = new Point(635, 428);
+            button2.BackColor = Color.FromArgb(138, 90, 60);
+            button2.Font = new Font("Segoe Script", 12F, FontStyle.Bold);
+            button2.ForeColor = Color.FromArgb(249, 190, 189);
+            button2.Location = new Point(569, 421);
             button2.Name = "button2";
-            button2.Size = new Size(125, 23);
+            button2.Size = new Size(191, 43);
             button2.TabIndex = 54;
             button2.Text = "Update Information";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // button3
             // 
-            button3.Location = new Point(170, 679);
+            button3.BackColor = Color.FromArgb(138, 90, 60);
+            button3.Font = new Font("Segoe Script", 12F, FontStyle.Bold);
+            button3.ForeColor = Color.FromArgb(249, 190, 189);
+            button3.Location = new Point(121, 679);
             button3.Name = "button3";
             button3.Size = new Size(191, 62);
             button3.TabIndex = 55;
             button3.Text = "Back to Shop";
-            button3.UseVisualStyleBackColor = true;
+            button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
             // maskedTextBox2
             // 
+            maskedTextBox2.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
             maskedTextBox2.Location = new Point(569, 67);
             maskedTextBox2.Mask = "9999 9999 9999 9999";
             maskedTextBox2.Name = "maskedTextBox2";
-            maskedTextBox2.Size = new Size(191, 23);
+            maskedTextBox2.Size = new Size(191, 30);
             maskedTextBox2.TabIndex = 56;
             maskedTextBox2.Visible = false;
             // 
             // maskedTextBox3
             // 
+            maskedTextBox3.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
             maskedTextBox3.Location = new Point(569, 127);
             maskedTextBox3.Mask = "99 / 99";
             maskedTextBox3.Name = "maskedTextBox3";
-            maskedTextBox3.Size = new Size(71, 23);
+            maskedTextBox3.Size = new Size(71, 30);
             maskedTextBox3.TabIndex = 56;
             maskedTextBox3.Visible = false;
             // 
             // maskedTextBox4
             // 
+            maskedTextBox4.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
             maskedTextBox4.Location = new Point(689, 127);
             maskedTextBox4.Mask = "999";
             maskedTextBox4.Name = "maskedTextBox4";
-            maskedTextBox4.Size = new Size(71, 23);
+            maskedTextBox4.Size = new Size(71, 30);
             maskedTextBox4.TabIndex = 56;
             maskedTextBox4.Visible = false;
             // 
             // label12
             // 
             label12.AutoSize = true;
+            label12.BackColor = Color.FromArgb(138, 90, 60);
+            label12.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
+            label12.ForeColor = Color.FromArgb(249, 190, 189);
             label12.Location = new Point(569, 46);
             label12.Name = "label12";
-            label12.Size = new Size(82, 15);
+            label12.Size = new Size(108, 20);
             label12.TabIndex = 57;
             label12.Text = "Card Number:";
             label12.Visible = false;
@@ -386,9 +460,12 @@
             // label13
             // 
             label13.AutoSize = true;
+            label13.BackColor = Color.FromArgb(138, 90, 60);
+            label13.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
+            label13.ForeColor = Color.FromArgb(249, 190, 189);
             label13.Location = new Point(569, 108);
             label13.Name = "label13";
-            label13.Size = new Size(34, 15);
+            label13.Size = new Size(46, 20);
             label13.TabIndex = 57;
             label13.Text = "Date:";
             label13.Visible = false;
@@ -396,9 +473,12 @@
             // label14
             // 
             label14.AutoSize = true;
+            label14.BackColor = Color.FromArgb(138, 90, 60);
+            label14.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
+            label14.ForeColor = Color.FromArgb(249, 190, 189);
             label14.Location = new Point(689, 108);
             label14.Name = "label14";
-            label14.Size = new Size(33, 15);
+            label14.Size = new Size(43, 20);
             label14.TabIndex = 57;
             label14.Text = "CVC:";
             label14.Visible = false;
@@ -418,6 +498,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(183, 196, 138);
             ClientSize = new Size(889, 763);
             Controls.Add(pictureBox1);
             Controls.Add(label14);

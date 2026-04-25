@@ -30,10 +30,6 @@
         {
             label1 = new Label();
             dataGridView1 = new DataGridView();
-            order = new DataGridViewTextBoxColumn();
-            Zadatak2ID = new DataGridViewTextBoxColumn();
-            imetorte = new DataGridViewTextBoxColumn();
-            Statustorte = new DataGridViewTextBoxColumn();
             label2 = new Label();
             panel1 = new Panel();
             richTextBox1 = new RichTextBox();
@@ -50,6 +46,10 @@
             label7 = new Label();
             comboBox2 = new ComboBox();
             label8 = new Label();
+            order = new DataGridViewTextBoxColumn();
+            Zadatak2ID = new DataGridViewTextBoxColumn();
+            imetorte = new DataGridViewTextBoxColumn();
+            Statustorte = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -79,32 +79,6 @@
             dataGridView1.TabIndex = 1;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
-            // 
-            // order
-            // 
-            order.HeaderText = "OrderID";
-            order.Name = "order";
-            order.ReadOnly = true;
-            order.Visible = false;
-            // 
-            // Zadatak2ID
-            // 
-            Zadatak2ID.HeaderText = "Zadatak2ID";
-            Zadatak2ID.Name = "Zadatak2ID";
-            Zadatak2ID.ReadOnly = true;
-            Zadatak2ID.Visible = false;
-            // 
-            // imetorte
-            // 
-            imetorte.HeaderText = "Cake Name";
-            imetorte.Name = "imetorte";
-            imetorte.ReadOnly = true;
-            // 
-            // Statustorte
-            // 
-            Statustorte.HeaderText = "Status";
-            Statustorte.Name = "Statustorte";
-            Statustorte.ReadOnly = true;
             // 
             // label2
             // 
@@ -258,6 +232,31 @@
             label8.Size = new Size(140, 19);
             label8.TabIndex = 0;
             label8.Text = "Started Task ID: None";
+            // 
+            // order
+            // 
+            order.HeaderText = "OrderID";
+            order.Name = "order";
+            order.ReadOnly = true;
+            // 
+            // Zadatak2ID
+            // 
+            Zadatak2ID.HeaderText = "Zadatak2ID";
+            Zadatak2ID.Name = "Zadatak2ID";
+            Zadatak2ID.ReadOnly = true;
+            Zadatak2ID.Visible = false;
+            // 
+            // imetorte
+            // 
+            imetorte.HeaderText = "Cake Name";
+            imetorte.Name = "imetorte";
+            imetorte.ReadOnly = true;
+            // 
+            // Statustorte
+            // 
+            Statustorte.HeaderText = "Status";
+            Statustorte.Name = "Statustorte";
+            Statustorte.ReadOnly = true;
             // 
             // Cook
             // 
