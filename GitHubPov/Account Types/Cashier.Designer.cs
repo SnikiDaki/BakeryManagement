@@ -35,8 +35,8 @@
             // button1
             // 
             button1.BackColor = Color.FromArgb(138, 90, 60);
-            button1.Font = new Font("Segoe Script", 18F, FontStyle.Bold);
-            button1.ForeColor = Color.FromArgb(247, 191, 190);
+            button1.Font = new Font("Segoe Script", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.FromArgb(249, 190, 189);
             button1.Location = new Point(164, 117);
             button1.Name = "button1";
             button1.Size = new Size(458, 72);
@@ -48,7 +48,7 @@
             // 
             button2.BackColor = Color.FromArgb(138, 90, 60);
             button2.Font = new Font("Segoe Script", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.FromArgb(247, 191, 190);
+            button2.ForeColor = Color.FromArgb(249, 190, 189);
             button2.Location = new Point(164, 249);
             button2.Name = "button2";
             button2.Size = new Size(458, 72);
