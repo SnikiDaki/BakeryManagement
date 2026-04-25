@@ -92,6 +92,38 @@ namespace GitHubPov
                     this.Hide();
                     customer.Show();
                 }
+                else if (dr.HasRows && role == "admin")
+                {
+                     MessageBox.Show($"Login Successful!\nWelcome, {username}!", "Login");
+                     Admin customer = new Admin(username, userid);
+                     customer.FormClosed += (s, args) => this.Close();
+                     this.Hide();
+                     customer.Show();
+                }
+                else if (dr.HasRows && role == "Cashier")
+                {
+                     MessageBox.Show($"Login Successful!\nWelcome, {username}!", "Login");
+                     Cashier customer = new Cashier(username, userid);
+                     customer.FormClosed += (s, args) => this.Close();
+                     this.Hide();
+                     customer.Show();
+                }
+                else if (dr.HasRows && role == "Courier")
+                {
+                     MessageBox.Show($"Login Successful!\nWelcome, {username}!", "Login");
+                     Courier customer = new Courier(username, userid);
+                     customer.FormClosed += (s, args) => this.Close();
+                     this.Hide();
+                     customer.Show();
+                }
+                else if (dr.HasRows && role == "Accountant")
+                {
+                     MessageBox.Show($"Login Successful!\nWelcome, {username}!", "Login");
+                     Accountant customer = new Accountant(username, userid);
+                     customer.FormClosed += (s, args) => this.Close();
+                     this.Hide();
+                     customer.Show();
+                }
                 else { MessageBox.Show($"Username or password is incorrect.", "Login"); }
             }
             catch (Exception ex) { MessageBox.Show($"Doslo je do greske: {ex} "); }

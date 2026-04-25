@@ -28,12 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Cashier";
+            button1 = new Button();
+            button2 = new Button();
+            SuspendLayout();
+            // 
+            // button1
+            // 
+            button1.Location = new Point(164, 117);
+            button1.Name = "button1";
+            button1.Size = new Size(458, 72);
+            button1.TabIndex = 1;
+            button1.Text = "View orders/Send out orders";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(164, 249);
+            button2.Name = "button2";
+            button2.Size = new Size(458, 72);
+            button2.TabIndex = 2;
+            button2.Text = "Place a order";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // Cashier
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Name = "Cashier";
+            Text = "Cashier";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button button1;
+        private Button button2;
     }
 }

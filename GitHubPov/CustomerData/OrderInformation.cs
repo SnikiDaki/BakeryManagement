@@ -1,4 +1,5 @@
-﻿using GitHubPov.Account_Types;
+﻿using GitHubPov.Account_Type_s;
+using GitHubPov.Account_Types;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -35,7 +36,6 @@ namespace GitHubPov.CustomerData
             cena = price;
             radioButton1.Checked = true;
             radioButton6.Checked = true;
-
         }
 
         public static class Db
@@ -187,17 +187,40 @@ namespace GitHubPov.CustomerData
                     }
 
             }
-                if (potvrda > 0)
-                {
-                    MessageBox.Show("Order Completed!");
-                    Customer customer = new Customer(user,uid);
-                    customer.FormClosed += (s, args) => this.Close();
-                    this.Hide();
-                    customer.Show();
+                    if (potvrda > 0)
+                    {
+                        MessageBox.Show("Order Completed!");
+
+                        string role = "";
+
+                        string roleQuery = "SELECT role FROM users WHERE id=@id";
+                        MySqlCommand roleCmd = new MySqlCommand(roleQuery, conn);
+                        roleCmd.Parameters.AddWithValue("@id", uid);
+
+                        object result = roleCmd.ExecuteScalar();
+                        if (result != null)
+                        {
+                            role = result.ToString().ToLower();
+                        }
+
+                        this.Hide();
+
+                        if (role == "customer")
+                        {
+                            Customer customer = new Customer(user, uid);
+                            customer.FormClosed += (s, args) => this.Close();
+                            customer.Show();
+                        }
+                        else if (role == "cashier")
+                        {
+                            Cashier cashier = new Cashier(user, uid);
+                            cashier.FormClosed += (s, args) => this.Close();
+                            cashier.Show();
+                        }
+                    }
+
+
                 }
-
-
-            }
             catch (Exception ex) { MessageBox.Show($"Erorr: {ex} "); }
 
 
