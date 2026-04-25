@@ -40,7 +40,8 @@ namespace GitHubPov.Account_Type_s
             button3.Enabled = false;
             comboBox1.SelectedIndex = 0;
             comboBox2.SelectedIndex = 0;
-           
+            button2.Enabled= false;
+
 
             MySqlConnection conn = new MySqlConnection(Db.konekcija);
             conn.Open();
@@ -52,7 +53,7 @@ namespace GitHubPov.Account_Type_s
                 MySqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                   meno = dr[0].ToString() + " " + dr[1].ToString();
+                    meno = dr[0].ToString() + " " + dr[1].ToString();
                     firstmeno = dr[0].ToString();
                     lastmeno = dr[1].ToString();
                 }
@@ -90,13 +91,13 @@ namespace GitHubPov.Account_Type_s
                 while (dr.Read())
                 {
                     produkt = dr["cakename"].ToString();
-                   // int quantity = Convert.ToInt32(dr["quantity"]);
+                    // int quantity = Convert.ToInt32(dr["quantity"]);
                     orderid = Convert.ToInt32(dr["orderid"]);
                     status = dr["statustask"].ToString();
                     taskid = Convert.ToInt32(dr["taskid"]);
                     comboBox2.Items.Add(produkt);
 
-                    dataGridView1.Rows.Add(orderid,taskid, produkt, status);
+                    dataGridView1.Rows.Add(orderid, taskid, produkt, status);
                 }
 
             }
@@ -124,6 +125,7 @@ namespace GitHubPov.Account_Type_s
             if (index >= 0)
             {
                 button3.Enabled = true;
+                button2.Enabled = true;
                 MessageBox.Show("Task Started, Good Luck!", "Task");
                 dataGridView1.Enabled = false;
                 button1.Enabled = false;
@@ -141,7 +143,7 @@ namespace GitHubPov.Account_Type_s
             cakename = row.Cells["imetorte"].Value.ToString();
             if (cakename == null) return;
             orderid2 = Convert.ToInt32(row.Cells["order"].Value);
-            taskid2= Convert.ToInt32(row.Cells["Zadatak2ID"].Value);
+            taskid2 = Convert.ToInt32(row.Cells["Zadatak2ID"].Value);
 
             MySqlConnection conn = new MySqlConnection(Db.konekcija);
             conn.Open();
@@ -190,7 +192,7 @@ namespace GitHubPov.Account_Type_s
                         //MySqlCommand cmd2 = new MySqlCommand(update, conn);
                         //cmd2.Parameters.AddWithValue("@orderid", orderid2);
                         //cmd2.ExecuteNonQuery();
-
+                        button2.Enabled = false;
                         button1.Enabled = true;
                         button3.Enabled = false;
                         dataGridView1.Enabled = true;
@@ -240,7 +242,7 @@ namespace GitHubPov.Account_Type_s
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             dataGridView1.Rows.Clear();
 
             MySqlConnection conn = new MySqlConnection(Db.konekcija);
@@ -256,13 +258,13 @@ namespace GitHubPov.Account_Type_s
                 while (dr.Read())
                 {
                     produkt = dr["cakename"].ToString();
-                  //  int quantity = Convert.ToInt32(dr["quantity"]);
+                    //  int quantity = Convert.ToInt32(dr["quantity"]);
                     orderid = Convert.ToInt32(dr["orderid"]);
                     status = dr["statustask"].ToString();
                     taskid = Convert.ToInt32(dr["taskid"]);
-                    
 
-                    dataGridView1.Rows.Add(orderid, taskid,produkt, status);
+
+                    dataGridView1.Rows.Add(orderid, taskid, produkt, status);
                 }
 
             }
@@ -272,6 +274,12 @@ namespace GitHubPov.Account_Type_s
             }
         }
 
-        
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Login eo = new Login();
+            eo.FormClosed += (s, args) => this.Close();
+            this.Hide();
+            eo.Show();
+        }
     }
 }

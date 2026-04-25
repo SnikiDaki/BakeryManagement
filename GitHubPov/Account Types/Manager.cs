@@ -45,7 +45,15 @@ namespace GitHubPov.Account_Type_s
 
         private void button2_Click(object sender, EventArgs e)
         {
-           Tasks eo = new Tasks(userime, Userid);
+            Tasks eo = new Tasks(userime, Userid);
+            eo.FormClosed += (s, args) => this.Close();
+            this.Hide();
+            eo.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Login eo = new Login();
             eo.FormClosed += (s, args) => this.Close();
             this.Hide();
             eo.Show();

@@ -61,7 +61,7 @@
             comboBox2.Items.AddRange(new object[] { "All" });
             comboBox2.Location = new Point(982, 85);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(121, 31);
+            comboBox2.Size = new Size(127, 31);
             comboBox2.TabIndex = 13;
             comboBox2.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
@@ -71,7 +71,7 @@
             comboBox1.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "All", "Completed", "Not Completed", "Awaiting For Approval" });
-            comboBox1.Location = new Point(760, 85);
+            comboBox1.Location = new Point(747, 85);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(127, 31);
             comboBox1.TabIndex = 14;
@@ -83,7 +83,7 @@
             label7.BackColor = Color.FromArgb(138, 90, 60);
             label7.Font = new Font("Segoe Script", 12F, FontStyle.Bold);
             label7.ForeColor = Color.FromArgb(249, 190, 189);
-            label7.Location = new Point(993, 52);
+            label7.Location = new Point(982, 52);
             label7.Name = "label7";
             label7.Size = new Size(110, 27);
             label7.TabIndex = 11;

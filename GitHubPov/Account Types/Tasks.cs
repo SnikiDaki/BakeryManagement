@@ -22,6 +22,7 @@ namespace GitHubPov.Account_Types
         public int Userid;
         public int Taskid;
         public int Orderid;
+        public string pickup = "";
         public Tasks(string username, int userid)
         {
             InitializeComponent();
@@ -121,41 +122,64 @@ namespace GitHubPov.Account_Types
         {
 
 
-            MySqlConnection conn = new MySqlConnection(Db.konekcija);
-            conn.Open();
-            try
+            using (MySqlConnection conn = new MySqlConnection(Db.konekcija))
             {
-
-                string updejt = "update tasks set statustask='Completed' WHERE taskid=@taskid;";
-                MySqlCommand cmd = new MySqlCommand(updejt, conn);
-                cmd.Parameters.AddWithValue("@taskid", Taskid);
-                int p = cmd.ExecuteNonQuery();
-                if (p > 0)
+                conn.Open();
+                try
                 {
 
-                    MessageBox.Show("Task Approved!", "Task");
-                    Tasks_Load(sender,e);
+                    string updejt = "update tasks set statustask='Completed' WHERE taskid=@taskid;";
+                    MySqlCommand cmd = new MySqlCommand(updejt, conn);
+                    cmd.Parameters.AddWithValue("@taskid", Taskid);
+                    int p = cmd.ExecuteNonQuery();
+                    if (p > 0)
+                    {
+
+                        MessageBox.Show("Task Approved!", "Task");
+
+
+                    }
+
+                    string selekcija = "select count(orderid) from tasks where orderid=@orderid and statustask!='Completed'";
+                    MySqlCommand cmd3 = new MySqlCommand(selekcija, conn);
+                    cmd3.Parameters.AddWithValue("@orderid", Orderid);
+
+                    string selekcija2 = "select pickup from orders where orderid=@orderid ";
+                    MySqlCommand cmd4 = new MySqlCommand(selekcija2, conn);
+                    cmd4.Parameters.AddWithValue("@orderid", Orderid);
+                    MySqlDataReader dr = cmd4.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        pickup = dr["pickup"].ToString();
+                    }
+                    dr.Close();
+
+                    int taskovi = Convert.ToInt32(cmd3.ExecuteScalar());
+                    if (taskovi == 0 && pickup == "Address Delivery")
+                    {
+                        string updejt2 = "update orders set chefstatus='Completed', status='Waiting For Courier' WHERE orderid=@orderid ;";
+                        MySqlCommand cmd2 = new MySqlCommand(updejt2, conn);
+                        cmd2.Parameters.AddWithValue("@orderid", Orderid);
+                        cmd2.ExecuteNonQuery();
+                        Tasks_Load(sender, e);
+
+                    }
+                    else if (taskovi == 0 && pickup == "Local pickup")
+                    {
+                        string updejt2 = "update orders set chefstatus='Completed', status='Ready To Pickup' WHERE orderid=@orderid ;";
+                        MySqlCommand cmd5 = new MySqlCommand(updejt2, conn);
+                        cmd5.Parameters.AddWithValue("@orderid", Orderid);
+                        cmd5.ExecuteNonQuery();
+                        Tasks_Load(sender, e);
+                    }
+
+
 
                 }
-
-                string selekcija = "select count(orderid) from tasks where orderid=@orderid and statustask!='Completed'";
-                MySqlCommand cmd3 = new MySqlCommand(selekcija, conn);
-                cmd3.Parameters.AddWithValue("@orderid", Orderid);
-                int taskovi = Convert.ToInt32(cmd3.ExecuteScalar());
-                if (taskovi == 0) {
-                    string updejt2 = "update orders set chefstatus='Completed', status='Waiting For Courier' WHERE orderid=@orderid;";
-                    MySqlCommand cmd2 = new MySqlCommand(updejt2, conn);
-                    cmd2.Parameters.AddWithValue("@orderid", Orderid);
-                    cmd2.ExecuteNonQuery();
-
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Eror:" + ex);
                 }
-
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Eror:" + ex);
             }
         }
 

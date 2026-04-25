@@ -39,7 +39,16 @@ namespace GitHubPov.Account_Types
             string password = textBox5.Text;
             string passcheck = textBox6.Text;
             string role = comboBox1.Text;
-            if (firstname == "" || lastname == "" || username == "" || email == "" || password == "" || passcheck == "" || role == "")
+            string adresa = textBox9.Text;
+            string telefon = maskedTextBox1.Text;
+
+            int hnum = Convert.ToInt32(textBox8.Text);
+
+            string city = textBox7.Text;
+
+
+
+            if (firstname == "" || lastname == "" || username == "" || email == "" || password == "" || passcheck == "" || role == "" || adresa == "" || telefon == "" || hnum == null || city == "")
             {
                 MessageBox.Show($"Please fill out the required fields!", "Register");
             }
@@ -52,7 +61,7 @@ namespace GitHubPov.Account_Types
                 conn.Open();
                 try
                 {
-                    string insert = "INSERT INTO users (firstname, lastname, username, email, password, role) VALUES (@firstname, @lastname, @username, @email, @password, @role)";
+                    string insert = "INSERT INTO users (firstname, lastname, username, email, password, role, telefon, adresa, hnum, city) VALUES (@firstname, @lastname, @username, @email, @password, @role, @telefon, @adresa, @hnum, @city)";
                     MySqlCommand cmd = new MySqlCommand(insert, conn);
                     cmd.Parameters.AddWithValue("@firstname", firstname);
                     cmd.Parameters.AddWithValue("@lastname", lastname);
@@ -60,6 +69,14 @@ namespace GitHubPov.Account_Types
                     cmd.Parameters.AddWithValue("@email", email);
                     cmd.Parameters.AddWithValue("@password", password);
                     cmd.Parameters.AddWithValue("@role", role);
+                    cmd.Parameters.AddWithValue("@telefon", telefon);
+                    cmd.Parameters.AddWithValue("@adresa", adresa);
+                    cmd.Parameters.AddWithValue("@hnum", hnum);
+                    cmd.Parameters.AddWithValue("@city", city);
+
+
+
+
                     if (password == passcheck)
                     {
                         int b = Convert.ToInt32(cmd.ExecuteNonQuery());
@@ -72,7 +89,11 @@ namespace GitHubPov.Account_Types
                              textBox4.Text = "";
                              textBox5.Text = "";
                             textBox6.Text = "";
-                            comboBox1.Text = "";
+                            comboBox1.SelectedIndex = -1;
+                            textBox7.Text = "";
+                            textBox8.Text = "";
+                            textBox9.Text = "";
+                            maskedTextBox1.Text = "";
 
                         }
                     }

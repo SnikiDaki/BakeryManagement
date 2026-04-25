@@ -37,7 +37,7 @@ namespace GitHubPov.CustomerData
 
             try
             {
-                string update = "UPDATE users SET firstname=@firstname, lastname=@lastname, email=@email, telefon=@telefon, adresa=@adresa, hnum=@hnum, city=@city WHERE username=@username and id=@id";
+                string update = "UPDATE users SET firstname=@firstname, lastname=@lastname, email=@email, telefon=@telefon, adresa=@adresa, hnum=@hnum, city=@city WHERE id=@id";
                 MySqlCommand cmd = new MySqlCommand(update, conn);
                 cmd.Parameters.AddWithValue("username", user2);
                 cmd.Parameters.AddWithValue("id", Uid);

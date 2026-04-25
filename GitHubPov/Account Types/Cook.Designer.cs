@@ -34,6 +34,10 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             label1 = new Label();
             dataGridView1 = new DataGridView();
+            order = new DataGridViewTextBoxColumn();
+            Zadatak2ID = new DataGridViewTextBoxColumn();
+            imetorte = new DataGridViewTextBoxColumn();
+            Statustorte = new DataGridViewTextBoxColumn();
             label2 = new Label();
             panel1 = new Panel();
             richTextBox1 = new RichTextBox();
@@ -50,10 +54,7 @@
             label7 = new Label();
             comboBox2 = new ComboBox();
             label8 = new Label();
-            order = new DataGridViewTextBoxColumn();
-            Zadatak2ID = new DataGridViewTextBoxColumn();
-            imetorte = new DataGridViewTextBoxColumn();
-            Statustorte = new DataGridViewTextBoxColumn();
+            button9 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -86,6 +87,38 @@
             dataGridView1.TabIndex = 1;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
+            // 
+            // order
+            // 
+            dataGridViewCellStyle1.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            order.DefaultCellStyle = dataGridViewCellStyle1;
+            order.HeaderText = "Order ID";
+            order.Name = "order";
+            order.ReadOnly = true;
+            // 
+            // Zadatak2ID
+            // 
+            dataGridViewCellStyle2.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
+            Zadatak2ID.DefaultCellStyle = dataGridViewCellStyle2;
+            Zadatak2ID.HeaderText = "Task ID";
+            Zadatak2ID.Name = "Zadatak2ID";
+            Zadatak2ID.ReadOnly = true;
+            // 
+            // imetorte
+            // 
+            dataGridViewCellStyle3.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
+            imetorte.DefaultCellStyle = dataGridViewCellStyle3;
+            imetorte.HeaderText = "Cake Name";
+            imetorte.Name = "imetorte";
+            imetorte.ReadOnly = true;
+            // 
+            // Statustorte
+            // 
+            dataGridViewCellStyle4.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
+            Statustorte.DefaultCellStyle = dataGridViewCellStyle4;
+            Statustorte.HeaderText = "Status";
+            Statustorte.Name = "Statustorte";
+            Statustorte.ReadOnly = true;
             // 
             // label2
             // 
@@ -266,12 +299,26 @@
             label8.TabIndex = 0;
             label8.Text = "Started Task ID: None";
             // 
+            // button9
+            // 
+            button9.BackColor = Color.FromArgb(138, 90, 60);
+            button9.Font = new Font("Segoe Script", 18F, FontStyle.Bold);
+            button9.ForeColor = Color.FromArgb(249, 190, 189);
+            button9.Location = new Point(12, 14);
+            button9.Name = "button9";
+            button9.Size = new Size(138, 49);
+            button9.TabIndex = 72;
+            button9.Text = "Logout";
+            button9.UseVisualStyleBackColor = false;
+            button9.Click += button9_Click;
+            // 
             // Cook
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(183, 196, 138);
             ClientSize = new Size(1179, 845);
+            Controls.Add(button9);
             Controls.Add(comboBox2);
             Controls.Add(comboBox1);
             Controls.Add(label7);
@@ -322,5 +369,6 @@
         private DataGridViewTextBoxColumn Zadatak2ID;
         private DataGridViewTextBoxColumn imetorte;
         private DataGridViewTextBoxColumn Statustorte;
+        private Button button9;
     }
 }

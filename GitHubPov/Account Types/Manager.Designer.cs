@@ -32,6 +32,7 @@
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
+            button5 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -85,6 +86,19 @@
             button4.Text = "Income Check";
             button4.UseVisualStyleBackColor = false;
             // 
+            // button5
+            // 
+            button5.BackColor = Color.FromArgb(138, 90, 60);
+            button5.Font = new Font("Segoe Script", 18F, FontStyle.Bold);
+            button5.ForeColor = Color.FromArgb(249, 190, 189);
+            button5.Location = new Point(857, 58);
+            button5.Name = "button5";
+            button5.Size = new Size(128, 72);
+            button5.TabIndex = 0;
+            button5.Text = "Logout";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
+            // 
             // Manager
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -94,6 +108,7 @@
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
+            Controls.Add(button5);
             Controls.Add(button1);
             Name = "Manager";
             Text = "Manager";
@@ -106,5 +121,6 @@
         private Button button2;
         private Button button3;
         private Button button4;
+        private Button button5;
     }
 }

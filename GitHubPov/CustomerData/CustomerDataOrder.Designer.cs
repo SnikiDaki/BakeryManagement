@@ -55,10 +55,6 @@
             label1 = new Label();
             button2 = new Button();
             dataGridView1 = new DataGridView();
-            label2 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            label11 = new Label();
-            button3 = new Button();
             ProductIme = new DataGridViewTextBoxColumn();
             ProductCena = new DataGridViewTextBoxColumn();
             ProductQuantity = new DataGridViewTextBoxColumn();
@@ -66,6 +62,10 @@
             OrderPayment = new DataGridViewTextBoxColumn();
             OrderStatus = new DataGridViewTextBoxColumn();
             OrderDatum = new DataGridViewTextBoxColumn();
+            label2 = new Label();
+            dateTimePicker1 = new DateTimePicker();
+            label11 = new Label();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -83,10 +83,11 @@
             // 
             // textBox1
             // 
+            textBox1.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
             textBox1.Location = new Point(77, 132);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "First Name *";
-            textBox1.Size = new Size(100, 23);
+            textBox1.Size = new Size(100, 30);
             textBox1.TabIndex = 1;
             // 
             // label3
@@ -109,14 +110,15 @@
             label4.Name = "label4";
             label4.Size = new Size(100, 20);
             label4.TabIndex = 10;
-            label4.Text = "First Name *";
+            label4.Text = "First Name";
             // 
             // textBox2
             // 
+            textBox2.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
             textBox2.Location = new Point(249, 132);
             textBox2.Name = "textBox2";
             textBox2.PlaceholderText = "Last Name *";
-            textBox2.Size = new Size(100, 23);
+            textBox2.Size = new Size(100, 30);
             textBox2.TabIndex = 11;
             // 
             // label5
@@ -128,14 +130,15 @@
             label5.Name = "label5";
             label5.Size = new Size(100, 20);
             label5.TabIndex = 12;
-            label5.Text = "Last Name*";
+            label5.Text = "Last Name";
             // 
             // textBox3
             // 
+            textBox3.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
             textBox3.Location = new Point(77, 204);
             textBox3.Name = "textBox3";
             textBox3.PlaceholderText = "Email *";
-            textBox3.Size = new Size(100, 23);
+            textBox3.Size = new Size(100, 30);
             textBox3.TabIndex = 13;
             // 
             // label6
@@ -147,14 +150,15 @@
             label6.Name = "label6";
             label6.Size = new Size(70, 20);
             label6.TabIndex = 15;
-            label6.Text = "Email*";
+            label6.Text = "Email";
             // 
             // maskedTextBox1
             // 
+            maskedTextBox1.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
             maskedTextBox1.Location = new Point(246, 204);
             maskedTextBox1.Mask = "(+999) 00-0000000";
             maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(100, 23);
+            maskedTextBox1.Size = new Size(124, 30);
             maskedTextBox1.TabIndex = 16;
             // 
             // label7
@@ -166,7 +170,7 @@
             label7.Name = "label7";
             label7.Size = new Size(140, 20);
             label7.TabIndex = 17;
-            label7.Text = "Phone Number * ";
+            label7.Text = "Phone Number";
             // 
             // label8
             // 
@@ -177,14 +181,15 @@
             label8.Name = "label8";
             label8.Size = new Size(78, 20);
             label8.TabIndex = 18;
-            label8.Text = "Address*";
+            label8.Text = "Address";
             // 
             // textBox4
             // 
+            textBox4.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
             textBox4.Location = new Point(77, 294);
             textBox4.Name = "textBox4";
             textBox4.PlaceholderText = "Address *";
-            textBox4.Size = new Size(100, 23);
+            textBox4.Size = new Size(100, 30);
             textBox4.TabIndex = 19;
             // 
             // label9
@@ -196,14 +201,15 @@
             label9.Name = "label9";
             label9.Size = new Size(127, 20);
             label9.TabIndex = 20;
-            label9.Text = "House Number *";
+            label9.Text = "House Number";
             // 
             // textBox5
             // 
+            textBox5.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
             textBox5.Location = new Point(243, 294);
             textBox5.Name = "textBox5";
             textBox5.PlaceholderText = "House Number *";
-            textBox5.Size = new Size(100, 23);
+            textBox5.Size = new Size(127, 30);
             textBox5.TabIndex = 21;
             // 
             // label10
@@ -215,14 +221,15 @@
             label10.Name = "label10";
             label10.Size = new Size(62, 20);
             label10.TabIndex = 22;
-            label10.Text = "City *";
+            label10.Text = "City";
             // 
             // textBox6
             // 
+            textBox6.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
             textBox6.Location = new Point(392, 294);
             textBox6.Name = "textBox6";
             textBox6.PlaceholderText = "City *";
-            textBox6.Size = new Size(100, 23);
+            textBox6.Size = new Size(100, 30);
             textBox6.TabIndex = 23;
             // 
             // button1
@@ -274,50 +281,6 @@
             dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(784, 296);
             dataGridView1.TabIndex = 27;
-            // 
-            // label2
-            // 
-            label2.BackColor = Color.FromArgb(138, 90, 60);
-            label2.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
-            label2.ForeColor = Color.FromArgb(249, 190, 189);
-            label2.Location = new Point(605, 80);
-            label2.Name = "label2";
-            label2.Size = new Size(98, 29);
-            label2.TabIndex = 9;
-            label2.Text = "Your Orders:";
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(1229, 71);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(115, 30);
-            dateTimePicker1.TabIndex = 28;
-            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.BackColor = Color.FromArgb(138, 90, 60);
-            label11.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
-            label11.ForeColor = Color.FromArgb(249, 190, 189);
-            label11.Location = new Point(1177, 75);
-            label11.Name = "label11";
-            label11.Size = new Size(46, 20);
-            label11.TabIndex = 29;
-            label11.Text = "Date:";
-            // 
-            // button3
-            // 
-            button3.BackgroundImage = Properties.Resources.refreshicon;
-            button3.BackgroundImageLayout = ImageLayout.Zoom;
-            button3.Location = new Point(1350, 72);
-            button3.Name = "button3";
-            button3.Size = new Size(30, 29);
-            button3.TabIndex = 30;
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
             // 
             // ProductIme
             // 
@@ -374,6 +337,50 @@
             OrderDatum.HeaderText = "Date";
             OrderDatum.Name = "OrderDatum";
             OrderDatum.ReadOnly = true;
+            // 
+            // label2
+            // 
+            label2.BackColor = Color.FromArgb(138, 90, 60);
+            label2.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
+            label2.ForeColor = Color.FromArgb(249, 190, 189);
+            label2.Location = new Point(605, 80);
+            label2.Name = "label2";
+            label2.Size = new Size(98, 29);
+            label2.TabIndex = 9;
+            label2.Text = "Your Orders:";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            dateTimePicker1.Location = new Point(1229, 71);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(115, 30);
+            dateTimePicker1.TabIndex = 28;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.BackColor = Color.FromArgb(138, 90, 60);
+            label11.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
+            label11.ForeColor = Color.FromArgb(249, 190, 189);
+            label11.Location = new Point(1177, 75);
+            label11.Name = "label11";
+            label11.Size = new Size(46, 20);
+            label11.TabIndex = 29;
+            label11.Text = "Date:";
+            // 
+            // button3
+            // 
+            button3.BackgroundImage = Properties.Resources.refreshicon;
+            button3.BackgroundImageLayout = ImageLayout.Zoom;
+            button3.Location = new Point(1350, 72);
+            button3.Name = "button3";
+            button3.Size = new Size(30, 29);
+            button3.TabIndex = 30;
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // CustomerDataOrder
             // 

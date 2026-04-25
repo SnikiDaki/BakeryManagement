@@ -76,6 +76,8 @@
             linkLabel5 = new LinkLabel();
             linkLabel6 = new LinkLabel();
             linkLabel7 = new LinkLabel();
+            pictureBox2 = new PictureBox();
+            button9 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -89,6 +91,7 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDown4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -121,7 +124,7 @@
             linkLabel1.ForeColor = Color.FromArgb(249, 190, 189);
             linkLabel1.LinkBehavior = LinkBehavior.HoverUnderline;
             linkLabel1.LinkColor = Color.FromArgb(249, 190, 189);
-            linkLabel1.Location = new Point(142, 30);
+            linkLabel1.Location = new Point(143, 30);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(79, 31);
             linkLabel1.TabIndex = 28;
@@ -422,7 +425,7 @@
             label16.BackColor = Color.FromArgb(138, 90, 60);
             label16.Font = new Font("Segoe Script", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label16.ForeColor = Color.FromArgb(249, 190, 189);
-            label16.Location = new Point(895, 404);
+            label16.Location = new Point(897, 403);
             label16.Name = "label16";
             label16.Size = new Size(84, 34);
             label16.TabIndex = 59;
@@ -550,7 +553,7 @@
             button8.BackColor = Color.FromArgb(138, 90, 60);
             button8.Font = new Font("Segoe Script", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button8.ForeColor = Color.FromArgb(249, 190, 189);
-            button8.Location = new Point(1016, 405);
+            button8.Location = new Point(1241, 446);
             button8.Name = "button8";
             button8.Size = new Size(219, 34);
             button8.TabIndex = 67;
@@ -648,12 +651,37 @@
             linkLabel7.Text = "More Info";
             linkLabel7.LinkClicked += linkLabel7_LinkClicked;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.logobakery;
+            pictureBox2.Location = new Point(897, 446);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(338, 234);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 70;
+            pictureBox2.TabStop = false;
+            // 
+            // button9
+            // 
+            button9.BackColor = Color.FromArgb(138, 90, 60);
+            button9.Font = new Font("Segoe Script", 18F, FontStyle.Bold);
+            button9.ForeColor = Color.FromArgb(249, 190, 189);
+            button9.Location = new Point(1285, 544);
+            button9.Name = "button9";
+            button9.Size = new Size(138, 49);
+            button9.TabIndex = 71;
+            button9.Text = "Logout";
+            button9.UseVisualStyleBackColor = false;
+            button9.Click += button9_Click;
+            // 
             // Customer
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(183, 196, 138);
             ClientSize = new Size(1472, 681);
+            Controls.Add(button9);
+            Controls.Add(pictureBox2);
             Controls.Add(linkLabel7);
             Controls.Add(linkLabel6);
             Controls.Add(linkLabel5);
@@ -715,6 +743,7 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDown4).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown5).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -768,5 +797,7 @@
         private LinkLabel linkLabel5;
         private LinkLabel linkLabel6;
         private LinkLabel linkLabel7;
+        private PictureBox pictureBox2;
+        private Button button9;
     }
 }

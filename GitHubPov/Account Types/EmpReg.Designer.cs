@@ -46,6 +46,14 @@
             comboBox1 = new ComboBox();
             button2 = new Button();
             button3 = new Button();
+            textBox7 = new TextBox();
+            label10 = new Label();
+            textBox8 = new TextBox();
+            label9 = new Label();
+            textBox9 = new TextBox();
+            label11 = new Label();
+            label12 = new Label();
+            maskedTextBox1 = new MaskedTextBox();
             SuspendLayout();
             // 
             // textBox6
@@ -63,7 +71,7 @@
             label7.BackColor = Color.FromArgb(138, 90, 60);
             label7.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             label7.ForeColor = Color.FromArgb(249, 190, 189);
-            label7.Location = new Point(120, 141);
+            label7.Location = new Point(151, 141);
             label7.Name = "label7";
             label7.Size = new Size(82, 20);
             label7.TabIndex = 26;
@@ -84,7 +92,7 @@
             label6.BackColor = Color.FromArgb(138, 90, 60);
             label6.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             label6.ForeColor = Color.FromArgb(249, 190, 189);
-            label6.Location = new Point(117, 102);
+            label6.Location = new Point(148, 102);
             label6.Name = "label6";
             label6.Size = new Size(85, 20);
             label6.TabIndex = 24;
@@ -96,7 +104,7 @@
             label5.BackColor = Color.FromArgb(138, 90, 60);
             label5.Font = new Font("Segoe Script", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(249, 190, 189);
-            label5.Location = new Point(31, 22);
+            label5.Location = new Point(108, 22);
             label5.Name = "label5";
             label5.Size = new Size(459, 53);
             label5.TabIndex = 23;
@@ -136,7 +144,7 @@
             label3.BackColor = Color.FromArgb(138, 90, 60);
             label3.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             label3.ForeColor = Color.FromArgb(249, 190, 189);
-            label3.Location = new Point(127, 261);
+            label3.Location = new Point(158, 261);
             label3.Name = "label3";
             label3.Size = new Size(75, 20);
             label3.TabIndex = 19;
@@ -156,7 +164,7 @@
             label2.BackColor = Color.FromArgb(138, 90, 60);
             label2.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             label2.ForeColor = Color.FromArgb(249, 190, 189);
-            label2.Location = new Point(141, 221);
+            label2.Location = new Point(182, 221);
             label2.Name = "label2";
             label2.Size = new Size(51, 20);
             label2.TabIndex = 17;
@@ -168,7 +176,7 @@
             label1.BackColor = Color.FromArgb(138, 90, 60);
             label1.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(249, 190, 189);
-            label1.Location = new Point(126, 183);
+            label1.Location = new Point(157, 183);
             label1.Name = "label1";
             label1.Size = new Size(76, 20);
             label1.TabIndex = 16;
@@ -201,7 +209,7 @@
             label8.BackColor = Color.FromArgb(138, 90, 60);
             label8.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             label8.ForeColor = Color.FromArgb(249, 190, 189);
-            label8.Location = new Point(148, 329);
+            label8.Location = new Point(194, 326);
             label8.Name = "label8";
             label8.Size = new Size(39, 20);
             label8.TabIndex = 20;
@@ -235,19 +243,104 @@
             // 
             button3.BackgroundImage = Properties.Resources.hidden_12197891;
             button3.BackgroundImageLayout = ImageLayout.Zoom;
-            button3.Location = new Point(362, 255);
+            button3.Location = new Point(345, 255);
             button3.Name = "button3";
-            button3.Size = new Size(23, 23);
+            button3.Size = new Size(29, 30);
             button3.TabIndex = 30;
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
+            // 
+            // textBox7
+            // 
+            textBox7.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
+            textBox7.Location = new Point(547, 215);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(100, 30);
+            textBox7.TabIndex = 40;
+            // 
+            // label10
+            // 
+            label10.BackColor = Color.FromArgb(138, 90, 60);
+            label10.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
+            label10.ForeColor = Color.FromArgb(249, 190, 189);
+            label10.Location = new Point(479, 221);
+            label10.Name = "label10";
+            label10.Size = new Size(62, 20);
+            label10.TabIndex = 39;
+            label10.Text = "City";
+            // 
+            // textBox8
+            // 
+            textBox8.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
+            textBox8.Location = new Point(547, 177);
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(100, 30);
+            textBox8.TabIndex = 38;
+            // 
+            // label9
+            // 
+            label9.BackColor = Color.FromArgb(138, 90, 60);
+            label9.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
+            label9.ForeColor = Color.FromArgb(249, 190, 189);
+            label9.Location = new Point(414, 183);
+            label9.Name = "label9";
+            label9.Size = new Size(127, 20);
+            label9.TabIndex = 37;
+            label9.Text = "House Number";
+            // 
+            // textBox9
+            // 
+            textBox9.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
+            textBox9.Location = new Point(547, 96);
+            textBox9.Name = "textBox9";
+            textBox9.Size = new Size(100, 30);
+            textBox9.TabIndex = 36;
+            // 
+            // label11
+            // 
+            label11.BackColor = Color.FromArgb(138, 90, 60);
+            label11.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
+            label11.ForeColor = Color.FromArgb(249, 190, 189);
+            label11.Location = new Point(463, 103);
+            label11.Name = "label11";
+            label11.Size = new Size(78, 20);
+            label11.TabIndex = 35;
+            label11.Text = "Address";
+            // 
+            // label12
+            // 
+            label12.BackColor = Color.FromArgb(138, 90, 60);
+            label12.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
+            label12.ForeColor = Color.FromArgb(249, 190, 189);
+            label12.Location = new Point(401, 141);
+            label12.Name = "label12";
+            label12.Size = new Size(140, 20);
+            label12.TabIndex = 34;
+            label12.Text = "Phone Number";
+            // 
+            // maskedTextBox1
+            // 
+            maskedTextBox1.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
+            maskedTextBox1.Location = new Point(547, 135);
+            maskedTextBox1.Mask = "(+999) 00-0000000";
+            maskedTextBox1.Name = "maskedTextBox1";
+            maskedTextBox1.Size = new Size(100, 30);
+            maskedTextBox1.TabIndex = 33;
             // 
             // EmpReg
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(183, 196, 138);
-            ClientSize = new Size(528, 450);
+            ClientSize = new Size(779, 450);
+            Controls.Add(textBox7);
+            Controls.Add(label10);
+            Controls.Add(textBox8);
+            Controls.Add(label9);
+            Controls.Add(textBox9);
+            Controls.Add(label11);
+            Controls.Add(label12);
+            Controls.Add(maskedTextBox1);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(comboBox1);
@@ -292,5 +385,13 @@
         private ComboBox comboBox1;
         private Button button2;
         private Button button3;
+        private TextBox textBox7;
+        private Label label10;
+        private TextBox textBox8;
+        private Label label9;
+        private TextBox textBox9;
+        private Label label11;
+        private Label label12;
+        private MaskedTextBox maskedTextBox1;
     }
 }

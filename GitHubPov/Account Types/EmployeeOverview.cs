@@ -32,6 +32,8 @@ namespace GitHubPov.Account_Types
 
         private void EmployeeOverview_Load(object sender, EventArgs e)
         {
+            dataGridView1.Rows.Clear();
+
             MySqlConnection conn = new MySqlConnection(Db.konekcija);
             conn.Open();
             try
@@ -73,8 +75,8 @@ namespace GitHubPov.Account_Types
                     textBox2.Text = dr["lastname"].ToString();
                     textBox3.Text = dr["username"].ToString();
                     textBox4.Text = dr["email"].ToString();
-                    textBox5.Text = dr["role"].ToString();
-                    textBox6.Text = dr["telefon"].ToString();
+                    comboBox1.Text = dr["role"].ToString();
+                    maskedTextBox1.Text = dr["telefon"].ToString();
                     textBox7.Text = dr["adresa"].ToString();
                     textBox8.Text = dr["city"].ToString();
 
@@ -92,10 +94,44 @@ namespace GitHubPov.Account_Types
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Manager eo = new Manager(userime,Userid);
+            Manager eo = new Manager(userime, Userid);
             eo.FormClosed += (s, args) => this.Close();
             this.Hide();
             eo.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MySqlConnection conn = new MySqlConnection(Db.konekcija);
+            conn.Open();
+
+            try
+            {
+                DataGridViewRow row = dataGridView1.CurrentRow;
+                int idemp = Convert.ToInt32(row.Cells["EmployeeID"].Value);
+
+
+                string update = "UPDATE users SET firstname=@firstname, lastname=@lastname, email=@email, telefon=@telefon, adresa=@adresa, hnum=@hnum, city=@city, username=@username where id=@id";
+                MySqlCommand cmd = new MySqlCommand(update, conn);
+                cmd.Parameters.AddWithValue("username", textBox3.Text);
+                cmd.Parameters.AddWithValue("id", idemp);
+                cmd.Parameters.AddWithValue("@firstname", textBox1.Text);
+                cmd.Parameters.AddWithValue("@lastname", textBox2.Text);
+                cmd.Parameters.AddWithValue("@email", textBox4.Text);
+                cmd.Parameters.AddWithValue("@role", comboBox1.Text);
+                cmd.Parameters.AddWithValue("@telefon", Convert.ToString(maskedTextBox1.Text));
+                cmd.Parameters.AddWithValue("@adresa", textBox4.Text);
+                cmd.Parameters.AddWithValue("@hnum", textBox7.Text);
+                cmd.Parameters.AddWithValue("@city", textBox8.Text);
+                int updejt = Convert.ToInt32(cmd.ExecuteNonQuery());
+
+                if (updejt > 0)
+                {
+                    MessageBox.Show($"Information Updated!");
+                    EmployeeOverview_Load(sender, e);
+                }
+            }
+            catch (Exception ex) { MessageBox.Show($"Error: {ex} "); }
         }
     }
 }

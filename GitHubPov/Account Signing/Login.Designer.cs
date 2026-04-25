@@ -54,11 +54,11 @@
             // button1
             // 
             button1.BackColor = Color.FromArgb(138, 90, 60);
-            button1.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Font = new Font("Segoe Script", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.FromArgb(249, 190, 189);
             button1.Location = new Point(246, 221);
             button1.Name = "button1";
-            button1.Size = new Size(114, 29);
+            button1.Size = new Size(114, 32);
             button1.TabIndex = 1;
             button1.Text = "Login";
             button1.UseVisualStyleBackColor = false;
@@ -89,7 +89,7 @@
             textBox2.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBox2.Location = new Point(246, 181);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(114, 30);
+            textBox2.Size = new Size(116, 30);
             textBox2.TabIndex = 4;
             textBox2.UseSystemPasswordChar = true;
             // 
@@ -107,27 +107,31 @@
             // 
             // linkLabel1
             // 
-            linkLabel1.AutoSize = true;
             linkLabel1.BackColor = Color.FromArgb(138, 90, 60);
             linkLabel1.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             linkLabel1.ForeColor = Color.FromArgb(249, 190, 189);
             linkLabel1.LinkColor = Color.FromArgb(249, 190, 189);
-            linkLabel1.Location = new Point(257, 294);
+            linkLabel1.Location = new Point(246, 287);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(99, 20);
+            linkLabel1.Size = new Size(114, 20);
             linkLabel1.TabIndex = 11;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Register Now";
+            linkLabel1.TextAlign = ContentAlignment.MiddleCenter;
             linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(286, 265);
+            label3.BackColor = Color.FromArgb(138, 90, 60);
+            label3.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.FromArgb(249, 190, 189);
+            label3.Location = new Point(288, 256);
             label3.Name = "label3";
-            label3.Size = new Size(20, 15);
+            label3.Size = new Size(26, 20);
             label3.TabIndex = 12;
             label3.Text = "Or";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // button2
             // 
