@@ -29,6 +29,7 @@ namespace GitHubPov.Account_Type_s
         public string lastmeno;
         public int taskid;
         public int taskid2;
+        public string statusrn = "";
 
 
 
@@ -41,6 +42,7 @@ namespace GitHubPov.Account_Type_s
             comboBox1.SelectedIndex = 0;
             comboBox2.SelectedIndex = 0;
             button2.Enabled= false;
+
 
 
             MySqlConnection conn = new MySqlConnection(Db.konekcija);
@@ -122,7 +124,7 @@ namespace GitHubPov.Account_Type_s
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (index >= 0)
+            if (index >= 0 && statusrn == "Not Completed")
             {
                 button3.Enabled = true;
                 button2.Enabled = true;
@@ -131,7 +133,7 @@ namespace GitHubPov.Account_Type_s
                 button1.Enabled = false;
                 label8.Text = $"Started Task ID: {taskid2}";
             }
-            else { MessageBox.Show("Task Not Selected!", "Task"); }
+            else { MessageBox.Show("Cannot start finished or unapproved task!", "Task"); }
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -144,6 +146,7 @@ namespace GitHubPov.Account_Type_s
             if (cakename == null) return;
             orderid2 = Convert.ToInt32(row.Cells["order"].Value);
             taskid2 = Convert.ToInt32(row.Cells["Zadatak2ID"].Value);
+            statusrn = row.Cells["Statustorte"].Value.ToString();
 
             MySqlConnection conn = new MySqlConnection(Db.konekcija);
             conn.Open();
