@@ -47,119 +47,148 @@
             // 
             // button1
             // 
+            button1.BackColor = Color.FromArgb(138, 90, 60);
+            button1.Font = new Font("Segoe Script", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.FromArgb(249, 190, 189);
             button1.Location = new Point(252, 329);
             button1.Name = "button1";
-            button1.Size = new Size(100, 23);
+            button1.Size = new Size(100, 42);
             button1.TabIndex = 0;
             button1.Text = "Register";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // textBox1
             // 
+            textBox1.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
             textBox1.Location = new Point(252, 77);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
+            textBox1.Size = new Size(100, 30);
             textBox1.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.FromArgb(138, 90, 60);
+            label1.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(249, 190, 189);
             label1.Location = new Point(110, 166);
             label1.Name = "label1";
-            label1.Size = new Size(60, 15);
+            label1.Size = new Size(76, 20);
             label1.TabIndex = 2;
             label1.Text = "Username";
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.FromArgb(138, 90, 60);
+            label2.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
+            label2.ForeColor = Color.FromArgb(249, 190, 189);
             label2.Location = new Point(110, 199);
             label2.Name = "label2";
-            label2.Size = new Size(36, 15);
+            label2.Size = new Size(51, 20);
             label2.TabIndex = 3;
             label2.Text = "Email";
             // 
             // textBox2
             // 
+            textBox2.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
             textBox2.Location = new Point(252, 116);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
+            textBox2.Size = new Size(100, 30);
             textBox2.TabIndex = 4;
             // 
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.FromArgb(138, 90, 60);
+            label3.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
+            label3.ForeColor = Color.FromArgb(249, 190, 189);
             label3.Location = new Point(110, 239);
             label3.Name = "label3";
-            label3.Size = new Size(57, 15);
+            label3.Size = new Size(75, 20);
             label3.TabIndex = 5;
             label3.Text = "Password";
             // 
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = Color.FromArgb(138, 90, 60);
+            label4.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
+            label4.ForeColor = Color.FromArgb(249, 190, 189);
             label4.Location = new Point(110, 278);
             label4.Name = "label4";
-            label4.Size = new Size(104, 15);
+            label4.Size = new Size(138, 20);
             label4.TabIndex = 6;
             label4.Text = "Confirm Password";
             // 
             // textBox3
             // 
+            textBox3.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
             textBox3.Location = new Point(252, 158);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
+            textBox3.Size = new Size(100, 30);
             textBox3.TabIndex = 7;
             // 
             // textBox4
             // 
+            textBox4.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
             textBox4.Location = new Point(252, 196);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
+            textBox4.Size = new Size(100, 30);
             textBox4.TabIndex = 8;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(208, 9);
+            label5.BackColor = Color.FromArgb(138, 90, 60);
+            label5.Font = new Font("Segoe Script", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.FromArgb(249, 190, 189);
+            label5.Location = new Point(189, 9);
             label5.Name = "label5";
-            label5.Size = new Size(190, 45);
+            label5.Size = new Size(234, 53);
             label5.TabIndex = 9;
             label5.Text = "Registration";
             // 
             // label6
             // 
             label6.AutoSize = true;
+            label6.BackColor = Color.FromArgb(138, 90, 60);
+            label6.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
+            label6.ForeColor = Color.FromArgb(249, 190, 189);
             label6.Location = new Point(110, 85);
             label6.Name = "label6";
-            label6.Size = new Size(64, 15);
+            label6.Size = new Size(85, 20);
             label6.TabIndex = 10;
             label6.Text = "First Name";
             // 
             // textBox5
             // 
+            textBox5.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
             textBox5.Location = new Point(252, 236);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(100, 23);
+            textBox5.Size = new Size(100, 30);
             textBox5.TabIndex = 11;
             textBox5.UseSystemPasswordChar = true;
             // 
             // label7
             // 
             label7.AutoSize = true;
+            label7.BackColor = Color.FromArgb(138, 90, 60);
+            label7.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
+            label7.ForeColor = Color.FromArgb(249, 190, 189);
             label7.Location = new Point(110, 124);
             label7.Name = "label7";
-            label7.Size = new Size(63, 15);
+            label7.Size = new Size(82, 20);
             label7.TabIndex = 12;
             label7.Text = "Last Name";
             // 
             // textBox6
             // 
+            textBox6.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
             textBox6.Location = new Point(252, 275);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(100, 23);
+            textBox6.Size = new Size(100, 30);
             textBox6.TabIndex = 13;
             textBox6.UseSystemPasswordChar = true;
             // 
@@ -167,9 +196,9 @@
             // 
             button2.BackgroundImage = Properties.Resources.hidden_12197891;
             button2.BackgroundImageLayout = ImageLayout.Zoom;
-            button2.Location = new Point(375, 239);
+            button2.Location = new Point(369, 239);
             button2.Name = "button2";
-            button2.Size = new Size(23, 23);
+            button2.Size = new Size(27, 27);
             button2.TabIndex = 14;
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
@@ -178,6 +207,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(183, 196, 138);
             ClientSize = new Size(578, 383);
             Controls.Add(button2);
             Controls.Add(textBox6);

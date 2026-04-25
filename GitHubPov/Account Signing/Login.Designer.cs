@@ -42,62 +42,79 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(171, 148);
+            label1.BackColor = Color.FromArgb(138, 90, 60);
+            label1.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(249, 190, 189);
+            label1.Location = new Point(164, 143);
             label1.Name = "label1";
-            label1.Size = new Size(60, 15);
+            label1.Size = new Size(76, 20);
             label1.TabIndex = 0;
             label1.Text = "Username";
             // 
             // button1
             // 
-            button1.Location = new Point(246, 227);
+            button1.BackColor = Color.FromArgb(138, 90, 60);
+            button1.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.FromArgb(249, 190, 189);
+            button1.Location = new Point(246, 221);
             button1.Name = "button1";
-            button1.Size = new Size(100, 23);
+            button1.Size = new Size(114, 29);
             button1.TabIndex = 1;
             button1.Text = "Login";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // textBox1
             // 
+            textBox1.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBox1.Location = new Point(245, 140);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
+            textBox1.Size = new Size(117, 30);
             textBox1.TabIndex = 2;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(171, 189);
+            label2.BackColor = Color.FromArgb(138, 90, 60);
+            label2.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.FromArgb(249, 190, 189);
+            label2.Location = new Point(165, 185);
             label2.Name = "label2";
-            label2.Size = new Size(57, 15);
+            label2.Size = new Size(75, 20);
             label2.TabIndex = 3;
             label2.Text = "Password";
             // 
             // textBox2
             // 
+            textBox2.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             textBox2.Location = new Point(246, 181);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
+            textBox2.Size = new Size(114, 30);
             textBox2.TabIndex = 4;
             textBox2.UseSystemPasswordChar = true;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(246, 66);
+            label5.BackColor = Color.FromArgb(138, 90, 60);
+            label5.Font = new Font("Segoe Script", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.FromArgb(249, 190, 189);
+            label5.Location = new Point(245, 65);
             label5.Name = "label5";
-            label5.Size = new Size(99, 45);
+            label5.Size = new Size(117, 51);
             label5.TabIndex = 10;
             label5.Text = "Login";
             // 
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
+            linkLabel1.BackColor = Color.FromArgb(138, 90, 60);
+            linkLabel1.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            linkLabel1.ForeColor = Color.FromArgb(249, 190, 189);
+            linkLabel1.LinkColor = Color.FromArgb(249, 190, 189);
             linkLabel1.Location = new Point(257, 294);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(77, 15);
+            linkLabel1.Size = new Size(99, 20);
             linkLabel1.TabIndex = 11;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Register Now";
@@ -116,7 +133,7 @@
             // 
             button2.BackgroundImage = Properties.Resources.hidden_12197891;
             button2.BackgroundImageLayout = ImageLayout.Zoom;
-            button2.Location = new Point(357, 182);
+            button2.Location = new Point(366, 181);
             button2.Name = "button2";
             button2.Size = new Size(23, 23);
             button2.TabIndex = 13;
@@ -127,6 +144,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(183, 196, 138);
             ClientSize = new Size(578, 383);
             Controls.Add(button2);
             Controls.Add(label3);
