@@ -23,6 +23,7 @@ namespace GitHubPov.Account_Types
         public int Taskid;
         public int Orderid;
         public string pickup = "";
+        public string statusrn = "";
         public Tasks(string username, int userid)
         {
             InitializeComponent();
@@ -30,6 +31,7 @@ namespace GitHubPov.Account_Types
             Userid = userid;
             comboBox1.SelectedIndex = 0;
             comboBox2.SelectedIndex = 0;
+           
 
             MySqlConnection conn = new MySqlConnection(Db.konekcija);
             conn.Open();
@@ -89,6 +91,8 @@ namespace GitHubPov.Account_Types
                 DataGridViewRow row = dataGridView1.CurrentRow;
                 Taskid = Convert.ToInt32(row.Cells["ZadatakID"].Value);
                 Orderid = Convert.ToInt32(row.Cells["NarudzbaID"].Value);
+                statusrn = Convert.ToString(row.Cells["Statustorte"].Value);
+
 
                 string select = "Select picture from tasks where taskid=@taskid;";
 
@@ -120,60 +124,102 @@ namespace GitHubPov.Account_Types
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-
-            using (MySqlConnection conn = new MySqlConnection(Db.konekcija))
+            if (statusrn != "Completed" && statusrn != "Not Completed")
             {
+
+
+
+                using (MySqlConnection conn = new MySqlConnection(Db.konekcija))
+                {
+                    conn.Open();
+                    try
+                    {
+
+                        string updejt = "update tasks set statustask='Completed' WHERE taskid=@taskid;";
+                        MySqlCommand cmd = new MySqlCommand(updejt, conn);
+                        cmd.Parameters.AddWithValue("@taskid", Taskid);
+                        int p = cmd.ExecuteNonQuery();
+                        if (p > 0)
+                        {
+
+                            MessageBox.Show("Task Approved!", "Task");
+
+
+                        }
+
+                        string selekcija = "select count(orderid) from tasks where orderid=@orderid and statustask!='Completed'";
+                        MySqlCommand cmd3 = new MySqlCommand(selekcija, conn);
+                        cmd3.Parameters.AddWithValue("@orderid", Orderid);
+
+                        string selekcija2 = "select pickup from orders where orderid=@orderid ";
+                        MySqlCommand cmd4 = new MySqlCommand(selekcija2, conn);
+                        cmd4.Parameters.AddWithValue("@orderid", Orderid);
+                        MySqlDataReader dr = cmd4.ExecuteReader();
+                        if (dr.Read())
+                        {
+                            pickup = dr["pickup"].ToString();
+                        }
+                        dr.Close();
+
+                        int taskovi = Convert.ToInt32(cmd3.ExecuteScalar());
+                        if (taskovi == 0 && pickup == "Address Delivery")
+                        {
+                            string updejt2 = "update orders set chefstatus='Completed', status='Waiting For Courier' WHERE orderid=@orderid ;";
+                            MySqlCommand cmd2 = new MySqlCommand(updejt2, conn);
+                            cmd2.Parameters.AddWithValue("@orderid", Orderid);
+                            cmd2.ExecuteNonQuery();
+                            Tasks_Load(sender, e);
+
+                        }
+                        else if (taskovi == 0 && pickup == "Local pickup")
+                        {
+                            string updejt2 = "update orders set chefstatus='Completed', status='Ready To Pickup' WHERE orderid=@orderid ;";
+                            MySqlCommand cmd5 = new MySqlCommand(updejt2, conn);
+                            cmd5.Parameters.AddWithValue("@orderid", Orderid);
+                            cmd5.ExecuteNonQuery();
+                            Tasks_Load(sender, e);
+                        }
+
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Eror:" + ex);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Cannot approve completed or uncompleted task!", "Task");
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (statusrn == "Awaiting For Approval")
+            {
+
+                MySqlConnection conn = new MySqlConnection(Db.konekcija);
                 conn.Open();
                 try
                 {
-
-                    string updejt = "update tasks set statustask='Completed' WHERE taskid=@taskid;";
+                    string updejt = "update tasks set statustask='Not Completed' WHERE taskid=@taskid;";
                     MySqlCommand cmd = new MySqlCommand(updejt, conn);
                     cmd.Parameters.AddWithValue("@taskid", Taskid);
                     int p = cmd.ExecuteNonQuery();
                     if (p > 0)
                     {
 
-                        MessageBox.Show("Task Approved!", "Task");
-
-
-                    }
-
-                    string selekcija = "select count(orderid) from tasks where orderid=@orderid and statustask!='Completed'";
-                    MySqlCommand cmd3 = new MySqlCommand(selekcija, conn);
-                    cmd3.Parameters.AddWithValue("@orderid", Orderid);
-
-                    string selekcija2 = "select pickup from orders where orderid=@orderid ";
-                    MySqlCommand cmd4 = new MySqlCommand(selekcija2, conn);
-                    cmd4.Parameters.AddWithValue("@orderid", Orderid);
-                    MySqlDataReader dr = cmd4.ExecuteReader();
-                    if (dr.Read())
-                    {
-                        pickup = dr["pickup"].ToString();
-                    }
-                    dr.Close();
-
-                    int taskovi = Convert.ToInt32(cmd3.ExecuteScalar());
-                    if (taskovi == 0 && pickup == "Address Delivery")
-                    {
-                        string updejt2 = "update orders set chefstatus='Completed', status='Waiting For Courier' WHERE orderid=@orderid ;";
+                        string updejt2 = "update orders set chefstatus='Not Completed', status='Pending' WHERE orderid=@orderid;";
                         MySqlCommand cmd2 = new MySqlCommand(updejt2, conn);
                         cmd2.Parameters.AddWithValue("@orderid", Orderid);
                         cmd2.ExecuteNonQuery();
+                        MessageBox.Show("Task Denied!", "Task");
                         Tasks_Load(sender, e);
 
                     }
-                    else if (taskovi == 0 && pickup == "Local pickup")
-                    {
-                        string updejt2 = "update orders set chefstatus='Completed', status='Ready To Pickup' WHERE orderid=@orderid ;";
-                        MySqlCommand cmd5 = new MySqlCommand(updejt2, conn);
-                        cmd5.Parameters.AddWithValue("@orderid", Orderid);
-                        cmd5.ExecuteNonQuery();
-                        Tasks_Load(sender, e);
-                    }
-
-
 
                 }
                 catch (Exception ex)
@@ -181,36 +227,9 @@ namespace GitHubPov.Account_Types
                     MessageBox.Show("Eror:" + ex);
                 }
             }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-
-            MySqlConnection conn = new MySqlConnection(Db.konekcija);
-            conn.Open();
-            try
+            else
             {
-                string updejt = "update tasks set statustask='Not Completed' WHERE taskid=@taskid;";
-                MySqlCommand cmd = new MySqlCommand(updejt, conn);
-                cmd.Parameters.AddWithValue("@taskid", Taskid);
-                int p = cmd.ExecuteNonQuery();
-                if (p > 0)
-                {
-
-                    string updejt2 = "update orders set chefstatus='Not Completed', status='Pending' WHERE orderid=@orderid;";
-                    MySqlCommand cmd2 = new MySqlCommand(updejt2, conn);
-                    cmd2.Parameters.AddWithValue("@orderid", Orderid);
-                    cmd2.ExecuteNonQuery();
-                    MessageBox.Show("Task Denied!", "Task");
-                    Tasks_Load(sender, e);
-
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Eror:" + ex);
+                MessageBox.Show("Cannot deny completed or uncompleted task!", "Task");
             }
         }
 
