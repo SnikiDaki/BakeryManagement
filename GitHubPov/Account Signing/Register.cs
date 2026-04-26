@@ -7,6 +7,7 @@ namespace GitHubPov
     public partial class Register : Form
     {
         public int x = 0;
+        public string emaildb = "";
         public Register()
         {
             InitializeComponent();
@@ -25,7 +26,29 @@ namespace GitHubPov
             string password = textBox5.Text;
             string passcheck = textBox6.Text;
 
-            if(firstname == "" || lastname =="" || username == "" || email == "" || password == "" || passcheck == "")
+            using (MySqlConnection conn = new MySqlConnection(Db.konekcija))
+            {
+                conn.Open();
+                string selekcija = "select email from users where email=@email;";
+                using (MySqlCommand cmd = new MySqlCommand(selekcija, conn))
+                {
+                    cmd.Parameters.AddWithValue("@email", email);
+                    using (MySqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read()) { emaildb = dr["email"].ToString(); }
+                    }
+                }
+           ;
+
+
+            }
+
+
+
+
+
+
+            if (firstname == "" || lastname =="" || username == "" || email == "" || password == "" || passcheck == "")
             {
                 MessageBox.Show($"Please fill out the required fields!", "Register");
             }
@@ -45,6 +68,8 @@ namespace GitHubPov
                 cmd.Parameters.AddWithValue("@password", password);
                 if (password == passcheck)
                 {
+
+                        if (email != emaildb) { 
                     int b = Convert.ToInt32(cmd.ExecuteNonQuery());
                     if (b == 1)
                     {
@@ -53,8 +78,10 @@ namespace GitHubPov
                         this.Hide();
                         login.Show();
                     }
+                        }
+                        else { MessageBox.Show($"Email already in use!", "Register"); }
                 }
-                else { MessageBox.Show($"Passwords do not match"); }
+                else { MessageBox.Show($"Passwords do not match", "Register"); }
             }
             catch (Exception ex) { MessageBox.Show($"There has been an error: {ex} "); }
 
