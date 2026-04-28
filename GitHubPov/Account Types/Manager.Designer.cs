@@ -111,6 +111,7 @@
             Controls.Add(button5);
             Controls.Add(button1);
             Name = "Manager";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Manager";
             ResumeLayout(false);
         }

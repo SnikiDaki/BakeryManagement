@@ -37,6 +37,8 @@
             linkLabel1 = new LinkLabel();
             label3 = new Label();
             button2 = new Button();
+            pictureBox2 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -144,12 +146,23 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.logobakery;
+            pictureBox2.Location = new Point(377, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(201, 159);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 72;
+            pictureBox2.TabStop = false;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(183, 196, 138);
             ClientSize = new Size(578, 383);
+            Controls.Add(pictureBox2);
             Controls.Add(button2);
             Controls.Add(label3);
             Controls.Add(linkLabel1);
@@ -160,8 +173,10 @@
             Controls.Add(button1);
             Controls.Add(label1);
             Name = "Login";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Login_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -177,5 +192,6 @@
         private LinkLabel linkLabel1;
         private Label label3;
         private Button button2;
+        private PictureBox pictureBox2;
     }
 }

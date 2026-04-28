@@ -65,9 +65,11 @@
             label13 = new Label();
             label14 = new Label();
             pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // label11
@@ -494,12 +496,23 @@
             pictureBox1.TabStop = false;
             pictureBox1.Visible = false;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.logobakery;
+            pictureBox2.Location = new Point(548, 480);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(338, 271);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 71;
+            pictureBox2.TabStop = false;
+            // 
             // OrderInformation
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(183, 196, 138);
             ClientSize = new Size(889, 763);
+            Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(label14);
             Controls.Add(label13);
@@ -533,6 +546,7 @@
             Controls.Add(textBox1);
             Controls.Add(Username);
             Name = "OrderInformation";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "OrderInformation";
             Load += OrderInformation_Load;
             groupBox1.ResumeLayout(false);
@@ -540,6 +554,7 @@
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -583,5 +598,6 @@
         private Label label13;
         private Label label14;
         private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }

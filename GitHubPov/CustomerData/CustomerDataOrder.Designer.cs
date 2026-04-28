@@ -413,6 +413,7 @@
             Controls.Add(textBox1);
             Controls.Add(labeluser);
             Name = "CustomerDataOrder";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Profile";
             Load += CustomerDataOrder_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

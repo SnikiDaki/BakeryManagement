@@ -43,6 +43,8 @@
             label7 = new Label();
             textBox6 = new TextBox();
             button2 = new Button();
+            pictureBox2 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -203,12 +205,23 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.logobakery;
+            pictureBox2.Location = new Point(358, 65);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(210, 167);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 72;
+            pictureBox2.TabStop = false;
+            // 
             // Register
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(183, 196, 138);
             ClientSize = new Size(578, 383);
+            Controls.Add(pictureBox2);
             Controls.Add(button2);
             Controls.Add(textBox6);
             Controls.Add(label7);
@@ -225,7 +238,9 @@
             Controls.Add(textBox1);
             Controls.Add(button1);
             Name = "Register";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Register";
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -247,5 +262,6 @@
         private Label label7;
         private TextBox textBox6;
         private Button button2;
+        private PictureBox pictureBox2;
     }
 }

@@ -49,8 +49,10 @@
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // comboBox2
@@ -230,12 +232,23 @@
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.logobakery;
+            pictureBox2.Location = new Point(820, 444);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(314, 262);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 73;
+            pictureBox2.TabStop = false;
+            // 
             // Tasks
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(183, 196, 138);
             ClientSize = new Size(1174, 770);
+            Controls.Add(pictureBox2);
             Controls.Add(button2);
             Controls.Add(button3);
             Controls.Add(button1);
@@ -248,10 +261,12 @@
             Controls.Add(dataGridView1);
             Controls.Add(label2);
             Name = "Tasks";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Tasks";
             Load += Tasks_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -274,5 +289,6 @@
         private DataGridViewTextBoxColumn imetorte;
         private DataGridViewTextBoxColumn kukname;
         private DataGridViewTextBoxColumn Statustorte;
+        private PictureBox pictureBox2;
     }
 }

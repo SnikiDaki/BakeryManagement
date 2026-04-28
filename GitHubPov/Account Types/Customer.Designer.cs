@@ -97,9 +97,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.recipe_chocolate_raspberry_cake;
-            pictureBox1.Location = new Point(18, 111);
+            pictureBox1.Location = new Point(18, 78);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(228, 154);
+            pictureBox1.Size = new Size(256, 187);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -124,7 +124,7 @@
             linkLabel1.ForeColor = Color.FromArgb(249, 190, 189);
             linkLabel1.LinkBehavior = LinkBehavior.HoverUnderline;
             linkLabel1.LinkColor = Color.FromArgb(249, 190, 189);
-            linkLabel1.Location = new Point(143, 30);
+            linkLabel1.Location = new Point(143, 21);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(79, 31);
             linkLabel1.TabIndex = 28;
@@ -139,7 +139,7 @@
             label1.BackColor = Color.FromArgb(138, 90, 60);
             label1.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(249, 190, 189);
-            label1.Location = new Point(18, 30);
+            label1.Location = new Point(18, 21);
             label1.Name = "label1";
             label1.Size = new Size(109, 31);
             label1.TabIndex = 29;
@@ -151,7 +151,7 @@
             label14.BackColor = Color.FromArgb(138, 90, 60);
             label14.Font = new Font("Segoe Script", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label14.ForeColor = Color.FromArgb(249, 190, 189);
-            label14.Location = new Point(307, 20);
+            label14.Location = new Point(307, 11);
             label14.Name = "label14";
             label14.Size = new Size(228, 56);
             label14.TabIndex = 30;
@@ -176,7 +176,7 @@
             button2.BackColor = Color.FromArgb(138, 90, 60);
             button2.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             button2.ForeColor = Color.FromArgb(249, 190, 189);
-            button2.Location = new Point(307, 302);
+            button2.Location = new Point(298, 303);
             button2.Name = "button2";
             button2.Size = new Size(109, 32);
             button2.TabIndex = 37;
@@ -199,9 +199,9 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources._9k;
-            pictureBox3.Location = new Point(307, 111);
+            pictureBox3.Location = new Point(298, 78);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(228, 154);
+            pictureBox3.Size = new Size(256, 187);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 35;
             pictureBox3.TabStop = false;
@@ -235,9 +235,9 @@
             // pictureBox4
             // 
             pictureBox4.Image = Properties.Resources.Sacher_Torte_6;
-            pictureBox4.Location = new Point(581, 111);
+            pictureBox4.Location = new Point(581, 78);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(228, 154);
+            pictureBox4.Size = new Size(256, 187);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 38;
             pictureBox4.TabStop = false;
@@ -247,7 +247,7 @@
             button4.BackColor = Color.FromArgb(138, 90, 60);
             button4.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             button4.ForeColor = Color.FromArgb(249, 190, 189);
-            button4.Location = new Point(18, 596);
+            button4.Location = new Point(18, 629);
             button4.Name = "button4";
             button4.Size = new Size(109, 32);
             button4.TabIndex = 43;
@@ -260,7 +260,7 @@
             label6.BackColor = Color.FromArgb(138, 90, 60);
             label6.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             label6.ForeColor = Color.FromArgb(249, 190, 189);
-            label6.Location = new Point(18, 563);
+            label6.Location = new Point(18, 596);
             label6.Name = "label6";
             label6.Size = new Size(106, 30);
             label6.TabIndex = 42;
@@ -272,7 +272,7 @@
             pictureBox5.Image = Properties.Resources.Honey_Cake_take_3_5;
             pictureBox5.Location = new Point(18, 406);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(228, 154);
+            pictureBox5.Size = new Size(256, 187);
             pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox5.TabIndex = 41;
             pictureBox5.TabStop = false;
@@ -282,7 +282,7 @@
             button5.BackColor = Color.FromArgb(138, 90, 60);
             button5.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             button5.ForeColor = Color.FromArgb(249, 190, 189);
-            button5.Location = new Point(307, 596);
+            button5.Location = new Point(307, 629);
             button5.Name = "button5";
             button5.Size = new Size(109, 32);
             button5.TabIndex = 46;
@@ -295,7 +295,7 @@
             label7.BackColor = Color.FromArgb(138, 90, 60);
             label7.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             label7.ForeColor = Color.FromArgb(249, 190, 189);
-            label7.Location = new Point(307, 563);
+            label7.Location = new Point(307, 596);
             label7.Name = "label7";
             label7.Size = new Size(135, 30);
             label7.TabIndex = 45;
@@ -305,9 +305,9 @@
             // pictureBox6
             // 
             pictureBox6.Image = Properties.Resources.Black_Forest_Cake_new_7;
-            pictureBox6.Location = new Point(307, 406);
+            pictureBox6.Location = new Point(307, 403);
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(228, 154);
+            pictureBox6.Size = new Size(256, 187);
             pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox6.TabIndex = 44;
             pictureBox6.TabStop = false;
@@ -317,7 +317,7 @@
             button6.BackColor = Color.FromArgb(138, 90, 60);
             button6.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             button6.ForeColor = Color.FromArgb(249, 190, 189);
-            button6.Location = new Point(581, 596);
+            button6.Location = new Point(581, 629);
             button6.Name = "button6";
             button6.Size = new Size(109, 32);
             button6.TabIndex = 49;
@@ -330,7 +330,7 @@
             label8.BackColor = Color.FromArgb(138, 90, 60);
             label8.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             label8.ForeColor = Color.FromArgb(249, 190, 189);
-            label8.Location = new Point(581, 563);
+            label8.Location = new Point(581, 596);
             label8.Name = "label8";
             label8.Size = new Size(132, 30);
             label8.TabIndex = 48;
@@ -342,7 +342,7 @@
             pictureBox7.Image = Properties.Resources.Red_Velvet_Layer_Cake_4;
             pictureBox7.Location = new Point(581, 406);
             pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(228, 154);
+            pictureBox7.Size = new Size(256, 187);
             pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox7.TabIndex = 47;
             pictureBox7.TabStop = false;
@@ -352,7 +352,7 @@
             label9.BackColor = Color.FromArgb(138, 90, 60);
             label9.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             label9.ForeColor = Color.FromArgb(249, 190, 189);
-            label9.Location = new Point(155, 268);
+            label9.Location = new Point(183, 268);
             label9.Name = "label9";
             label9.Size = new Size(91, 30);
             label9.TabIndex = 50;
@@ -364,7 +364,7 @@
             label10.BackColor = Color.FromArgb(138, 90, 60);
             label10.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             label10.ForeColor = Color.FromArgb(249, 190, 189);
-            label10.Location = new Point(446, 268);
+            label10.Location = new Point(458, 268);
             label10.Name = "label10";
             label10.Size = new Size(96, 30);
             label10.TabIndex = 51;
@@ -376,7 +376,7 @@
             label11.BackColor = Color.FromArgb(138, 90, 60);
             label11.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             label11.ForeColor = Color.FromArgb(249, 190, 189);
-            label11.Location = new Point(713, 268);
+            label11.Location = new Point(741, 268);
             label11.Name = "label11";
             label11.Size = new Size(96, 30);
             label11.TabIndex = 52;
@@ -388,7 +388,7 @@
             label12.BackColor = Color.FromArgb(138, 90, 60);
             label12.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             label12.ForeColor = Color.FromArgb(249, 190, 189);
-            label12.Location = new Point(155, 563);
+            label12.Location = new Point(183, 596);
             label12.Name = "label12";
             label12.Size = new Size(91, 30);
             label12.TabIndex = 53;
@@ -400,7 +400,7 @@
             label13.BackColor = Color.FromArgb(138, 90, 60);
             label13.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             label13.ForeColor = Color.FromArgb(249, 190, 189);
-            label13.Location = new Point(448, 563);
+            label13.Location = new Point(476, 596);
             label13.Name = "label13";
             label13.Size = new Size(87, 30);
             label13.TabIndex = 54;
@@ -412,7 +412,7 @@
             label15.BackColor = Color.FromArgb(138, 90, 60);
             label15.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             label15.ForeColor = Color.FromArgb(249, 190, 189);
-            label15.Location = new Point(719, 563);
+            label15.Location = new Point(747, 596);
             label15.Name = "label15";
             label15.Size = new Size(90, 30);
             label15.TabIndex = 55;
@@ -491,7 +491,7 @@
             pictureBox8.Image = Properties.Resources.browncolor;
             pictureBox8.Location = new Point(855, -2);
             pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(10, 682);
+            pictureBox8.Size = new Size(10, 756);
             pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox8.TabIndex = 60;
             pictureBox8.TabStop = false;
@@ -499,7 +499,7 @@
             // numericUpDown1
             // 
             numericUpDown1.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
-            numericUpDown1.Location = new Point(488, 596);
+            numericUpDown1.Location = new Point(516, 631);
             numericUpDown1.Margin = new Padding(3, 1, 3, 1);
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(47, 30);
@@ -508,7 +508,7 @@
             // numericUpDown2
             // 
             numericUpDown2.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
-            numericUpDown2.Location = new Point(762, 598);
+            numericUpDown2.Location = new Point(790, 630);
             numericUpDown2.Margin = new Padding(3, 1, 3, 1);
             numericUpDown2.Name = "numericUpDown2";
             numericUpDown2.Size = new Size(47, 30);
@@ -517,7 +517,7 @@
             // numericUpDown3
             // 
             numericUpDown3.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
-            numericUpDown3.Location = new Point(199, 598);
+            numericUpDown3.Location = new Point(227, 631);
             numericUpDown3.Margin = new Padding(3, 1, 3, 1);
             numericUpDown3.Name = "numericUpDown3";
             numericUpDown3.Size = new Size(47, 30);
@@ -526,7 +526,7 @@
             // numericUpDown4
             // 
             numericUpDown4.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
-            numericUpDown4.Location = new Point(199, 304);
+            numericUpDown4.Location = new Point(227, 301);
             numericUpDown4.Name = "numericUpDown4";
             numericUpDown4.Size = new Size(47, 30);
             numericUpDown4.TabIndex = 64;
@@ -534,7 +534,7 @@
             // numericUpDown5
             // 
             numericUpDown5.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
-            numericUpDown5.Location = new Point(488, 304);
+            numericUpDown5.Location = new Point(507, 303);
             numericUpDown5.Name = "numericUpDown5";
             numericUpDown5.Size = new Size(47, 30);
             numericUpDown5.TabIndex = 65;
@@ -542,7 +542,7 @@
             // numericUpDown6
             // 
             numericUpDown6.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
-            numericUpDown6.Location = new Point(762, 304);
+            numericUpDown6.Location = new Point(790, 303);
             numericUpDown6.Margin = new Padding(3, 1, 3, 1);
             numericUpDown6.Name = "numericUpDown6";
             numericUpDown6.Size = new Size(47, 30);
@@ -583,7 +583,7 @@
             linkLabel3.BackColor = Color.FromArgb(138, 90, 60);
             linkLabel3.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             linkLabel3.LinkColor = Color.FromArgb(249, 190, 189);
-            linkLabel3.Location = new Point(307, 346);
+            linkLabel3.Location = new Point(298, 346);
             linkLabel3.Name = "linkLabel3";
             linkLabel3.Size = new Size(74, 20);
             linkLabel3.TabIndex = 69;
@@ -613,7 +613,7 @@
             linkLabel5.BackColor = Color.FromArgb(138, 90, 60);
             linkLabel5.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             linkLabel5.LinkColor = Color.FromArgb(249, 190, 189);
-            linkLabel5.Location = new Point(18, 646);
+            linkLabel5.Location = new Point(18, 679);
             linkLabel5.Name = "linkLabel5";
             linkLabel5.Size = new Size(74, 20);
             linkLabel5.TabIndex = 69;
@@ -628,7 +628,7 @@
             linkLabel6.BackColor = Color.FromArgb(138, 90, 60);
             linkLabel6.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             linkLabel6.LinkColor = Color.FromArgb(249, 190, 189);
-            linkLabel6.Location = new Point(307, 646);
+            linkLabel6.Location = new Point(307, 679);
             linkLabel6.Name = "linkLabel6";
             linkLabel6.Size = new Size(74, 20);
             linkLabel6.TabIndex = 69;
@@ -643,7 +643,7 @@
             linkLabel7.BackColor = Color.FromArgb(138, 90, 60);
             linkLabel7.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             linkLabel7.LinkColor = Color.FromArgb(249, 190, 189);
-            linkLabel7.Location = new Point(581, 646);
+            linkLabel7.Location = new Point(581, 679);
             linkLabel7.Name = "linkLabel7";
             linkLabel7.Size = new Size(74, 20);
             linkLabel7.TabIndex = 69;
@@ -656,7 +656,7 @@
             pictureBox2.Image = Properties.Resources.logobakery;
             pictureBox2.Location = new Point(897, 446);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(338, 234);
+            pictureBox2.Size = new Size(338, 268);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 70;
             pictureBox2.TabStop = false;
@@ -679,7 +679,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(183, 196, 138);
-            ClientSize = new Size(1472, 681);
+            ClientSize = new Size(1480, 726);
             Controls.Add(button9);
             Controls.Add(pictureBox2);
             Controls.Add(linkLabel7);
@@ -728,6 +728,7 @@
             Controls.Add(label3);
             Controls.Add(pictureBox1);
             Name = "Customer";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Customer";
             Load += Customer_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             label1 = new Label();
             dataGridView1 = new DataGridView();
             order = new DataGridViewTextBoxColumn();
@@ -55,9 +55,11 @@
             comboBox2 = new ComboBox();
             label8 = new Label();
             button9 = new Button();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -90,32 +92,32 @@
             // 
             // order
             // 
-            dataGridViewCellStyle1.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            order.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            order.DefaultCellStyle = dataGridViewCellStyle5;
             order.HeaderText = "Order ID";
             order.Name = "order";
             order.ReadOnly = true;
             // 
             // Zadatak2ID
             // 
-            dataGridViewCellStyle2.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
-            Zadatak2ID.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
+            Zadatak2ID.DefaultCellStyle = dataGridViewCellStyle6;
             Zadatak2ID.HeaderText = "Task ID";
             Zadatak2ID.Name = "Zadatak2ID";
             Zadatak2ID.ReadOnly = true;
             // 
             // imetorte
             // 
-            dataGridViewCellStyle3.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
-            imetorte.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
+            imetorte.DefaultCellStyle = dataGridViewCellStyle7;
             imetorte.HeaderText = "Cake Name";
             imetorte.Name = "imetorte";
             imetorte.ReadOnly = true;
             // 
             // Statustorte
             // 
-            dataGridViewCellStyle4.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
-            Statustorte.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
+            Statustorte.DefaultCellStyle = dataGridViewCellStyle8;
             Statustorte.HeaderText = "Status";
             Statustorte.Name = "Statustorte";
             Statustorte.ReadOnly = true;
@@ -312,12 +314,23 @@
             button9.UseVisualStyleBackColor = false;
             button9.Click += button9_Click;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.logobakery;
+            pictureBox2.Location = new Point(466, 522);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(273, 206);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 73;
+            pictureBox2.TabStop = false;
+            // 
             // Cook
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(183, 196, 138);
             ClientSize = new Size(1179, 845);
+            Controls.Add(pictureBox2);
             Controls.Add(button9);
             Controls.Add(comboBox2);
             Controls.Add(comboBox1);
@@ -335,12 +348,14 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "Cook";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Cook";
             Load += Cook_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -370,5 +385,6 @@
         private DataGridViewTextBoxColumn imetorte;
         private DataGridViewTextBoxColumn Statustorte;
         private Button button9;
+        private PictureBox pictureBox2;
     }
 }

@@ -220,6 +220,7 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Name = "Admin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Admin";
             ResumeLayout(false);
             PerformLayout();

@@ -54,6 +54,8 @@
             label11 = new Label();
             label12 = new Label();
             maskedTextBox1 = new MaskedTextBox();
+            pictureBox2 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // textBox6
@@ -327,12 +329,23 @@
             maskedTextBox1.Size = new Size(100, 30);
             maskedTextBox1.TabIndex = 33;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.logobakery;
+            pictureBox2.Location = new Point(463, 279);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(201, 159);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 73;
+            pictureBox2.TabStop = false;
+            // 
             // EmpReg
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(183, 196, 138);
             ClientSize = new Size(779, 450);
+            Controls.Add(pictureBox2);
             Controls.Add(textBox7);
             Controls.Add(label10);
             Controls.Add(textBox8);
@@ -360,7 +373,9 @@
             Controls.Add(textBox1);
             Controls.Add(button1);
             Name = "EmpReg";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "EmpReg";
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -393,5 +408,6 @@
         private Label label11;
         private Label label12;
         private MaskedTextBox maskedTextBox1;
+        private PictureBox pictureBox2;
     }
 }
