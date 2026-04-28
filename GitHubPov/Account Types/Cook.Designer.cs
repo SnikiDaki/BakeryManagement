@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             label1 = new Label();
             dataGridView1 = new DataGridView();
             order = new DataGridViewTextBoxColumn();
@@ -92,32 +92,32 @@
             // 
             // order
             // 
-            dataGridViewCellStyle5.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            order.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            order.DefaultCellStyle = dataGridViewCellStyle1;
             order.HeaderText = "Order ID";
             order.Name = "order";
             order.ReadOnly = true;
             // 
             // Zadatak2ID
             // 
-            dataGridViewCellStyle6.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
-            Zadatak2ID.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
+            Zadatak2ID.DefaultCellStyle = dataGridViewCellStyle2;
             Zadatak2ID.HeaderText = "Task ID";
             Zadatak2ID.Name = "Zadatak2ID";
             Zadatak2ID.ReadOnly = true;
             // 
             // imetorte
             // 
-            dataGridViewCellStyle7.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
-            imetorte.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
+            imetorte.DefaultCellStyle = dataGridViewCellStyle3;
             imetorte.HeaderText = "Cake Name";
             imetorte.Name = "imetorte";
             imetorte.ReadOnly = true;
             // 
             // Statustorte
             // 
-            dataGridViewCellStyle8.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
-            Statustorte.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
+            Statustorte.DefaultCellStyle = dataGridViewCellStyle4;
             Statustorte.HeaderText = "Status";
             Statustorte.Name = "Statustorte";
             Statustorte.ReadOnly = true;
@@ -347,6 +347,8 @@
             Controls.Add(label8);
             Controls.Add(label2);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "Cook";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cook";

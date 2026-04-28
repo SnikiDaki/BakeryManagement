@@ -260,9 +260,11 @@
             Controls.Add(label6);
             Controls.Add(dataGridView1);
             Controls.Add(label2);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MinimizeBox = false;
             Name = "Tasks";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Tasks";
+            Text = "Task Overview Screen";
             Load += Tasks_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

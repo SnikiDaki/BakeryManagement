@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
+﻿using GitHubPov.Account_Types;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,22 @@ namespace GitHubPov.Account_Type_s
             InitializeComponent();
             userime = username;
             Userid = userid;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Login eo = new Login();
+            eo.FormClosed += (s, args) => this.Close();
+            this.Hide();
+            eo.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CourierDeliveries coi = new CourierDeliveries(userime, Userid);
+            coi.FormClosed += (s, args) => this.Close();
+            this.Hide();
+            coi.Show();
         }
     }
 }

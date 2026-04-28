@@ -79,7 +79,6 @@
             labeluser.Size = new Size(87, 18);
             labeluser.TabIndex = 0;
             labeluser.Text = "Username";
-            labeluser.Click += labeluser_Click;
             // 
             // textBox1
             // 
@@ -250,9 +249,9 @@
             label1.BackColor = Color.FromArgb(138, 90, 60);
             label1.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(249, 190, 189);
-            label1.Location = new Point(1209, 23);
+            label1.Location = new Point(1177, 23);
             label1.Name = "label1";
-            label1.Size = new Size(78, 18);
+            label1.Size = new Size(110, 18);
             label1.TabIndex = 25;
             label1.Text = "Logged in as:";
             // 
@@ -412,9 +411,11 @@
             Controls.Add(label3);
             Controls.Add(textBox1);
             Controls.Add(labeluser);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "CustomerDataOrder";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Profile";
+            Text = "My Profile";
             Load += CustomerDataOrder_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

@@ -727,9 +727,11 @@
             Controls.Add(linkLabel1);
             Controls.Add(label3);
             Controls.Add(pictureBox1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "Customer";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Customer";
+            Text = "Shop Screen";
             Load += Customer_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();

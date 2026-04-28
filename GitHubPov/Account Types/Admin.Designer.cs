@@ -219,9 +219,11 @@
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "Admin";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Admin";
+            Text = "Admin Screen";
             ResumeLayout(false);
             PerformLayout();
         }

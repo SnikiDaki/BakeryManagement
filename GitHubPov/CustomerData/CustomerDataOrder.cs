@@ -1,4 +1,7 @@
-﻿using MySql.Data.MySqlClient;
+﻿using GitHubPov.Account_Type_s;
+using GitHubPov.Account_Types;
+using Microsoft.VisualBasic.ApplicationServices;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +11,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GitHubPov.Account_Types;
 
 namespace GitHubPov.CustomerData
 {
@@ -99,18 +101,6 @@ namespace GitHubPov.CustomerData
             catch (Exception ex) { MessageBox.Show($"Erorr: {ex} "); }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Customer customer = new Customer(user2, Uid);
-            customer.Show();
-        }
-
-        private void labeluser_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
@@ -142,6 +132,13 @@ namespace GitHubPov.CustomerData
         private void button3_Click(object sender, EventArgs e)
         {
             CustomerDataOrder_Load(sender, e);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Customer customer = new Customer(user2, Uid);
+            customer.Show();
         }
     }
 }

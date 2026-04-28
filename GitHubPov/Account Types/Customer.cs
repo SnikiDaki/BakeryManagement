@@ -115,13 +115,13 @@ namespace GitHubPov.Account_Types
 
         private void button5_Click(object sender, EventArgs e)
         {
-            products.Add(new Product { ProductName = "Black Forest Cake ", Price = 25, Quantity = (int)numericUpDown2.Value });
+            products.Add(new Product { ProductName = "Black Forest Cake ", Price = 25, Quantity = (int)numericUpDown1.Value });
             korpa();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            products.Add(new Product { ProductName = "Red Velvet Cake ", Price = 25, Quantity = (int)numericUpDown1.Value });
+            products.Add(new Product { ProductName = "Red Velvet Cake ", Price = 25, Quantity = (int)numericUpDown2.Value });
             korpa();
         }
 

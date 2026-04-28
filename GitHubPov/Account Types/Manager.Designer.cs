@@ -110,9 +110,11 @@
             Controls.Add(button2);
             Controls.Add(button5);
             Controls.Add(button1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "Manager";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Manager";
+            Text = "Manager Screen";
             ResumeLayout(false);
         }
 

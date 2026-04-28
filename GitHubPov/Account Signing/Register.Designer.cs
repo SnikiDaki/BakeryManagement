@@ -237,9 +237,11 @@
             Controls.Add(label1);
             Controls.Add(textBox1);
             Controls.Add(button1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "Register";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Register";
+            Text = "Registry Screen";
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();

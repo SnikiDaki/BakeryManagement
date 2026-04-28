@@ -371,9 +371,11 @@
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(dataGridView1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "EmployeeOverview";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "EmployeeOverview";
+            Text = "Employee Overview";
             Load += EmployeeOverview_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

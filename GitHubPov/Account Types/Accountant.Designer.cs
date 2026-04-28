@@ -35,9 +35,11 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "Accountant";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Accountant";
+            Text = "Accountant Screen";
             ResumeLayout(false);
         }
 

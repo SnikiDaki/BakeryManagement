@@ -1,4 +1,5 @@
 ﻿using GitHubPov.Account_Type_s;
+using Microsoft.VisualBasic.ApplicationServices;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -9,15 +10,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GitHubPov.Account_Types
 {
-    public partial class CashierOrderInfo : Form
+    public partial class CourierDeliveries : Form
     {
         public string userime;
         public int Userid;
         private bool isLoaded = false;
-        public CashierOrderInfo(string userime, int userid)
+        public CourierDeliveries(string userime, int userid)
         {
             InitializeComponent();
             this.userime = userime;
@@ -47,7 +49,7 @@ namespace GitHubPov.Account_Types
                 string select = "SELECT orders.userid, users.username, orders.product, orders.quantity, orders.info, orders.date FROM orders JOIN users ON orders.userid = users.id WHERE orders.status = @status";
                 MySqlCommand cmd = new MySqlCommand(select, conn);
 
-                cmd.Parameters.AddWithValue("@status", "Ready To Pickup");
+                cmd.Parameters.AddWithValue("@status", "Waiting For Courier");
 
                 MySqlDataReader dr = cmd.ExecuteReader();
 
@@ -66,7 +68,7 @@ namespace GitHubPov.Account_Types
             dataGridView1.Columns[0].Visible = false;
         }
 
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        private void dataGridView1_SelectionChanged_1(object sender, EventArgs e)
         {
             if (!isLoaded) return;
             if (dataGridView1.CurrentRow == null) return;
@@ -85,7 +87,27 @@ namespace GitHubPov.Account_Types
                 {
                     conn.Open();
 
-                    string query = @"SELECT product FROM orders WHERE userid = @uid AND date = @date AND status = 'Ready To Pickup'";
+                    string query = "SELECT adresa FROM users WHERE id = @uid";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@uid", selectedUserId);
+
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        textBox2.Text = result.ToString();
+                    }
+                    else
+                    {
+                        textBox2.Text = "";
+                    }
+                }
+
+                using (MySqlConnection conn = new MySqlConnection(Db.konekcija))
+                {
+                    conn.Open();
+
+                    string query = @"SELECT product FROM orders WHERE userid = @uid AND date = @date AND status = 'Waiting For Courier'";
 
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@uid", selectedUserId);
@@ -105,7 +127,7 @@ namespace GitHubPov.Account_Types
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentRow == null)
             {
@@ -114,13 +136,13 @@ namespace GitHubPov.Account_Types
             }
 
             int selectedUserId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            DateTime selectedDate = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[4].Value);
+            DateTime selectedDate = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[5].Value);
 
             using (MySqlConnection conn = new MySqlConnection(Db.konekcija))
             {
                 conn.Open();
 
-                string query = @"UPDATE orders SET status = 'Order Completed' WHERE userid = @uid AND date = @date AND status = 'Ready To Pickup'";
+                string query = @"UPDATE orders SET status = 'Order Delivered' WHERE userid = @uid AND date = @date AND status = 'Waiting For Courier'";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@uid", selectedUserId);
@@ -128,16 +150,17 @@ namespace GitHubPov.Account_Types
 
                 int rows = cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Order given out.");
+                MessageBox.Show("Order Delivered");
             }
 
             LoadOrders();
 
             dataGridView2.Rows.Clear();
             textBox1.Clear();
+            textBox2.Clear();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click_1(object sender, EventArgs e)
         {
             Cashier c = new Cashier(userime, Userid);
             c.Show();
@@ -145,4 +168,3 @@ namespace GitHubPov.Account_Types
         }
     }
 }
-

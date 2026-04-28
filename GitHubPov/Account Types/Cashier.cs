@@ -31,5 +31,21 @@ namespace GitHubPov.Account_Type_s
             this.Hide();
             customer.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CourierDeliveries cd = new CourierDeliveries(userime, Userid);
+            cd.FormClosed += (s, args) => this.Close();
+            this.Hide();
+            cd.Show();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Login eo = new Login();
+            eo.FormClosed += (s, args) => this.Close();
+            this.Hide();
+            eo.Show();
+        }
     }
 }

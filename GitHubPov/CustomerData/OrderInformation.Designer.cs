@@ -545,9 +545,11 @@
             Controls.Add(label1);
             Controls.Add(textBox1);
             Controls.Add(Username);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "OrderInformation";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "OrderInformation";
+            Text = "Payment Screen";
             Load += OrderInformation_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
