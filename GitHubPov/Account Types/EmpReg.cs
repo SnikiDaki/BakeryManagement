@@ -17,11 +17,14 @@ namespace GitHubPov.Account_Types
         public string userime;
         public int Userid;
         public int x = 0;
+        public string emaildb = "";
         public EmpReg(string username, int userid)
         {
             InitializeComponent();
             userime = username;
             Userid = userid;
+
+            
         }
 
         public static class Db
@@ -45,6 +48,24 @@ namespace GitHubPov.Account_Types
             int hnum = Convert.ToInt32(textBox8.Text);
 
             string city = textBox7.Text;
+
+            using (MySqlConnection conn = new MySqlConnection(Db.konekcija))
+            {
+                conn.Open();
+                string selekcija = "select email from users where email=@email;";
+                using (MySqlCommand cmd = new MySqlCommand(selekcija, conn))
+                {
+                    cmd.Parameters.AddWithValue("@email", email);
+                    using (MySqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read()) { emaildb = dr["email"].ToString(); }
+                    }
+                }
+            ;
+
+
+            }
+
 
 
 
@@ -79,6 +100,7 @@ namespace GitHubPov.Account_Types
 
                     if (password == passcheck)
                     {
+                        if (email != emaildb) { 
                         int b = Convert.ToInt32(cmd.ExecuteNonQuery());
                         if (b == 1)
                         {
@@ -96,8 +118,14 @@ namespace GitHubPov.Account_Types
                             maskedTextBox1.Text = "";
 
                         }
+
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Email already in use!", "Register");
+                        }
                     }
-                    else { MessageBox.Show($"Passwords do not match"); }
+                    else { MessageBox.Show($"Passwords do not match!", "Register"); }
                 }
                 catch (Exception ex) { MessageBox.Show($"There has been an error: {ex} "); }
             }
