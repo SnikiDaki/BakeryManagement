@@ -34,7 +34,7 @@ namespace GitHubPov.Account_Type_s
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CourierDeliveries cd = new CourierDeliveries(userime, Userid);
+            CashierOrderInfo cd = new CashierOrderInfo(userime, Userid);
             cd.FormClosed += (s, args) => this.Close();
             this.Hide();
             cd.Show();

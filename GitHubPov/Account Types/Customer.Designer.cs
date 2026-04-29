@@ -436,7 +436,7 @@
             button7.BackColor = Color.FromArgb(138, 90, 60);
             button7.Font = new Font("Segoe Script", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button7.ForeColor = Color.FromArgb(249, 190, 189);
-            button7.Location = new Point(1241, 406);
+            button7.Location = new Point(1150, 406);
             button7.Name = "button7";
             button7.Size = new Size(219, 34);
             button7.TabIndex = 58;
@@ -480,7 +480,7 @@
             label17.BackColor = Color.FromArgb(138, 90, 60);
             label17.Font = new Font("Segoe Script", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label17.ForeColor = Color.FromArgb(249, 190, 189);
-            label17.Location = new Point(1080, 30);
+            label17.Location = new Point(1050, 36);
             label17.Name = "label17";
             label17.Size = new Size(189, 53);
             label17.TabIndex = 56;
@@ -553,7 +553,7 @@
             button8.BackColor = Color.FromArgb(138, 90, 60);
             button8.Font = new Font("Segoe Script", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button8.ForeColor = Color.FromArgb(249, 190, 189);
-            button8.Location = new Point(1241, 446);
+            button8.Location = new Point(1150, 446);
             button8.Name = "button8";
             button8.Size = new Size(219, 34);
             button8.TabIndex = 67;
@@ -654,9 +654,9 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.logobakery;
-            pictureBox2.Location = new Point(897, 446);
+            pictureBox2.Location = new Point(909, 458);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(338, 268);
+            pictureBox2.Size = new Size(238, 202);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 70;
             pictureBox2.TabStop = false;
@@ -666,7 +666,7 @@
             button9.BackColor = Color.FromArgb(138, 90, 60);
             button9.Font = new Font("Segoe Script", 18F, FontStyle.Bold);
             button9.ForeColor = Color.FromArgb(249, 190, 189);
-            button9.Location = new Point(1285, 544);
+            button9.Location = new Point(1220, 541);
             button9.Name = "button9";
             button9.Size = new Size(138, 49);
             button9.TabIndex = 71;
@@ -679,7 +679,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(183, 196, 138);
-            ClientSize = new Size(1480, 726);
+            ClientSize = new Size(1370, 726);
             Controls.Add(button9);
             Controls.Add(pictureBox2);
             Controls.Add(linkLabel7);

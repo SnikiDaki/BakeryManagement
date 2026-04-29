@@ -114,7 +114,7 @@ namespace GitHubPov.Account_Types
             }
 
             int selectedUserId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            DateTime selectedDate = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[4].Value);
+            DateTime selectedDate = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[5].Value);
 
             using (MySqlConnection conn = new MySqlConnection(Db.konekcija))
             {
@@ -140,8 +140,9 @@ namespace GitHubPov.Account_Types
         private void button5_Click(object sender, EventArgs e)
         {
             Cashier c = new Cashier(userime, Userid);
+            c.FormClosed += (s, args) => this.Close();
+            this.Hide();
             c.Show();
-            this.Close();
         }
     }
 }

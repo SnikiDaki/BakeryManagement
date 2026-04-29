@@ -162,9 +162,10 @@ namespace GitHubPov.Account_Types
 
         private void button5_Click_1(object sender, EventArgs e)
         {
-            Cashier c = new Cashier(userime, Userid);
+            Courier c = new Courier(userime, Userid);
+            c.FormClosed += (s, args) => this.Close();
+            this.Hide();
             c.Show();
-            this.Close();
         }
     }
 }
