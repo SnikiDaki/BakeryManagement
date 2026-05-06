@@ -79,6 +79,7 @@ namespace GitHubPov.Account_Types
                     maskedTextBox1.Text = dr["telefon"].ToString();
                     textBox7.Text = dr["adresa"].ToString();
                     textBox8.Text = dr["city"].ToString();
+                    textBox5.Text = dr["hnum"].ToString();
 
 
 
@@ -111,17 +112,17 @@ namespace GitHubPov.Account_Types
                 int idemp = Convert.ToInt32(row.Cells["EmployeeID"].Value);
 
 
-                string update = "UPDATE users SET firstname=@firstname, lastname=@lastname, email=@email, telefon=@telefon, adresa=@adresa, hnum=@hnum, city=@city, username=@username where id=@id";
+                string update = "UPDATE users SET firstname=@firstname, lastname=@lastname, email=@email, role=@role, telefon=@telefon, adresa=@adresa, hnum=@hnum, city=@city, username=@username where id=@id";
                 MySqlCommand cmd = new MySqlCommand(update, conn);
-                cmd.Parameters.AddWithValue("username", textBox3.Text);
-                cmd.Parameters.AddWithValue("id", idemp);
+                cmd.Parameters.AddWithValue("@username", textBox3.Text);
+                cmd.Parameters.AddWithValue("@id", idemp);
                 cmd.Parameters.AddWithValue("@firstname", textBox1.Text);
                 cmd.Parameters.AddWithValue("@lastname", textBox2.Text);
                 cmd.Parameters.AddWithValue("@email", textBox4.Text);
                 cmd.Parameters.AddWithValue("@role", comboBox1.Text);
                 cmd.Parameters.AddWithValue("@telefon", Convert.ToString(maskedTextBox1.Text));
-                cmd.Parameters.AddWithValue("@adresa", textBox4.Text);
-                cmd.Parameters.AddWithValue("@hnum", textBox7.Text);
+                cmd.Parameters.AddWithValue("@adresa", textBox7.Text);
+                cmd.Parameters.AddWithValue("@hnum", Convert.ToInt32(textBox5.Text));
                 cmd.Parameters.AddWithValue("@city", textBox8.Text);
                 int updejt = Convert.ToInt32(cmd.ExecuteNonQuery());
 

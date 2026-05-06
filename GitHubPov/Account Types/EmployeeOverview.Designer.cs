@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             dataGridView1 = new DataGridView();
             EmployeeID = new DataGridViewTextBoxColumn();
             EmployeeName = new DataGridViewTextBoxColumn();
@@ -59,6 +59,8 @@
             button2 = new Button();
             comboBox1 = new ComboBox();
             maskedTextBox1 = new MaskedTextBox();
+            textBox5 = new TextBox();
+            label11 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -79,8 +81,8 @@
             // 
             // EmployeeID
             // 
-            dataGridViewCellStyle1.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            EmployeeID.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            EmployeeID.DefaultCellStyle = dataGridViewCellStyle6;
             EmployeeID.HeaderText = "EmployeeID";
             EmployeeID.Name = "EmployeeID";
             EmployeeID.ReadOnly = true;
@@ -88,32 +90,32 @@
             // 
             // EmployeeName
             // 
-            dataGridViewCellStyle2.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
-            EmployeeName.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
+            EmployeeName.DefaultCellStyle = dataGridViewCellStyle7;
             EmployeeName.HeaderText = "Employee FirstName";
             EmployeeName.Name = "EmployeeName";
             EmployeeName.ReadOnly = true;
             // 
             // EmployeeLastName
             // 
-            dataGridViewCellStyle3.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
-            EmployeeLastName.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
+            EmployeeLastName.DefaultCellStyle = dataGridViewCellStyle8;
             EmployeeLastName.HeaderText = "Employee LastName";
             EmployeeLastName.Name = "EmployeeLastName";
             EmployeeLastName.ReadOnly = true;
             // 
             // EmployeeUserName
             // 
-            dataGridViewCellStyle4.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
-            EmployeeUserName.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
+            EmployeeUserName.DefaultCellStyle = dataGridViewCellStyle9;
             EmployeeUserName.HeaderText = "Employee Username";
             EmployeeUserName.Name = "EmployeeUserName";
             EmployeeUserName.ReadOnly = true;
             // 
             // EmployeeRole
             // 
-            dataGridViewCellStyle5.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
-            EmployeeRole.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
+            EmployeeRole.DefaultCellStyle = dataGridViewCellStyle10;
             EmployeeRole.HeaderText = "Employee Role";
             EmployeeRole.Name = "EmployeeRole";
             EmployeeRole.ReadOnly = true;
@@ -123,7 +125,7 @@
             textBox1.BackColor = Color.White;
             textBox1.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
             textBox1.ForeColor = SystemColors.ControlText;
-            textBox1.Location = new Point(125, 370);
+            textBox1.Location = new Point(110, 365);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(150, 30);
             textBox1.TabIndex = 1;
@@ -158,7 +160,7 @@
             label3.BackColor = Color.FromArgb(138, 90, 60);
             label3.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             label3.ForeColor = Color.FromArgb(249, 190, 189);
-            label3.Location = new Point(30, 373);
+            label3.Location = new Point(15, 368);
             label3.Name = "label3";
             label3.Size = new Size(89, 20);
             label3.TabIndex = 3;
@@ -169,7 +171,7 @@
             textBox2.BackColor = Color.White;
             textBox2.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
             textBox2.ForeColor = SystemColors.ControlText;
-            textBox2.Location = new Point(125, 428);
+            textBox2.Location = new Point(110, 423);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(150, 30);
             textBox2.TabIndex = 1;
@@ -180,7 +182,7 @@
             label4.BackColor = Color.FromArgb(138, 90, 60);
             label4.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             label4.ForeColor = Color.FromArgb(249, 190, 189);
-            label4.Location = new Point(33, 434);
+            label4.Location = new Point(18, 429);
             label4.Name = "label4";
             label4.Size = new Size(86, 20);
             label4.TabIndex = 3;
@@ -191,7 +193,7 @@
             textBox3.BackColor = Color.White;
             textBox3.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
             textBox3.ForeColor = SystemColors.ControlText;
-            textBox3.Location = new Point(412, 373);
+            textBox3.Location = new Point(365, 368);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(150, 30);
             textBox3.TabIndex = 1;
@@ -202,7 +204,7 @@
             label5.BackColor = Color.FromArgb(138, 90, 60);
             label5.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             label5.ForeColor = Color.FromArgb(249, 190, 189);
-            label5.Location = new Point(326, 376);
+            label5.Location = new Point(279, 371);
             label5.Name = "label5";
             label5.Size = new Size(80, 20);
             label5.TabIndex = 3;
@@ -213,7 +215,7 @@
             textBox4.BackColor = Color.White;
             textBox4.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
             textBox4.ForeColor = SystemColors.ControlText;
-            textBox4.Location = new Point(412, 428);
+            textBox4.Location = new Point(365, 423);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(150, 30);
             textBox4.TabIndex = 1;
@@ -224,7 +226,7 @@
             label7.BackColor = Color.FromArgb(138, 90, 60);
             label7.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             label7.ForeColor = Color.FromArgb(249, 190, 189);
-            label7.Location = new Point(339, 434);
+            label7.Location = new Point(292, 429);
             label7.Name = "label7";
             label7.Size = new Size(57, 20);
             label7.TabIndex = 3;
@@ -236,7 +238,7 @@
             label6.BackColor = Color.FromArgb(138, 90, 60);
             label6.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             label6.ForeColor = Color.FromArgb(249, 190, 189);
-            label6.Location = new Point(643, 376);
+            label6.Location = new Point(569, 371);
             label6.Name = "label6";
             label6.Size = new Size(43, 20);
             label6.TabIndex = 3;
@@ -248,7 +250,7 @@
             label8.BackColor = Color.FromArgb(138, 90, 60);
             label8.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             label8.ForeColor = Color.FromArgb(249, 190, 189);
-            label8.Location = new Point(603, 434);
+            label8.Location = new Point(529, 429);
             label8.Name = "label8";
             label8.Size = new Size(119, 20);
             label8.TabIndex = 3;
@@ -259,7 +261,7 @@
             textBox7.BackColor = Color.White;
             textBox7.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
             textBox7.ForeColor = SystemColors.ControlText;
-            textBox7.Location = new Point(994, 367);
+            textBox7.Location = new Point(896, 358);
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(150, 30);
             textBox7.TabIndex = 1;
@@ -269,7 +271,7 @@
             textBox8.BackColor = Color.White;
             textBox8.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
             textBox8.ForeColor = SystemColors.ControlText;
-            textBox8.Location = new Point(994, 426);
+            textBox8.Location = new Point(896, 417);
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(150, 30);
             textBox8.TabIndex = 1;
@@ -280,7 +282,7 @@
             label9.BackColor = Color.FromArgb(138, 90, 60);
             label9.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             label9.ForeColor = Color.FromArgb(249, 190, 189);
-            label9.Location = new Point(923, 376);
+            label9.Location = new Point(825, 367);
             label9.Name = "label9";
             label9.Size = new Size(65, 20);
             label9.TabIndex = 3;
@@ -292,7 +294,7 @@
             label10.BackColor = Color.FromArgb(138, 90, 60);
             label10.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
             label10.ForeColor = Color.FromArgb(249, 190, 189);
-            label10.Location = new Point(939, 432);
+            label10.Location = new Point(841, 423);
             label10.Name = "label10";
             label10.Size = new Size(43, 20);
             label10.TabIndex = 3;
@@ -330,7 +332,7 @@
             comboBox1.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Cashier", "Cook", "Courier", "Accountant" });
-            comboBox1.Location = new Point(728, 367);
+            comboBox1.Location = new Point(654, 362);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(150, 31);
             comboBox1.TabIndex = 29;
@@ -338,18 +340,40 @@
             // maskedTextBox1
             // 
             maskedTextBox1.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
-            maskedTextBox1.Location = new Point(728, 426);
+            maskedTextBox1.Location = new Point(654, 421);
             maskedTextBox1.Mask = "(+999) 00-0000000";
             maskedTextBox1.Name = "maskedTextBox1";
             maskedTextBox1.Size = new Size(150, 30);
             maskedTextBox1.TabIndex = 30;
+            // 
+            // textBox5
+            // 
+            textBox5.BackColor = Color.White;
+            textBox5.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold);
+            textBox5.ForeColor = SystemColors.ControlText;
+            textBox5.Location = new Point(1196, 358);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(150, 30);
+            textBox5.TabIndex = 1;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.BackColor = Color.FromArgb(138, 90, 60);
+            label11.Font = new Font("Segoe Script", 9.75F, FontStyle.Bold);
+            label11.ForeColor = Color.FromArgb(249, 190, 189);
+            label11.Location = new Point(1062, 364);
+            label11.Name = "label11";
+            label11.Size = new Size(115, 20);
+            label11.TabIndex = 3;
+            label11.Text = "House Number:";
             // 
             // EmployeeOverview
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(183, 196, 138);
-            ClientSize = new Size(1156, 550);
+            ClientSize = new Size(1358, 550);
             Controls.Add(maskedTextBox1);
             Controls.Add(comboBox1);
             Controls.Add(button2);
@@ -357,6 +381,7 @@
             Controls.Add(label10);
             Controls.Add(label8);
             Controls.Add(label7);
+            Controls.Add(label11);
             Controls.Add(label9);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -366,6 +391,7 @@
             Controls.Add(label1);
             Controls.Add(textBox8);
             Controls.Add(textBox4);
+            Controls.Add(textBox5);
             Controls.Add(textBox7);
             Controls.Add(textBox3);
             Controls.Add(textBox2);
@@ -410,5 +436,7 @@
         private Button button2;
         private ComboBox comboBox1;
         private MaskedTextBox maskedTextBox1;
+        private TextBox textBox5;
+        private Label label11;
     }
 }
